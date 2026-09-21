@@ -1,0 +1,1 @@
+"""Core package for the PDF Merkmal Extrahierer."""

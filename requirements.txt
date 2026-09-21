@@ -1,0 +1,11 @@
+openai
+python-dotenv
+pydantic
+jsonschema
+pymupdf
+pytesseract
+python-doctr[torch]
+transformers
+torch
+Pillow
+opencv-python
