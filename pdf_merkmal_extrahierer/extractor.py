@@ -132,26 +132,40 @@ class LayoutExtractor:
 
                     # 2. Text und Bilder extrahieren
                     blocks = page.get_text("blocks")
-                    
+
+                    # Text zeilenweise extrahieren, damit Checkboxen anhand ihrer
+                    # Position in die jeweilige Zeile einsortiert werden können.
+                    words = page.get_text("words")
+                    text_lines: dict[tuple[int, int], list[tuple]] = {}
+                    for word in words:
+                        block_number = int(word[5])
+                        line_number = int(word[6])
+                        text_lines.setdefault((block_number, line_number), []).append(word)
+
+                    for line_words in text_lines.values():
+                        line_words.sort(key=lambda word: word[0])
+                        text = " ".join(word[4] for word in line_words).strip()
+                        if text:
+                            page_elements.append({
+                                "file": pdf_path.name,
+                                "page": page_number,
+                                "type": "text",
+                                "bbox": [
+                                    round(float(min(word[0] for word in line_words)), 2),
+                                    round(float(min(word[1] for word in line_words)), 2),
+                                    round(float(max(word[2] for word in line_words)), 2),
+                                    round(float(max(word[3] for word in line_words)), 2),
+                                ],
+                                "text": text,
+                            })
+
                     for block in blocks:
                         # block[6] enthält den Block-Typ in PyMuPDF
                         if len(block) >= 7:
                             block_type = block[6]
                             
-                            # --- Typ 0: Normaler, markierbarer Text ---
-                            if block_type == 0 and isinstance(block[4], str):
-                                text = block[4].strip()
-                                if text:
-                                    page_elements.append({
-                                        "file": pdf_path.name,
-                                        "page": page_number,
-                                        "type": "text",
-                                        "bbox": [round(float(value), 2) for value in block[:4]],
-                                        "text": text,
-                                    })
-                                    
                             # --- Typ 1: Eingebettetes Bild ---
-                            elif block_type == 1:
+                            if block_type == 1:
                                 # Wir schneiden das Bild exakt an seinen Koordinaten aus
                                 clip_rect = pymupdf.Rect(block[:4])
                                 pixmap = page.get_pixmap(dpi=self.dpi, alpha=False, clip=clip_rect)
@@ -178,17 +192,16 @@ class LayoutExtractor:
                                     })
 
                     # 3. Fallback für Seiten, die GANZ ohne Blöcke sind (z.B. fehlerhafte PDFs)
-                    if not blocks:
+                    if not words:
                         ocr_elements = self._extract_ocr_elements(page, page_number, 0)
                         for el in ocr_elements:
                             el["file"] = pdf_path.name
                         page_elements.extend(ocr_elements)
 
                     
-                    # A) In Lesereihenfolge sortieren
-                    # Wir runden die Y-Koordinate (bbox[1]) in 5-Pixel-Schritten. 
-                    # So landen Text und Checkbox, die leicht verschoben auf derselben Zeile stehen, auf gleicher Höhe.
-                    page_elements.sort(key=lambda el: (round(el["bbox"][1] / 5), el["bbox"][0]))
+                    # A) In Lesereihenfolge sortieren. Elemente derselben Zeile
+                    # werden über ihre vertikale Überlappung zusammengefasst.
+                    page_elements = self._sort_in_reading_order(page_elements)
                     
                     # B) Index sauber durchzählen und Datenmüll entfernen
                     for el in page_elements:
@@ -207,6 +220,37 @@ class LayoutExtractor:
             elements=elements,
             backend=self.backend,
         )
+
+    @staticmethod
+    def _sort_in_reading_order(
+        elements: list[dict[str, object]],
+    ) -> list[dict[str, object]]:
+        """Sort elements by rows and then by their horizontal position."""
+        rows: list[dict[str, object]] = []
+        for element in sorted(elements, key=lambda item: item["bbox"][1]):
+            bbox = element["bbox"]
+            row = next(
+                (
+                    candidate
+                    for candidate in rows
+                    if bbox[1] < candidate["bottom"]
+                    and bbox[3] > candidate["top"]
+                ),
+                None,
+            )
+            if row is None:
+                rows.append({"top": bbox[1], "bottom": bbox[3], "elements": [element]})
+            else:
+                row["top"] = min(row["top"], bbox[1])
+                row["bottom"] = max(row["bottom"], bbox[3])
+                row["elements"].append(element)
+
+        rows.sort(key=lambda row: row["top"])
+        return [
+            element
+            for row in rows
+            for element in sorted(row["elements"], key=lambda item: item["bbox"][0])
+        ]
 
     def _extract_vector_checkboxes(
         self, page: pymupdf.Page, page_number: int, file_name: str, previous_count: int

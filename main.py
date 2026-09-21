@@ -10,8 +10,9 @@ from typing import Any
 from collections import defaultdict # Neu hinzugefügt für die Gruppierung
 
 from pdf_merkmal_extrahierer.discovery import find_article_pdfs
-from pdf_merkmal_extrahierer.extractor import LayoutExtractor, OcrExtractor
+from pdf_merkmal_extrahierer.extractor import LayoutExtractor
 from pdf_merkmal_extrahierer.llm_client import LlmClient
+from pdf_merkmal_extrahierer.preprocessing import merge_layout_to_markdown
 
 
 def load_system_prompt(prompt_path: Path) -> str:
@@ -39,13 +40,6 @@ def process_article(
     debug_prefix = output_path.with_name(f"{output_path.stem}.DEBUG")
 
     # extractor.py haben wir so umgebaut, dass sie Listen akzeptieren
-    text_result = OcrExtractor().extract(pdf_paths)
-    write_debug_markdown(
-        debug_prefix.with_name(f"{debug_prefix.name}_01_ocr.md"),
-        "OCR-Extraktion (Kombiniert)",
-        text_result.text,
-    )
-
     layout_result = LayoutExtractor().extract(pdf_paths)
     write_debug_markdown(
         debug_prefix.with_name(f"{debug_prefix.name}_02_layout.md"),
@@ -59,16 +53,12 @@ def process_article(
             "_meta": {
                 "source_files": [p.name for p in pdf_paths], # GEÄNDERT auf Plural
                 "status": "offline-dummy",
-                "ocr_backend": text_result.backend,
                 "layout_backend": layout_result.backend,
             },
         }
     else:
         client = llm_client or LlmClient()
-        prompt = (
-            f"OCR-Text:\n{text_result.text}\n\n"
-            f"Layout-Elemente:\n{json.dumps(layout_result.elements, ensure_ascii=False)}"
-        )
+        prompt = merge_layout_to_markdown(layout_result.elements)
         write_debug_markdown(
             debug_prefix.with_name(f"{debug_prefix.name}_03_llm_input.md"),
             "LLM-Eingabe",
