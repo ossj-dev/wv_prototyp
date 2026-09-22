@@ -1,0 +1,3 @@
+# LLM-Ausgabe
+
+{"dokumentensprache": "Deutsch", "artikelnummer": "PB HW VIO 3n", "labels": [{"verpackungsebene": "Verpackungsebene 0", "label_inhalt": ["Herstelldatum", "Erbe article no./Erbe-Artikel Nr.", "Designation/Bezeichnung", "Quantity/Menge", "Lot no. or SN/Lot- bzw. SN", "Expiry date or Manufacturing date/Mindesthaltbarkeitsdatum", "Barcode"]}, {"verpackungsebene": "Artikel", "label_inhalt": ["Herstelldatum", "Erbe article no./Erbe-Artikel Nr.", "Designation/Bezeichnung", "Quantity/Menge", "Lot no. or SN/Lot- bzw. SN", "Expiry date or manufacturing date/Mindesthaltbarkeitsdatum"]}, {"verpackungsebene": "Artikel", "label_inhalt": ["Barcode"]}]}

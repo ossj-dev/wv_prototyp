@@ -1,0 +1,21 @@
+{
+  "dokumentensprache": "de",
+  "artikelnummer": "s. oben",
+  "labels": [
+    {
+      "label_id": "A",
+      "label_name": "Label (Etikett)",
+      "application_location": "rechtsseitig zentriert aufgeklebt"
+    },
+    {
+      "label_id": "B",
+      "label_name": "Erbesiegel",
+      "application_location": "mittig"
+    },
+    {
+      "label_id": "C",
+      "label_name": "Erbesiegel",
+      "application_location": "mittig"
+    }
+  ]
+}

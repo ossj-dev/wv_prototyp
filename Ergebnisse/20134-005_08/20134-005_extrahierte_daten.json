@@ -1,0 +1,14 @@
+{
+  "merkmale": [],
+  "_meta": {
+    "source_files": [
+      "174012_DE_005 20134-005_V5.pdf",
+      "20134-005-1.pdf",
+      "20134-005_SLV.pdf",
+      "D111190_DE_002.pdf"
+    ],
+    "status": "llm_json_error",
+    "error": "Unterminated string starting at: line 1 column 63004 (char 63003)",
+    "layout_backend": "pymupdf"
+  }
+}

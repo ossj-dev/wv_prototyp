@@ -1,0 +1,31 @@
+{
+  "article_number": "20862-021",
+  "source_files": [
+    "data/20862-021/800015672.lab_2.pdf",
+    "data/20862-021/Verpackungsvorschrift D210231.pdf"
+  ],
+  "prompt_file": "prompts/sys_prompt_regelprompt.txt",
+  "json_schema": false,
+  "thinking_enabled": false,
+  "model": "meta-llama-3.1-8b-instruct",
+  "offline": false,
+  "started_at_utc": "2026-09-22T09:51:08.994947+00:00",
+  "finished_at_utc": "2026-09-22T09:51:30.976872+00:00",
+  "duration_seconds": 21.982,
+  "token_usage": {
+    "completion_tokens": 121,
+    "prompt_tokens": 1102,
+    "total_tokens": 1223,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "20862-021_extrahierte_daten.json",
+  "status": "ok",
+  "error": null
+}

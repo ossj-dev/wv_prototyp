@@ -1,0 +1,24 @@
+{
+  "dokumentensprache": "de",
+  "artikelnummer": "PB HW VIO 3n PowerBoard",
+  "labels": [
+    {
+      "verpackungsebene": "{\"label_on_packaging_level_0\": \"boolean\", \"content_of_the_label\": \"string\", \"herstelldatum\": \"date\", \"erbe_article_no_erbe_artikel_nr\": \"verbatim-string\", \"designation_bezeichnung\": \"verbatim-string\", \"quantity_menge\": \"integer\", \"lot_no_or_sn_lot_bzw_sn\": \"verbatim-string\", \"expiry_date_or_manufacturing_date_mindesthaltbarkeitsdatum_bzw_barcode\": \"date\"}, \"label_on_packaging_level_1\": \"boolean\", \"content_of_the_label\": \"string",
+      "label_inhalt": [
+        "verbatim-string"
+      ]
+    },
+    {
+      "verpackungsebene": "{\"label_on_article\": \"boolean\", \"content_of_the_label\": \"string\", \"herstelldatum\": \"date\", \"erbe_article_no_erbe_artikel_nr\": \"verbatim-string\", \"designation_bezeichnung\": ",
+      "label_inhalt": [
+        "verbatim-string"
+      ]
+    },
+    {
+      "verpackungsebene": "{\"other_sonstiges\": \"boolean\", \"content_inhalt\": \"string",
+      "label_inhalt": [
+        "verbatim-string"
+      ]
+    }
+  ]
+}

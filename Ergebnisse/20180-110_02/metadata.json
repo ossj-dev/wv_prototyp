@@ -1,0 +1,31 @@
+{
+  "article_number": "20180-110",
+  "source_files": [
+    "data/20180-110/20240620081328.pdf",
+    "data/20180-110/D289949_DE_000.pdf"
+  ],
+  "prompt_file": "prompts/sys_prompt_minimalprompt.txt",
+  "json_schema": true,
+  "thinking_enabled": false,
+  "model": "meta-llama-3.1-8b-instruct",
+  "offline": false,
+  "started_at_utc": "2026-09-22T11:43:00.416378+00:00",
+  "finished_at_utc": "2026-09-22T11:43:20.289300+00:00",
+  "duration_seconds": 19.873,
+  "token_usage": {
+    "completion_tokens": 337,
+    "prompt_tokens": 1532,
+    "total_tokens": 1869,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "20180-110_extrahierte_daten.json",
+  "status": "ok",
+  "error": null
+}

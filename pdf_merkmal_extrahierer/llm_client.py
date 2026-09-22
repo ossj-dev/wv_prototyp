@@ -31,6 +31,7 @@ class LlmClient:
         self.enable_thinking = os.getenv(
             "LM_STUDIO_ENABLE_THINKING", "false"
         ).lower() in {"1", "true", "yes"}
+        self.last_usage: dict[str, Any] | None = None
 
         from openai import OpenAI
 
@@ -40,10 +41,11 @@ class LlmClient:
         self,
         raw_text: str,
         system_prompt: str,
+        use_json_schema: bool = True,
         few_shot_examples: Sequence[FewShotExample] = (),
         debug_output_path: Path | None = None,
     ) -> dict[str, Any]:
-        """Extract a JSON object from raw document text using JSON mode."""
+        """Extract a JSON object, optionally enforcing the output schema."""
         messages: list[dict[str, str]] = [
             {"role": "system", "content": system_prompt},
         ]
@@ -59,7 +61,9 @@ class LlmClient:
         request_options: dict[str, Any] = {
             "model": self.model,
             "messages": messages,
-            "response_format": {
+        }
+        if use_json_schema:
+            request_options["response_format"] = {
                 "type": "json_schema",
                 "json_schema": {
                     "name": "packaging_instruction_extraction",
@@ -70,18 +74,6 @@ class LlmClient:
                         "properties": {
                             "dokumentensprache": {"type": ["string", "null"]},
                             "artikelnummer": {"type": ["string", "null"]},
-                            "merkmale": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "additionalProperties": False,
-                                    "properties": {
-                                        "merkmal_name": {"type": "string"},
-                                        "angabe": {"type": "string"},
-                                    },
-                                    "required": ["merkmal_name", "angabe"],
-                                },
-                            },
                             "labels": {
                                 "type": "array",
                                 "items": {
@@ -104,13 +96,11 @@ class LlmClient:
                         "required": [
                             "dokumentensprache",
                             "artikelnummer",
-                            "merkmale",
                             "labels",
                         ],
                     },
                 },
-            },
-        }
+            }
         if not self.enable_thinking:
             request_options["extra_body"] = {
                 "chat_template_kwargs": {"enable_thinking": False}
@@ -119,6 +109,15 @@ class LlmClient:
         response = self._client.chat.completions.create(
             **request_options,
         )
+        usage = getattr(response, "usage", None)
+        if usage is not None:
+            self.last_usage = (
+                usage.model_dump()
+                if hasattr(usage, "model_dump")
+                else dict(usage)
+            )
+        else:
+            self.last_usage = None
         choice = response.choices[0]
         message = choice.message
         content = message.content

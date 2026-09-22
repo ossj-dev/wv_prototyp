@@ -5,9 +5,11 @@ from __future__ import annotations
 import json
 import os
 import argparse
+import time
 from pathlib import Path
 from typing import Any
 from collections import defaultdict # Neu hinzugefügt für die Gruppierung
+from datetime import datetime, timezone
 
 from pdf_merkmal_extrahierer.discovery import find_article_pdfs
 from pdf_merkmal_extrahierer.extractor import LayoutExtractor
@@ -27,6 +29,38 @@ def write_debug_markdown(path: Path, title: str, content: str) -> None:
     path.write_text(f"# {title}\n\n{content}\n", encoding="utf-8")
 
 
+def create_run_directory(results_root: Path, article_name: str) -> Path:
+    """Create the next numbered result directory for an article."""
+    results_root.mkdir(parents=True, exist_ok=True)
+    run_index = 1
+    while True:
+        run_directory = results_root / f"{article_name}_{run_index:02d}"
+        if not run_directory.exists():
+            run_directory.mkdir()
+            return run_directory
+        run_index += 1
+
+
+def choose_experiment_settings(
+    prompt_directory: Path,
+) -> tuple[str, Path, bool]:
+    """Select the article, prompt, and schema mode interactively."""
+    article_number = input("Artikelnummer: ").strip()
+    prompt_choices = {
+        "1": ("minimal", prompt_directory / "sys_prompt_minimalprompt.txt"),
+        "2": ("regel", prompt_directory / "sys_prompt_regelprompt.txt"),
+    }
+    print("Prompt auswählen: [1] minimal  [2] regel")
+    prompt_choice = input("Auswahl [2]: ").strip() or "2"
+    if prompt_choice not in prompt_choices:
+        raise ValueError("Ungültige Prompt-Auswahl. Bitte 1 oder 2 verwenden.")
+
+    schema_choice = input("JSON Schema verwenden? [J/n]: ").strip().lower()
+    use_json_schema = schema_choice not in {"n", "nein", "no"}
+    _, prompt_path = prompt_choices[prompt_choice]
+    return article_number, prompt_path, use_json_schema
+
+
 # GEÄNDERT: Akzeptiert jetzt eine Liste von Pfaden (pdf_paths)
 def process_article(
     article_name: str,
@@ -35,6 +69,7 @@ def process_article(
     system_prompt: str,
     llm_client: LlmClient | None = None,
     offline: bool = False,
+    use_json_schema: bool = True,
 ) -> dict[str, Any]:
     """Extract multiple PDFs for one article and write a combined JSON."""
     debug_prefix = output_path.with_name(f"{output_path.stem}.DEBUG")
@@ -47,30 +82,51 @@ def process_article(
         json.dumps(layout_result.elements, ensure_ascii=False, indent=2),
     )
 
+    prompt = merge_layout_to_markdown(layout_result.elements)
+    write_debug_markdown(
+        output_path.parent / "llm_input.md",
+        "LLM-Eingabe",
+        f"## Systemprompt\n\n{system_prompt}\n\n## Benutzereingabe\n\n{prompt}",
+    )
+
     if offline:
         result: dict[str, Any] = {
             "merkmale": [],
             "_meta": {
-                "source_files": [p.name for p in pdf_paths], # GEÄNDERT auf Plural
+                "source_files": [p.name for p in pdf_paths],
                 "status": "offline-dummy",
                 "layout_backend": layout_result.backend,
             },
         }
+        (output_path.parent / "llm_output.md").write_text(
+            "# LLM-Ausgabe\n\nKein LLM-Aufruf im Offline-Modus.\n",
+            encoding="utf-8",
+        )
     else:
         client = llm_client or LlmClient()
-        prompt = merge_layout_to_markdown(layout_result.elements)
-        write_debug_markdown(
-            debug_prefix.with_name(f"{debug_prefix.name}_03_llm_input.md"),
-            "LLM-Eingabe",
-            f"## Systemprompt\n\n{system_prompt}\n\n## Benutzereingabe\n\n{prompt}",
-        )
-        result = client.extract_json(
-            prompt,
-            system_prompt,
-            debug_output_path=debug_prefix.with_name(
-                f"{debug_prefix.name}_04_llm_output.md"
-            ),
-        )
+        try:
+            result = client.extract_json(
+                prompt,
+                system_prompt,
+                use_json_schema=use_json_schema,
+                debug_output_path=output_path.parent / "llm_output.md",
+            )
+        except Exception as exc:  # noqa: BLE001 - intentionally keep run metadata
+            result = {
+                "merkmale": [],
+                "_meta": {
+                    "source_files": [p.name for p in pdf_paths],
+                    "status": "llm_json_error",
+                    "error": str(exc),
+                    "layout_backend": layout_result.backend,
+                },
+            }
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(
+                json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            return result
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
@@ -85,20 +141,36 @@ def main() -> None:
     from dotenv import load_dotenv
 
     parser = argparse.ArgumentParser(description="Extrahiert Merkmale eines Artikels.")
-    parser.add_argument("article_number", help="Artikelnummer, z. B. 123456")
     parser.add_argument(
+        "article_number",
+        nargs="?",
+        help="Artikelnummer, z. B. 123456; ohne Angabe wird interaktiv gefragt",
+    )
+    parser.add_argument(
+        "-p",
         "--prompt-file",
         type=Path,
         help="Optionale Systemprompt-Datei für Prompt-Vergleiche",
+    )
+    parser.add_argument(
+        "--json-schema",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="JSON-Schema-Constraint verwenden (Standard: aktiviert)",
     )
     args = parser.parse_args()
 
     load_dotenv()
     input_root = Path(os.getenv("INPUT_ROOT", "./data"))
     offline = os.getenv("OFFLINE_MODE", "false").lower() in {"1", "true", "yes"}
-    prompt_path = args.prompt_file or Path(
-        os.getenv("SYSTEM_PROMPT_FILE", "./prompts/system_default.txt")
-    )
+    if args.article_number is None and args.prompt_file is None:
+        args.article_number, prompt_path, args.json_schema = choose_experiment_settings(
+            Path("./prompts")
+        )
+    else:
+        prompt_path = args.prompt_file or Path(
+            os.getenv("SYSTEM_PROMPT_FILE", "./prompts/system_default.txt")
+        )
     system_prompt = load_system_prompt(prompt_path)
     
     # PDFs suchen
@@ -115,19 +187,66 @@ def main() -> None:
 
     # Verarbeitung auf Artikelebene (nicht mehr auf Dateiebene)
     for article_name, pdf_paths in pdfs_by_article.items():
-        # Ausgabe-JSON direkt in den Artikel-Ordner legen
-        # Wir nehmen den Parent-Ordner des ersten PDFs
-        article_dir = pdf_paths[0].parent
-        output_path = article_dir / f"{article_name}_extrahierte_daten.json"
-        
-        process_article(
-            article_name=article_name,
-            pdf_paths=pdf_paths,
-            output_path=output_path,
-            system_prompt=system_prompt,
-            offline=offline
+        run_directory = create_run_directory(
+            Path(os.getenv("RESULTS_ROOT", "./Ergebnisse")), article_name
         )
-        print(f"Fertig! Artikel: {article_name} | {len(pdf_paths)} Datei(en) verarbeitet | JSON: {output_path}")
+        output_path = run_directory / f"{article_name}_extrahierte_daten.json"
+        started_at = datetime.now(timezone.utc)
+        started_counter = time.perf_counter()
+        client = LlmClient() if not offline else None
+
+        try:
+            result = process_article(
+                article_name=article_name,
+                pdf_paths=pdf_paths,
+                output_path=output_path,
+                system_prompt=system_prompt,
+                llm_client=client,
+                offline=offline,
+                use_json_schema=args.json_schema,
+            )
+            status = result.get("_meta", {}).get("status", "ok")
+            error_text = result.get("_meta", {}).get("error")
+        except Exception as exc:  # noqa: BLE001 - still write metadata for analysis
+            result = {
+                "merkmale": [],
+                "_meta": {
+                    "source_files": [str(path) for path in pdf_paths],
+                    "status": "processing_error",
+                    "error": str(exc),
+                },
+            }
+            status = "processing_error"
+            error_text = str(exc)
+
+        finished_at = datetime.now(timezone.utc)
+        elapsed_seconds = time.perf_counter() - started_counter
+        metadata = {
+            "article_number": article_name,
+            "source_files": [str(path) for path in pdf_paths],
+            "prompt_file": str(prompt_path),
+            "json_schema": args.json_schema,
+            "thinking_enabled": os.getenv(
+                "LM_STUDIO_ENABLE_THINKING", "false"
+            ).lower() in {"1", "true", "yes"},
+            "model": os.getenv("LM_STUDIO_MODEL", "local-model"),
+            "offline": offline,
+            "started_at_utc": started_at.isoformat(),
+            "finished_at_utc": finished_at.isoformat(),
+            "duration_seconds": round(elapsed_seconds, 3),
+            "token_usage": client.last_usage if client is not None else None,
+            "result_file": output_path.name,
+            "status": status,
+            "error": error_text,
+        }
+        (run_directory / "metadata.json").write_text(
+            json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        print(
+            f"Fertig! Artikel: {article_name} | {len(pdf_paths)} Datei(en) verarbeitet "
+            f"| Ergebnisordner: {run_directory} | JSON: {output_path} | Status: {status}"
+        )
 
 
 if __name__ == "__main__":
