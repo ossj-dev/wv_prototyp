@@ -1,0 +1,31 @@
+{
+  "article_number": "20180-101",
+  "source_files": [
+    "data/20180-101/20231127094618.pdf",
+    "data/20180-101/D208847_DE_001.pdf"
+  ],
+  "prompt_file": "prompts/sys_prompt_minimalprompt.txt",
+  "json_schema": false,
+  "thinking_enabled": false,
+  "model": "qwen/qwen2.5-coder-14b",
+  "offline": false,
+  "started_at_utc": "2026-09-23T13:12:42.138318+00:00",
+  "finished_at_utc": "2026-09-23T13:13:11.123808+00:00",
+  "duration_seconds": 28.985,
+  "token_usage": {
+    "completion_tokens": 148,
+    "prompt_tokens": 1188,
+    "total_tokens": 1336,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "20180-101_extrahierte_daten.json",
+  "status": "llm_json_error",
+  "error": "Expecting value: line 1 column 1 (char 0)"
+}

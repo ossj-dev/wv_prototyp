@@ -1,0 +1,29 @@
+# LLM-Ausgabe
+
+{
+  "dokumentensprache": "de",
+  "artikelnummer": "20323-000",
+  "labels": [
+    {
+      "verpackungsebene": "0",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN",
+        "Barcode"
+      ]
+    },
+    {
+      "verpackungsebene": "einzelartikel",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+        "Barcode"
+      ]
+    }
+  ]
+}

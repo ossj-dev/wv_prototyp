@@ -1,0 +1,14 @@
+# LLM-Ausgabe
+
+{
+  "dokumentensprache": "de",
+  "artikelnummer": "1234567",
+  "labels": [
+    {
+      "verpackungsebene": "1",
+      "label_inhalt": [
+        "Working element bip., active, 26/24CH, w. protection rod"
+      ]
+    }
+  ]
+}
