@@ -9,3 +9,6 @@ __pycache__/
 # Local source documents and generated artifacts
 data/*
 !data/.gitkeep
+
+.DS_Store
+*/DS_Store
