@@ -1,0 +1,36 @@
+{
+  "dokumentensprache": "deutsch",
+  "artikelnummer": "20323-000",
+  "labels": [
+    {
+      "verpackungsebene": "",
+      "label_inhalt": [
+        "Erbe‐Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot‐ bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+        "Barcode"
+      ]
+    },
+    {
+      "verpackungsebene": "a",
+      "label_inhalt": [
+        "Erbe‐Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot‐ bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+        "Barcode"
+      ]
+    },
+    {
+      "verpackungsebene": "",
+      "label_inhalt": [
+        "Erbe‐Artikel Nr.",
+        "Lot‐ bzw. SN",
+        "Sonstiges: Leerräume m. Wellpappe auffüllen"
+      ]
+    }
+  ]
+}

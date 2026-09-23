@@ -1,0 +1,32 @@
+{
+  "article_number": "30160-875",
+  "source_files": [
+    "data/30160-875/D108713_DE_001.pdf",
+    "data/30160-875/D230937_007_Assembly.pdf",
+    "data/30160-875/D275038_DE_000.pdf"
+  ],
+  "prompt_file": "prompts/sys_prompt_minimalprompt.txt",
+  "json_schema": false,
+  "thinking_enabled": false,
+  "model": "qwen2.5-7b-instruct",
+  "offline": false,
+  "started_at_utc": "2026-09-23T08:15:48.333539+00:00",
+  "finished_at_utc": "2026-09-23T08:17:16.908108+00:00",
+  "duration_seconds": 88.575,
+  "token_usage": {
+    "completion_tokens": 232,
+    "prompt_tokens": 6054,
+    "total_tokens": 6286,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "30160-875_extrahierte_daten.json",
+  "status": "llm_json_error",
+  "error": "Expecting value: line 1 column 1 (char 0)"
+}

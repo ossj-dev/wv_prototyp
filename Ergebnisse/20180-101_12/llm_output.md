@@ -1,0 +1,19 @@
+# LLM-Ausgabe
+
+{
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": null,
+  "labels": [
+    {
+      "verpackungsebene": "Verpackungsebene 0",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+        "Barcode ",
+        "Bezeichnung Inhalt:",
+        "Erbe-Artikel Nr. + Menge",
+        "Lot- bzw. SN + UDI-Code Lot- bzw. SN"
+      ]
+    }
+  ]
+}
