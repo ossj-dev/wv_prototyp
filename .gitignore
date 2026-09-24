@@ -11,5 +11,5 @@ data/*
 !data/.gitkeep
 
 .DS_Store
-*/DS_Store
+*/.DS_Store
 Ergebnisse/.DS_Store
