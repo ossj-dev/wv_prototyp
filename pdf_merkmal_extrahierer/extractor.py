@@ -10,7 +10,12 @@ from PIL import Image
 
 
 OcrBackend = Literal["tesseract", "doctr"]
-LayoutBackend = Literal["pymupdf", "table-transformer", "layoutlmv3"]
+LayoutBackend = Literal[
+    "pymupdf",
+    "docling-paddle",
+    "table-transformer",
+    "layoutlmv3",
+]
 
 
 @dataclass(frozen=True)
@@ -123,24 +128,31 @@ class LayoutExtractor:
                     # Temporärer Speicher für diese eine Seite
                     page_elements: list[dict[str, object]] = []
 
-                    # 1. Checkboxen extrahieren
-                    # Wir übergeben 0 als previous_count, da der Index später vergeben wird
-                    checkbox_elements = self._extract_vector_checkboxes(
-                        page, page_number, pdf_path.name, 0
-                    )
-                    page_elements.extend(checkbox_elements)
-
-                    # 2. Text und Bilder extrahieren
+                    # 1. Text und Bilder extrahieren
                     blocks = page.get_text("blocks")
 
                     # Text zeilenweise extrahieren, damit Checkboxen anhand ihrer
                     # Position in die jeweilige Zeile einsortiert werden können.
                     words = page.get_text("words")
+                    text_layer = page.get_text("text")
+                    text_layer_is_corrupted = self._text_layer_is_corrupted(text_layer)
+                    use_ocr_fallback = not words or text_layer_is_corrupted
+
+                    # Verpackungs-Checkboxen nur aus einem brauchbaren Textlayer
+                    # oder einer echten textlosen Scan-Seite übernehmen. Bei
+                    # beschädigten Label-Textlayern wären Labelrahmen falsche Checkboxen.
+                    if not text_layer_is_corrupted:
+                        checkbox_elements = self._extract_vector_checkboxes(
+                            page, page_number, pdf_path.name, 0
+                        )
+                        page_elements.extend(checkbox_elements)
+
                     text_lines: dict[tuple[int, int], list[tuple]] = {}
-                    for word in words:
-                        block_number = int(word[5])
-                        line_number = int(word[6])
-                        text_lines.setdefault((block_number, line_number), []).append(word)
+                    if not use_ocr_fallback:
+                        for word in words:
+                            block_number = int(word[5])
+                            line_number = int(word[6])
+                            text_lines.setdefault((block_number, line_number), []).append(word)
 
                     for line_words in text_lines.values():
                         line_words.sort(key=lambda word: word[0])
@@ -191,9 +203,14 @@ class LayoutExtractor:
                                         "text": ocr_text,
                                     })
 
-                    # 3. Fallback für Seiten, die GANZ ohne Blöcke sind (z.B. fehlerhafte PDFs)
-                    if not words:
-                        ocr_elements = self._extract_ocr_elements(page, page_number, 0)
+                    # 3. Fallback für Seiten ohne brauchbaren Textlayer
+                    if use_ocr_fallback:
+                        ocr_elements = self._extract_ocr_elements(
+                            page,
+                            page_number,
+                            0,
+                            page_segmentation_mode=11 if text_layer_is_corrupted else 3,
+                        )
                         for el in ocr_elements:
                             el["file"] = pdf_path.name
                         page_elements.extend(ocr_elements)
@@ -207,18 +224,20 @@ class LayoutExtractor:
                     for el in page_elements:
                         el["index"] = len(elements) + 1
                         
-                        # Bbox (und ggf. OCR-Confidence) bei Texten löschen!
-                        if el["type"] in ["text", "ocr-word"]:
-                            del el["bbox"]
-                            if "confidence" in el:
-                                del el["confidence"]
-                                
                         elements.append(el)
 
         return LayoutExtractionResult(
             source=pdf_paths,
             elements=elements,
             backend=self.backend,
+        )
+
+    @staticmethod
+    def _text_layer_is_corrupted(text: str) -> bool:
+        """Detect broken PDF encodings that return control characters as text."""
+        return any(
+            ord(character) < 32 and character not in "\n\r\t"
+            for character in text
         )
 
     @staticmethod
@@ -308,14 +327,19 @@ class LayoutExtractor:
             
         return elements
 
+
     def _extract_ocr_elements(
-        self, page: pymupdf.Page, page_number: int, previous_count: int
+        self,
+        page: pymupdf.Page,
+        page_number: int,
+        previous_count: int,
+        page_segmentation_mode: int = 3,
     ) -> list[dict[str, object]]:
         """Extract positioned words when a page has no embedded text layer."""
         pixmap = page.get_pixmap(dpi=self.dpi, alpha=False)
         from PIL import Image
         import pytesseract
-        
+
         image = Image.frombytes(
             "RGB", (pixmap.width, pixmap.height), pixmap.samples
         )
@@ -323,7 +347,7 @@ class LayoutExtractor:
             data = pytesseract.image_to_data(
                 image,
                 lang=self.language,
-                config="--psm 3",
+                config=f"--psm {page_segmentation_mode}",
                 output_type=pytesseract.Output.DICT,
             )
         finally:
@@ -355,3 +379,177 @@ class LayoutExtractor:
                 }
             )
         return elements
+
+
+class DoclingPaddleExtractor:
+    """Extract native PDF layout with Docling and scanned pages with PaddleOCR."""
+
+    def __init__(
+        self,
+        language: str = "german",
+        dpi: int = 300,
+        minimum_ocr_confidence: float = 0.35,
+    ) -> None:
+        self.language = language
+        self.dpi = dpi
+        self.minimum_ocr_confidence = minimum_ocr_confidence
+        self.backend: LayoutBackend = "docling-paddle"
+
+    def extract(self, pdf_paths: list[Path]) -> LayoutExtractionResult:
+        """Preserve Docling reading order and use PaddleOCR only for scan pages."""
+        if self.dpi <= 0:
+            raise ValueError(f"Die OCR-Auflösung muss positiv sein: {self.dpi}")
+        if not 0 <= self.minimum_ocr_confidence <= 1:
+            raise ValueError("Die minimale OCR-Konfidenz muss zwischen 0 und 1 liegen.")
+
+        from docling.datamodel.base_models import InputFormat
+        from docling.datamodel.pipeline_options import PdfPipelineOptions
+        from docling.document_converter import DocumentConverter, PdfFormatOption
+
+        pipeline_options = PdfPipelineOptions(
+            do_ocr=False,
+            do_table_structure=True,
+        )
+        converter = DocumentConverter(
+            format_options={
+                InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)
+            }
+        )
+        ocr = self._create_paddle_ocr()
+        elements: list[dict[str, object]] = []
+
+        for pdf_path in pdf_paths:
+            _validate_pdf_path(pdf_path)
+            converted = converter.convert(pdf_path).document
+            with pymupdf.open(pdf_path) as pdf:
+                for page_number, page in enumerate(pdf, start=1):
+                    if self._needs_ocr(page):
+                        page_elements = self._extract_paddle_page(
+                            page, page_number, pdf_path.name, ocr
+                        )
+                    else:
+                        page_elements = self._extract_docling_page(
+                            converted, page_number, pdf_path.name, page.rect.height
+                        )
+                    page_elements.extend(
+                        LayoutExtractor()._extract_vector_checkboxes(
+                            page, page_number, pdf_path.name, 0
+                        )
+                    )
+                    page_elements = LayoutExtractor._sort_in_reading_order(page_elements)
+                    for element in page_elements:
+                        element["index"] = len(elements) + 1
+                        elements.append(element)
+
+        return LayoutExtractionResult(
+            source=pdf_paths,
+            elements=elements,
+            backend=self.backend,
+        )
+
+    def _create_paddle_ocr(self):
+        from paddleocr import PaddleOCR
+
+        return PaddleOCR(
+            lang=self.language,
+            use_doc_orientation_classify=False,
+            use_doc_unwarping=False,
+            use_textline_orientation=False,
+        )
+
+    @staticmethod
+    def _needs_ocr(page: pymupdf.Page) -> bool:
+        words = page.get_text("words")
+        text = page.get_text("text")
+        return not words or LayoutExtractor._text_layer_is_corrupted(text)
+
+    def _extract_docling_page(
+        self,
+        document: object,
+        page_number: int,
+        file_name: str,
+        page_height: float,
+    ) -> list[dict[str, object]]:
+        page_elements: list[dict[str, object]] = []
+        for item, _ in document.iterate_items():
+            provenance = getattr(item, "prov", [])
+            if not provenance or provenance[0].page_no != page_number:
+                continue
+            text = getattr(item, "text", None)
+            element_type = "text"
+            is_table = (
+                item.__class__.__name__ == "TableItem"
+                or str(getattr(item, "label", "")).lower().endswith("table")
+            )
+            if is_table and not isinstance(text, str):
+                export_to_markdown = getattr(item, "export_to_markdown", None)
+                text = (
+                    export_to_markdown(document)
+                    if callable(export_to_markdown)
+                    else None
+                )
+                element_type = "table"
+            if not isinstance(text, str) or not text.strip():
+                continue
+            bbox = provenance[0].bbox
+            left = float(bbox.l)
+            top = page_height - float(bbox.t)
+            right = float(bbox.r)
+            bottom = page_height - float(bbox.b)
+            page_elements.append(
+                {
+                    "file": file_name,
+                    "page": page_number,
+                    "type": element_type,
+                    "bbox": [round(left, 2), round(top, 2), round(right, 2), round(bottom, 2)],
+                    "text": " ".join(text.split()),
+                    "source": "docling",
+                }
+            )
+        return page_elements
+
+    def _extract_paddle_page(
+        self,
+        page: pymupdf.Page,
+        page_number: int,
+        file_name: str,
+        ocr: object,
+    ) -> list[dict[str, object]]:
+        import numpy as np
+
+        pixmap = page.get_pixmap(dpi=self.dpi, alpha=False)
+        image = np.frombuffer(pixmap.samples, dtype=np.uint8).reshape(
+            pixmap.height, pixmap.width, pixmap.n
+        )
+        result = next(iter(ocr.predict(image)), None)
+        if result is None:
+            return []
+        data = result.json.get("res", result.json)
+        scale = 72 / self.dpi
+        elements: list[dict[str, object]] = []
+        for polygon, text, confidence in zip(
+            data.get("rec_polys", []),
+            data.get("rec_texts", []),
+            data.get("rec_scores", []),
+        ):
+            text = str(text).strip()
+            confidence = float(confidence)
+            if not text or confidence < self.minimum_ocr_confidence:
+                continue
+            coordinates = np.asarray(polygon)
+            left = float(coordinates[:, 0].min()) * scale
+            top = float(coordinates[:, 1].min()) * scale
+            right = float(coordinates[:, 0].max()) * scale
+            bottom = float(coordinates[:, 1].max()) * scale
+            elements.append(
+                {
+                    "file": file_name,
+                    "page": page_number,
+                    "type": "ocr-word",
+                    "bbox": [round(left, 2), round(top, 2), round(right, 2), round(bottom, 2)],
+                    "text": text,
+                    "confidence": round(confidence, 4),
+                    "source": "paddleocr",
+                }
+            )
+        return LayoutExtractor._sort_in_reading_order(elements)

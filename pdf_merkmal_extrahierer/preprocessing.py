@@ -8,26 +8,52 @@ import re
 def merge_layout_to_markdown(layout_elements: list) -> str:
     """Merge indexed text and checkbox elements into readable Markdown text."""
     sorted_elements = sorted(layout_elements, key=lambda element: element["index"])
-    merged_parts: list[str] = []
+    output_lines: list[str] = []
+    current_line: list[str] = []
     current_file: str | None = None
     current_page: object | None = None
+    current_line_top: float | None = None
+    current_line_bottom: float | None = None
+
+    def flush_line() -> None:
+        if current_line:
+            output_lines.append(" ".join(current_line))
+            current_line.clear()
 
     for element in sorted_elements:
         file_name = element.get("file")
         page_number = element.get("page")
         if file_name != current_file:
+            flush_line()
             if isinstance(file_name, str) and file_name:
-                merged_parts.append(f"\n=== DOKUMENT: {file_name} ===")
+                output_lines.append(f"=== DOKUMENT: {file_name} ===")
             current_file = file_name if isinstance(file_name, str) else None
             current_page = None
+            current_line_top = None
+            current_line_bottom = None
         if page_number != current_page:
+            flush_line()
             if page_number is not None:
-                merged_parts.append(f"\n--- SEITE {page_number} ---")
+                output_lines.append(f"--- SEITE {page_number} ---")
             current_page = page_number
+            current_line_top = None
+            current_line_bottom = None
+
+        bbox = element.get("bbox")
+        if (
+            current_line
+            and isinstance(bbox, list)
+            and len(bbox) >= 4
+            and current_line_bottom is not None
+            and float(bbox[1]) > current_line_bottom + 1.5
+        ):
+            flush_line()
+            current_line_top = None
+            current_line_bottom = None
 
         element_type = element.get("type")
 
-        if element_type in {"text", "ocr-word"}:
+        if element_type in {"text", "ocr-word", "table"}:
             value = element.get("text", "")
             if not isinstance(value, str):
                 continue
@@ -44,6 +70,16 @@ def merge_layout_to_markdown(layout_elements: list) -> str:
             continue
 
         if value:
-            merged_parts.append(value)
+            current_line.append(value)
+            if isinstance(bbox, list) and len(bbox) >= 4:
+                top = float(bbox[1])
+                bottom = float(bbox[3])
+                current_line_top = top if current_line_top is None else min(current_line_top, top)
+                current_line_bottom = (
+                    bottom
+                    if current_line_bottom is None
+                    else max(current_line_bottom, bottom)
+                )
 
-    return " ".join(merged_parts)
+    flush_line()
+    return "\n".join(output_lines)

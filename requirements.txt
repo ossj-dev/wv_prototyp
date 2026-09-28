@@ -9,3 +9,6 @@ transformers
 torch
 Pillow
 opencv-python
+docling
+paddleocr
+paddlepaddle

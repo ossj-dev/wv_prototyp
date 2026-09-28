@@ -1,0 +1,31 @@
+{
+  "article_number": "30160-862",
+  "source_files": [
+    "data/30160-862/D108713_DE_001.pdf",
+    "data/30160-862/D279711_DE_000.pdf"
+  ],
+  "prompt_file": "prompts/zero_shot.txt",
+  "json_schema": true,
+  "thinking_enabled": false,
+  "model": "qwen2.5-7b-instruct",
+  "offline": false,
+  "started_at_utc": "2026-09-28T13:15:50.912487+00:00",
+  "finished_at_utc": "2026-09-28T13:16:21.307320+00:00",
+  "duration_seconds": 30.395,
+  "token_usage": {
+    "completion_tokens": 214,
+    "prompt_tokens": 3110,
+    "total_tokens": 3324,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "30160-862_extrahierte_daten.json",
+  "status": "ok",
+  "error": null
+}

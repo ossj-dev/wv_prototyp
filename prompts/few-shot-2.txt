@@ -3,6 +3,12 @@ Du bist ein präziser Daten-Extraktions-Assistent. Deine Aufgabe ist es, spezifi
 ### DEINE AUFGABE:
 Analysiere die bereitgestellten Dokumente (dies können Verpackungsvorschriften ODER Beispiel-Labels ODER beides sein) und extrahiere AUSSCHLIESSLICH, welche Verpackungsebene ein Label benötigt und welche Datenfelder auf diesem Label stehen müssen. Ignoriere alle anderen Prüfmerkmale oder allgemeinen Dokumenteninformationen.
 
+### MEHRERE DOKUMENTE:
+Die Eingabe kann mehrere Dokumente enthalten. Die Abschnitte beginnen mit "=== DOKUMENT: ... ===" und können Seitenabschnitte enthalten.
+Analysiere jedes Dokument zunächst unabhängig und führe die Ergebnisse erst danach in einem gemeinsamen JSON zusammen.
+Ein Dokument mit Verpackungsvorschrift und ein Dokument mit Beispiel-Label dürfen nicht nach denselben Regeln interpretiert werden.
+Übernimm keine Werte aus den Orientierungsbeispielen in das Ergebnis. Wenn mehrere Dokumente dieselbe Label-Anforderung beschreiben, fasse sie zu einem Label-Objekt zusammen und vermeide Duplikate.
+
 ### ALLGEMEINE REGELN FÜR DIE EXTRAKTION:
 1. Sprache: Verwende für die extrahierten Werte exakt die erkannte Sprache des Originaldokuments.
 2. Felder statt Werte: Wenn du ein Beispiel-Label liest (z.B. "Art.Nr: 40402-405"), extrahiere die Kategorie/das Feld für die Überprüfung (z.B. "Artikelnummer"), nicht zwingend nur den starren Wert.
@@ -83,7 +89,50 @@ Erwarteter JSON-Output:
 </Beispiel 1>
 
 <Beispiel 2>
-Eingabetext: "'LVWULEXWHG E\ [X] [X] HSW ULTRA-JANET QUICK-LOCK, 0/ (UEH (OHNWURPHGL]LQ *PE+ :DOGKRHUQOHVWUDVVH 7XHELQJHQ *HUPDQ\ +HQNH 6DVV :ROI *PE+ .HOWHQVWUDVVH *HUPDQ\ 0DGH LQ *HUPDQ\ 7XWWOLQJHQ (UEH $UW 1U [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] -RKQHU 0HGLFDO 6FKZHL] *PE+ 7DIHOVWDWWVWUDVVH D &+ $UWK [X] [X] [X] [X] [X] [X] 5HY HSW ULTRA-JANET QUICK-LOCK , 150ML 5HY Produktetikett mit Sprachen/ product label with languages Produktetikett/ Bedienungsanleitung / Gebrauchsanweisung / IFU Spülspritze, alle Ausführungen/ jet syringes, all versions product label [X] [X] [X] [X] [X] [X] [X] [X] Seidenpapier/ tissue Spülspritze in Seidenpapier einwickeln/ jet syringes wrap in tissue paper Faltschachtel/ folding box Spülspritze in Seidenpapier in Faltschachtel verpacken/ jet syringes in tissue packed in a folding box Produktetikett/ product label Etikett wie dargestellt aufkleben/ stick the label as shown Produktetikett mit Sprachen/ XY product label with languages Etikett wie dargestellt aufkleben/ stick the label as shown [X] XY [X] [X] [X] 2024 Etiketten müsse von dieser 06.11. Reichle 1:3 Position aus lesbar sein/ labels must be readable ----- [X] from this position"
+Eingabetext: "=== DOKUMENT: 800020459.pdf ===
+--- SEITE 1 ---
+Distributed by HSW ULTRA-JANET QUICK-LOCK, 150 ML
+Sfoe Erbe Elektromedizin GmbH ul 78532 Germany Keltenstrasse Henke-Sass, Tuttlingen Wolf 1 GmbH
+Waldhoernlestrasse
+72072 Tuebingen, Germany 17 Made el] 2024-09 in Germany
+|REF|
+Erbe Art.Nr 8300065309
+1234567 20862-089 oH [REP Johner Tafelstattstrasse CH-6415 Medical Arth Schweiz 13a GmbH
+Lary}
+a 1 [|i] [MD ca C€
+(01)04035873074793
+(11)240926 18 A " 45% 0 So"
+(10)1234567 800020459 Rev.1
+--- SEITE 2 ---
+HSW ULTRA-JANET QUICK-LOCK , 150ML
+DE Blasenspritze Quick-Lock -Anschluss, 150ml
+EN Bladder syringe Quick lock connection, 150ml
+FR Seringue a vessie Raccord Quick-Lock, 150ml NO Bleerespreyte Quick-Lock-las, 150 ml
+DA Blzresprajte Quick-Lock-fatning, 150ml Fl VirtsarakkKoruisku, quick-lock-lukitus, 150 ml SV Blasspruta med Quick-Lock-anslutning, 150 ml SL Brizga za mehur, prikljucek Quick-Lock, 150 ml
+IT Attacco Quick-Lock della siringa per vescica, 150ml
+ES Jeringa vesical conexién Quick-Lock, 150ml
+PT Seringa para inigagao vesical com conector Quick Lock, 150ml
+NL Blaasspuit quick-lock-aansluiting, 150 ml
+PL Strzykawka cewnikowa ztacze quick-lock, 150ml EL PUpYyya ouposoyou KuaTAS pe cuvGeon Quick-Lock, 150ml
+Cs Lavazni stfikacka s pfipojenim Quick-Lock, 150 ml HU Holyagfecskendo Quick-Lock csatlakozoval, 150ml BG Quick-Lock BOb3Ka Ha COPMHUOBKAa 3a NMKOYHMA Mexyp, 150ml
+HR Quick-lock prikljucéak Strcaljke za mjehur, 150 ml ET Quick-Lock-liitmikuga poiesustal, 150 ml
+LV
+LT Slirce Slapimo ar pislés Quick-Lock Svirk&to savienojumu, Quick-Lock 150 jungtis, ml 150 ml RO Seringa pentru vezica urinara conectare tip Quick-Lock, 150 ml
+SK Injekéna striekacka na mocovy mechur, s uzaverom Quick-Lock, 150ml
+800020460 Rev.1
+=== DOKUMENT: 800020800.pdf ===
+--- SEITE 1 ---
+Produktetikett mit Sprachen/ product label with languages
+Produktetikett/ Bedienungsanleitung / Gebrauchsanweisung / IFU Spülspritze, alle Ausführungen/ jet syringes, all versions product label
+[X] [X] [X] [X] [X] [X] [X] [X] Seidenpapier/ tissue
+Spülspritze in Seidenpapier einwickeln/ jet syringes wrap in tissue paper
+Faltschachtel/ folding box Spülspritze in Seidenpapier in Faltschachtel verpacken/ jet syringes in tissue packed in a folding box
+Produktetikett/ product label Etikett wie dargestellt aufkleben/ stick the label as shown
+Produktetikett mit Sprachen/
+XY product label with languages Etikett wie dargestellt aufkleben/ stick the label as shown
+[X] XY [X] [X] [X]
+2024
+Etiketten müsse von dieser 06.11. Reichle 1:3 Position aus lesbar sein/ labels must be readable ----- [X] from this position"
 
 Erwarteter JSON-Output:
 {

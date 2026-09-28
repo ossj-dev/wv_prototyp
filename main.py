@@ -12,7 +12,7 @@ from collections import defaultdict # Neu hinzugefügt für die Gruppierung
 from datetime import datetime, timezone
 
 from pdf_merkmal_extrahierer.discovery import find_article_pdfs
-from pdf_merkmal_extrahierer.extractor import LayoutExtractor
+from pdf_merkmal_extrahierer.extractor import DoclingPaddleExtractor, LayoutExtractor
 from pdf_merkmal_extrahierer.llm_client import LlmClient
 from pdf_merkmal_extrahierer.preprocessing import merge_layout_to_markdown
 from pdf_merkmal_extrahierer.refinement import refine_extraction_result
@@ -79,7 +79,16 @@ def process_article(
     debug_prefix = output_path.with_name(f"{output_path.stem}.DEBUG")
 
     # extractor.py haben wir so umgebaut, dass sie Listen akzeptieren
-    layout_result = LayoutExtractor().extract(pdf_paths)
+    layout_backend = os.getenv("LAYOUT_BACKEND", "docling-paddle").lower()
+    if layout_backend == "pymupdf":
+        extractor = LayoutExtractor(language="deu")
+    elif layout_backend == "docling-paddle":
+        extractor = DoclingPaddleExtractor(language="german")
+    else:
+        raise ValueError(
+            "Unbekanntes LAYOUT_BACKEND. Erlaubt sind: docling-paddle, pymupdf."
+        )
+    layout_result = extractor.extract(pdf_paths)
     write_debug_markdown(
         debug_prefix.with_name(f"{debug_prefix.name}_02_layout.md"),
         "Layout-Extraktion (Kombiniert)",
