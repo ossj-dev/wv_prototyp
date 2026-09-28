@@ -41,11 +41,10 @@ class LlmClient:
         self,
         raw_text: str,
         system_prompt: str,
-        use_json_schema: bool = True,
         few_shot_examples: Sequence[FewShotExample] = (),
         debug_output_path: Path | None = None,
     ) -> dict[str, Any]:
-        """Extract a JSON object, optionally enforcing the output schema."""
+        """Extract a JSON object while enforcing the output schema."""
         messages: list[dict[str, str]] = [
             {"role": "system", "content": system_prompt},
         ]
@@ -62,45 +61,44 @@ class LlmClient:
             "model": self.model,
             "messages": messages,
         }
-        if use_json_schema:
-            request_options["response_format"] = {
-                "type": "json_schema",
-                "json_schema": {
-                    "name": "packaging_instruction_extraction",
-                    "strict": True,
-                    "schema": {
-                        "type": "object",
-                        "additionalProperties": False,
-                        "properties": {
-                            "dokumentensprache": {"type": ["string", "null"]},
-                            "artikelnummer": {"type": ["string", "null"]},
-                            "labels": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "additionalProperties": False,
-                                    "properties": {
-                                        "verpackungsebene": {"type": "string"},
-                                        "label_inhalt": {
-                                            "type": "array",
-                                            "items": {"type": "string"},
-                                        },
+        request_options["response_format"] = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "packaging_instruction_extraction",
+                "strict": True,
+                "schema": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "properties": {
+                        "dokumentensprache": {"type": ["string", "null"]},
+                        "artikelnummer": {"type": ["string", "null"]},
+                        "labels": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": False,
+                                "properties": {
+                                    "verpackungsebene": {"type": "string"},
+                                    "label_inhalt": {
+                                        "type": "array",
+                                        "items": {"type": "string"},
                                     },
-                                    "required": [
-                                        "verpackungsebene",
-                                        "label_inhalt",
-                                    ],
                                 },
+                                "required": [
+                                    "verpackungsebene",
+                                    "label_inhalt",
+                                ],
                             },
                         },
-                        "required": [
-                            "dokumentensprache",
-                            "artikelnummer",
-                            "labels",
-                        ],
                     },
+                    "required": [
+                        "dokumentensprache",
+                        "artikelnummer",
+                        "labels",
+                    ],
                 },
             }
+        }
         if not self.enable_thinking:
             request_options["extra_body"] = {
                 "chat_template_kwargs": {"enable_thinking": False}

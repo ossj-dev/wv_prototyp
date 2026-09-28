@@ -15,6 +15,7 @@ from pdf_merkmal_extrahierer.discovery import find_article_pdfs
 from pdf_merkmal_extrahierer.extractor import LayoutExtractor
 from pdf_merkmal_extrahierer.llm_client import LlmClient
 from pdf_merkmal_extrahierer.preprocessing import merge_layout_to_markdown
+from pdf_merkmal_extrahierer.refinement import refine_extraction_result
 
 
 def load_system_prompt(prompt_path: Path) -> str:
@@ -44,21 +45,22 @@ def create_run_directory(results_root: Path, article_name: str) -> Path:
 def choose_experiment_settings(
     prompt_directory: Path,
 ) -> tuple[str, Path, bool]:
-    """Select the article, prompt, and schema mode interactively."""
+    """Select the article and prompt interactively."""
     article_number = input("Artikelnummer: ").strip()
     prompt_choices = {
-        "1": ("minimal", prompt_directory / "sys_prompt_minimalprompt.txt"),
-        "2": ("regel", prompt_directory / "sys_prompt_regelprompt.txt"),
+        "1": ("few-shot-2", prompt_directory / "few-shot-2.txt", False),
+        "2": ("few-shot-4", prompt_directory / "few-shot-4.txt", False),
+        "3": ("refinement", prompt_directory / "zero_shot.txt", True),
     }
-    print("Prompt auswählen: [1] minimal  [2] regel")
-    prompt_choice = input("Auswahl [2]: ").strip() or "2"
+    print(
+        "Prompt auswählen: [1] few-shot-2  [2] few-shot-4  [3] refinement"
+    )
+    prompt_choice = input("Auswahl [1]: ").strip() or "1"
     if prompt_choice not in prompt_choices:
-        raise ValueError("Ungültige Prompt-Auswahl. Bitte 1 oder 2 verwenden.")
+        raise ValueError("Ungültige Prompt-Auswahl. Bitte 1, 2 oder 3 verwenden.")
 
-    schema_choice = input("JSON Schema verwenden? [J/n]: ").strip().lower()
-    use_json_schema = schema_choice not in {"n", "nein", "no"}
-    _, prompt_path = prompt_choices[prompt_choice]
-    return article_number, prompt_path, use_json_schema
+    _, prompt_path, refinement_enabled = prompt_choices[prompt_choice]
+    return article_number, prompt_path, refinement_enabled
 
 
 # GEÄNDERT: Akzeptiert jetzt eine Liste von Pfaden (pdf_paths)
@@ -69,7 +71,9 @@ def process_article(
     system_prompt: str,
     llm_client: LlmClient | None = None,
     offline: bool = False,
-    use_json_schema: bool = True,
+    refinement_enabled: bool = False,
+    refinement_prompt_path: Path | None = None,
+    refinement_max_attempts: int = 1,
 ) -> dict[str, Any]:
     """Extract multiple PDFs for one article and write a combined JSON."""
     debug_prefix = output_path.with_name(f"{output_path.stem}.DEBUG")
@@ -108,9 +112,24 @@ def process_article(
             result = client.extract_json(
                 prompt,
                 system_prompt,
-                use_json_schema=use_json_schema,
                 debug_output_path=output_path.parent / "llm_output.md",
             )
+            if refinement_enabled:
+                if refinement_prompt_path is None:
+                    raise ValueError("Für den Refinement-Modus fehlt der Refinement-Prompt.")
+                refinement_prompt = load_system_prompt(refinement_prompt_path)
+                result, feedback = refine_extraction_result(
+                    initial_result=result,
+                    document_prompt=prompt,
+                    refinement_prompt=refinement_prompt,
+                    llm_extract=client.extract_json,
+                    debug_directory=output_path.parent,
+                    max_attempts=refinement_max_attempts,
+                )
+                (output_path.parent / "refinement_feedback.json").write_text(
+                    json.dumps(feedback, ensure_ascii=False, indent=2) + "\n",
+                    encoding="utf-8",
+                )
         except Exception as exc:  # noqa: BLE001 - intentionally keep run metadata
             result = {
                 "merkmale": [],
@@ -152,25 +171,20 @@ def main() -> None:
         type=Path,
         help="Optionale Systemprompt-Datei für Prompt-Vergleiche",
     )
-    parser.add_argument(
-        "--json-schema",
-        action=argparse.BooleanOptionalAction,
-        default=True,
-        help="JSON-Schema-Constraint verwenden (Standard: aktiviert)",
-    )
     args = parser.parse_args()
 
     load_dotenv()
     input_root = Path(os.getenv("INPUT_ROOT", "./data"))
     offline = os.getenv("OFFLINE_MODE", "false").lower() in {"1", "true", "yes"}
     if args.article_number is None and args.prompt_file is None:
-        args.article_number, prompt_path, args.json_schema = choose_experiment_settings(
+        args.article_number, prompt_path, refinement_enabled = choose_experiment_settings(
             Path("./prompts")
         )
     else:
         prompt_path = args.prompt_file or Path(
             os.getenv("SYSTEM_PROMPT_FILE", "./prompts/system_default.txt")
         )
+        refinement_enabled = False
     system_prompt = load_system_prompt(prompt_path)
     
     # PDFs suchen
@@ -203,7 +217,11 @@ def main() -> None:
                 system_prompt=system_prompt,
                 llm_client=client,
                 offline=offline,
-                use_json_schema=args.json_schema,
+                refinement_enabled=refinement_enabled,
+                refinement_prompt_path=Path(
+                    os.getenv("REFINEMENT_PROMPT_FILE", "./prompts/refinement_prompt.txt")
+                ),
+                refinement_max_attempts=int(os.getenv("REFINEMENT_MAX_ATTEMPTS", "1")),
             )
             status = result.get("_meta", {}).get("status", "ok")
             error_text = result.get("_meta", {}).get("error")
@@ -225,7 +243,7 @@ def main() -> None:
             "article_number": article_name,
             "source_files": [str(path) for path in pdf_paths],
             "prompt_file": str(prompt_path),
-            "json_schema": args.json_schema,
+            "json_schema": True,
             "thinking_enabled": os.getenv(
                 "LM_STUDIO_ENABLE_THINKING", "false"
             ).lower() in {"1", "true", "yes"},

@@ -20,14 +20,14 @@ SZENARIO A - WENN DAS DOKUMENT EINE VERPACKUNGSVORSCHRIFT IST:
 SZENARIO B - WENN DAS DOKUMENT EIN REINES BEISPIEL-LABEL IST:
 Wenn das Dokument keine Checkboxen oder Vorschriften enthält, sondern ein abgedrucktes Etikett ist:
 - Setze als "verpackungsebene" den Wert "Beispiel-Label" (außer aus dem Text geht eindeutig eine spezifische Ebene hervor).
-- Liste unter "label_inhalt" alle relevanten Datenfelder auf, die auf diesem Label zu sehen sind und geprüft werden müssen (z.B. Barcode, Artikelnummer, Chargennummer, Menge, Datum).
+- Liste unter "label_inhalt" alle relevanten Datenfelder auf, die auf diesem Label zu sehen sind und geprüft werden müssen (z.B. Barcode, Artikelnummer, Chargennummer, Menge, Datum, usw.).
 
 OUTPUT-FORMAT:
 Antworte AUSSCHLIESSLICH mit einem validen JSON-Objekt. Generiere keinen Begleittext, keine Markdown-Formatierung um das JSON herum (kein ```json ... ```) und keine Erklärungen. Das JSON muss exakt folgendem Schema entsprechen:
 
 {
   "dokumentensprache": "Sprache des Dokuments (z.B. Deutsch, English)",
-  "artikelnummer": "Exakte Artikelnummer aus dem Dokument oder null",
+  "artikelnummer": "Exakte Artikelnummer aus dem Dokument oder null bei Beispiel-Label",
   "labels": [
     {
       "verpackungsebene": "Die Verpackungsebene (z.B. Einzelverpackung, Außenverpackung, Beispiel-Label)",
