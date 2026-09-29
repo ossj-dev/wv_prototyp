@@ -48,7 +48,7 @@ class OcrExtractor:
         self,
         backend: OcrBackend = "tesseract",
         language: str = "eng",
-        dpi: int = 300,
+        dpi: int = 200,
     ) -> None:
         self.backend = backend
         self.language = language
@@ -102,7 +102,7 @@ class LayoutExtractor:
         self,
         backend: LayoutBackend = "pymupdf",
         language: str = "eng",
-        dpi: int = 300,
+        dpi: int = 200,
     ) -> None:
         self.backend = backend
         self.language = language
@@ -245,24 +245,31 @@ class LayoutExtractor:
         elements: list[dict[str, object]],
     ) -> list[dict[str, object]]:
         """Sort elements by rows and then by their horizontal position."""
+        vertical_tolerance = 4.0
         rows: list[dict[str, object]] = []
-        for element in sorted(elements, key=lambda item: item["bbox"][1]):
+        for element in sorted(
+            elements,
+            key=lambda item: (item["bbox"][1] + item["bbox"][3]) / 2,
+        ):
             bbox = element["bbox"]
+            center_y = (bbox[1] + bbox[3]) / 2
             row = next(
                 (
                     candidate
                     for candidate in rows
-                    if bbox[1] < candidate["bottom"]
-                    and bbox[3] > candidate["top"]
+                    if abs(center_y - candidate["center"]) <= vertical_tolerance
                 ),
                 None,
             )
             if row is None:
-                rows.append({"top": bbox[1], "bottom": bbox[3], "elements": [element]})
+                rows.append({"top": bbox[1], "center": center_y, "elements": [element]})
             else:
                 row["top"] = min(row["top"], bbox[1])
-                row["bottom"] = max(row["bottom"], bbox[3])
                 row["elements"].append(element)
+                row["center"] = sum(
+                    (item["bbox"][1] + item["bbox"][3]) / 2
+                    for item in row["elements"]
+                ) / len(row["elements"])
 
         rows.sort(key=lambda row: row["top"])
         return [
@@ -395,13 +402,6 @@ class DoclingPaddleExtractor:
         self.minimum_ocr_confidence = minimum_ocr_confidence
         self.backend: LayoutBackend = "docling-paddle"
 
-    def extract(self, pdf_paths: list[Path]) -> LayoutExtractionResult:
-        """Preserve Docling reading order and use PaddleOCR only for scan pages."""
-        if self.dpi <= 0:
-            raise ValueError(f"Die OCR-Auflösung muss positiv sein: {self.dpi}")
-        if not 0 <= self.minimum_ocr_confidence <= 1:
-            raise ValueError("Die minimale OCR-Konfidenz muss zwischen 0 und 1 liegen.")
-
         from docling.datamodel.base_models import InputFormat
         from docling.datamodel.pipeline_options import PdfPipelineOptions
         from docling.document_converter import DocumentConverter, PdfFormatOption
@@ -410,33 +410,40 @@ class DoclingPaddleExtractor:
             do_ocr=False,
             do_table_structure=True,
         )
-        converter = DocumentConverter(
+        self.converter = DocumentConverter(
             format_options={
                 InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)
             }
         )
-        ocr = self._create_paddle_ocr()
+        self.ocr = self._create_paddle_ocr()
+
+    def extract(self, pdf_paths: list[Path]) -> LayoutExtractionResult:
+        """Preserve Docling reading order and use PaddleOCR only for scan pages."""
+        if self.dpi <= 0:
+            raise ValueError(f"Die OCR-Auflösung muss positiv sein: {self.dpi}")
+        if not 0 <= self.minimum_ocr_confidence <= 1:
+            raise ValueError("Die minimale OCR-Konfidenz muss zwischen 0 und 1 liegen.")
+
         elements: list[dict[str, object]] = []
 
         for pdf_path in pdf_paths:
             _validate_pdf_path(pdf_path)
-            converted = converter.convert(pdf_path).document
+            converted = self.converter.convert(pdf_path).document
             with pymupdf.open(pdf_path) as pdf:
                 for page_number, page in enumerate(pdf, start=1):
                     if self._needs_ocr(page):
                         page_elements = self._extract_paddle_page(
-                            page, page_number, pdf_path.name, ocr
+                            page, page_number, pdf_path.name, self.ocr
                         )
+                        page_elements = LayoutExtractor._sort_in_reading_order(page_elements)
                     else:
                         page_elements = self._extract_docling_page(
                             converted, page_number, pdf_path.name, page.rect.height
                         )
-                    page_elements.extend(
-                        LayoutExtractor()._extract_vector_checkboxes(
-                            page, page_number, pdf_path.name, 0
-                        )
+                    checkboxes = LayoutExtractor()._extract_vector_checkboxes(
+                        page, page_number, pdf_path.name, 0
                     )
-                    page_elements = LayoutExtractor._sort_in_reading_order(page_elements)
+                    page_elements = self._insert_checkboxes_by_y(page_elements, checkboxes)
                     for element in page_elements:
                         element["index"] = len(elements) + 1
                         elements.append(element)
@@ -552,4 +559,24 @@ class DoclingPaddleExtractor:
                     "source": "paddleocr",
                 }
             )
-        return LayoutExtractor._sort_in_reading_order(elements)
+        return elements
+
+    @staticmethod
+    def _insert_checkboxes_by_y(
+        elements: list[dict[str, object]],
+        checkboxes: list[dict[str, object]],
+    ) -> list[dict[str, object]]:
+        """Insert checkboxes by vertical position without reordering source elements."""
+        result = list(elements)
+        for checkbox in sorted(checkboxes, key=lambda item: item["bbox"][1]):
+            checkbox_top = checkbox["bbox"][1]
+            insert_at = next(
+                (
+                    index
+                    for index, element in enumerate(result)
+                    if element["bbox"][1] > checkbox_top
+                ),
+                len(result),
+            )
+            result.insert(insert_at, checkbox)
+        return result

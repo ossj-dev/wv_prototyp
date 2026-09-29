@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import json
 
 
 def merge_layout_to_markdown(layout_elements: list) -> str:
@@ -83,3 +84,45 @@ def merge_layout_to_markdown(layout_elements: list) -> str:
 
     flush_line()
     return "\n".join(output_lines)
+
+
+def layout_to_spatial_format(layout_elements: list) -> str:
+    """Convert layout elements to compact, grouped JSON with spatial data."""
+    grouped_elements: dict[tuple[object, object], list[dict[str, object]]] = {}
+
+    for element in sorted(layout_elements, key=lambda item: item.get("index", 0)):
+        element_type = element.get("type")
+        if element_type in {"text", "ocr-word", "table"}:
+            text = element.get("text", "")
+            if not isinstance(text, str):
+                continue
+            text = re.sub(r"\s+", " ", text).strip()
+        elif element_type == "checkbox":
+            state = element.get("state")
+            if state == "checked":
+                text = "[X]"
+            elif state == "unchecked":
+                text = "[ ]"
+            else:
+                continue
+        else:
+            continue
+
+        bbox = element.get("bbox")
+        if not text or not isinstance(bbox, list) or len(bbox) < 4:
+            continue
+        try:
+            rounded_bbox = [round(float(value), 1) for value in bbox[:4]]
+        except (TypeError, ValueError):
+            continue
+
+        group_key = (element.get("file"), element.get("page"))
+        grouped_elements.setdefault(group_key, []).append(
+            {"text": text, "bbox": rounded_bbox}
+        )
+
+    spatial_groups = [
+        {"file": file_name, "page": page_number, "elements": elements}
+        for (file_name, page_number), elements in grouped_elements.items()
+    ]
+    return json.dumps(spatial_groups, ensure_ascii=False, indent=2)

@@ -49,7 +49,7 @@ Eingabetext: "Vp. Vor. Lap Schlauchset 5m ohne Ventil Projektname Projektnummer 
 Erwarteter JSON-Output:
 {
   "dokumentensprache": "Deutsch",
-  "artikelnummer": null,
+  "artikelnummer": 20323‐011,
   "labels": [
     {
       "verpackungsebene": "Verpackungsebene 0",
@@ -91,48 +91,20 @@ Erwarteter JSON-Output:
 <Beispiel 2>
 Eingabetext: "=== DOKUMENT: 800020459.pdf ===
 --- SEITE 1 ---
-Distributed by HSW ULTRA-JANET QUICK-LOCK, 150 ML
-Sfoe Erbe Elektromedizin GmbH ul 78532 Germany Keltenstrasse Henke-Sass, Tuttlingen Wolf 1 GmbH
-Waldhoernlestrasse
-72072 Tuebingen, Germany 17 Made el] 2024-09 in Germany
-|REF|
-Erbe Art.Nr 8300065309
-1234567 20862-089 oH [REP Johner Tafelstattstrasse CH-6415 Medical Arth Schweiz 13a GmbH
-Lary}
-a 1 [|i] [MD ca C€
-(01)04035873074793
-(11)240926 18 A " 45% 0 So"
+Distributed by HSW ULTRA-JANET QUICK-LOCK, 150 ML [X] [X] rbE Keltenstrasse 1 Henke-Sass, Wolf GmbH 78532 Tuttlingen Erbe Elektromedizin GmbH Germany
+Waldhoernlestrasse 17 Made in Germany 72072 Tuebingen, Germany 2024-09
+REF 8300065309 [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] Johner Medical Schweiz GmbH CH REP Tafelstattstrasse 13a CH-6415 Arth Erbe Art.Nr.: 20862-089 [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X] [X]
+LOT 1234567 米 R ONLY 21 [X] [X] [X] [X] [X] [X] PAP QTY 1 MD UKCE
++60°℃ 90% (01)04035873074793 -18°C- 15% (11)240926
 (10)1234567 800020459 Rev.1
 --- SEITE 2 ---
 HSW ULTRA-JANET QUICK-LOCK , 150ML
-DE Blasenspritze Quick-Lock -Anschluss, 150ml
-EN Bladder syringe Quick lock connection, 150ml
-FR Seringue a vessie Raccord Quick-Lock, 150ml NO Bleerespreyte Quick-Lock-las, 150 ml
-DA Blzresprajte Quick-Lock-fatning, 150ml Fl VirtsarakkKoruisku, quick-lock-lukitus, 150 ml SV Blasspruta med Quick-Lock-anslutning, 150 ml SL Brizga za mehur, prikljucek Quick-Lock, 150 ml
-IT Attacco Quick-Lock della siringa per vescica, 150ml
-ES Jeringa vesical conexién Quick-Lock, 150ml
-PT Seringa para inigagao vesical com conector Quick Lock, 150ml
-NL Blaasspuit quick-lock-aansluiting, 150 ml
-PL Strzykawka cewnikowa ztacze quick-lock, 150ml EL PUpYyya ouposoyou KuaTAS pe cuvGeon Quick-Lock, 150ml
-Cs Lavazni stfikacka s pfipojenim Quick-Lock, 150 ml HU Holyagfecskendo Quick-Lock csatlakozoval, 150ml BG Quick-Lock BOb3Ka Ha COPMHUOBKAa 3a NMKOYHMA Mexyp, 150ml
-HR Quick-lock prikljucéak Strcaljke za mjehur, 150 ml ET Quick-Lock-liitmikuga poiesustal, 150 ml
-LV
-LT Slirce Slapimo ar pislés Quick-Lock Svirk&to savienojumu, Quick-Lock 150 jungtis, ml 150 ml RO Seringa pentru vezica urinara conectare tip Quick-Lock, 150 ml
-SK Injekéna striekacka na mocovy mechur, s uzaverom Quick-Lock, 150ml
-800020460 Rev.1
+DE Blasenspritze Quick-Lock -Anschluss, 150ml EN Bladder syringe Quick lock connection, 150ml FR Seringue à vessie Raccord Quick-Lock, 150ml NO Bleresprøyte Quick-Lock-làs, 150 ml DA Blæresprøjte Quick-Lock-fatning, 150ml FI Virtsarakkoruisku, quick-lock-lukitus, 150 ml SV Blâsspruta med Quick-Lock-anslutning, 150 ml SL Brizga za mehur, priključek Quick-Lock, 150 ml IT Attacco Quick-Lock della siringa per vescica, 150ml ES Jeringa vesical conexión Quick-Lock, 150ml PT Seringa para irrigação vesical com conector Quick Lock, 150ml NL Blaasspuit quick-lock-aansluiting, 150 ml PL Strzykawka cewnikowa złącze quick-lock, 150ml EL Σúριγγα oupοδóχου κστη με σvδεση Quick-Lοck, 150ml CS Lavážní stříkačka s připojením Quick-Lock, 150 ml HU Hólyagfecskendő Quick-Lock csatlakozóval, 150ml - , 150 HR Quick-lock priključak štrcaljke za mjehur, 150 ml ET Quick-Lock-liitmikuga põiesüstal, 150 ml LV ŠJirce ar Quick-Lock savienojumu, 150 ml LT Šlapimo pūslės švirkšto Quick-Lock jungtis, 150 ml RO Seringå pentru vezica urinară conectare tip Quick-Lock, 150 ml SK Injekčná striekačka na močový mechúr, s uzáverom Quick-Lock, 150ml 800020460 Rev.1
 === DOKUMENT: 800020800.pdf ===
 --- SEITE 1 ---
-Produktetikett mit Sprachen/ product label with languages
-Produktetikett/ Bedienungsanleitung / Gebrauchsanweisung / IFU Spülspritze, alle Ausführungen/ jet syringes, all versions product label
-[X] [X] [X] [X] [X] [X] [X] [X] Seidenpapier/ tissue
-Spülspritze in Seidenpapier einwickeln/ jet syringes wrap in tissue paper
-Faltschachtel/ folding box Spülspritze in Seidenpapier in Faltschachtel verpacken/ jet syringes in tissue packed in a folding box
-Produktetikett/ product label Etikett wie dargestellt aufkleben/ stick the label as shown
-Produktetikett mit Sprachen/
-XY product label with languages Etikett wie dargestellt aufkleben/ stick the label as shown
-[X] XY [X] [X] [X]
-2024
-Etiketten müsse von dieser 06.11. Reichle 1:3 Position aus lesbar sein/ labels must be readable ----- [X] from this position"
+[X] [X] [X] [X] [X] [X] [X] [X]
+[X] [X] [X] [X]
+[X]"
 
 Erwarteter JSON-Output:
 {

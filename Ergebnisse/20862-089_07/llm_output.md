@@ -1,0 +1,18 @@
+# LLM-Ausgabe
+
+{
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": "log missing in provided text, but inferred as 20862-089 from context",
+  "labels": [
+    {
+      "verpackungsebene": "Beispiel-Label",
+      "label_inhalt": [
+        "REF",
+        "Erbe-Art.Nr.",
+        "Lot",
+        "Menge",
+        "Barcode"
+      ]
+    }
+  ]
+}

@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import argparse
+import hashlib
 import time
 from pathlib import Path
 from typing import Any
@@ -12,10 +13,13 @@ from collections import defaultdict # Neu hinzugefügt für die Gruppierung
 from datetime import datetime, timezone
 
 from pdf_merkmal_extrahierer.discovery import find_article_pdfs
-from pdf_merkmal_extrahierer.extractor import DoclingPaddleExtractor, LayoutExtractor
+from pdf_merkmal_extrahierer.extractor import (
+    DoclingPaddleExtractor,
+    LayoutExtractionResult,
+    LayoutExtractor,
+)
 from pdf_merkmal_extrahierer.llm_client import LlmClient
 from pdf_merkmal_extrahierer.preprocessing import merge_layout_to_markdown
-from pdf_merkmal_extrahierer.refinement import refine_extraction_result
 
 
 def load_system_prompt(prompt_path: Path) -> str:
@@ -48,19 +52,20 @@ def choose_experiment_settings(
     """Select the article and prompt interactively."""
     article_number = input("Artikelnummer: ").strip()
     prompt_choices = {
-        "1": ("few-shot-2", prompt_directory / "few-shot-2.txt", False),
-        "2": ("few-shot-4", prompt_directory / "few-shot-4.txt", False),
-        "3": ("refinement", prompt_directory / "zero_shot.txt", True),
+        "1": ("few-shot-2", prompt_directory / "few-shot-2.txt", False, False),
+        "2": ("few-shot-4", prompt_directory / "few-shot-4.txt", False, False),
+        "3": ("zero-shot", prompt_directory / "zero_shot.txt", False, False),
+        "4": ("spatial", prompt_directory / "spatial_prompt.txt", False, True),
     }
     print(
-        "Prompt auswählen: [1] few-shot-2  [2] few-shot-4  [3] refinement"
+        "Prompt auswählen: [1] few-shot-2  [2] few-shot-4  [3] zero-shot  [4] spatial"
     )
     prompt_choice = input("Auswahl [1]: ").strip() or "1"
     if prompt_choice not in prompt_choices:
-        raise ValueError("Ungültige Prompt-Auswahl. Bitte 1, 2 oder 3 verwenden.")
+        raise ValueError("Ungültige Prompt-Auswahl. Bitte 1, 2, 3 oder 4 verwenden.")
 
-    _, prompt_path, refinement_enabled = prompt_choices[prompt_choice]
-    return article_number, prompt_path, refinement_enabled
+    _, prompt_path, _, use_spatial_layout = prompt_choices[prompt_choice]
+    return article_number, prompt_path, use_spatial_layout
 
 
 # GEÄNDERT: Akzeptiert jetzt eine Liste von Pfaden (pdf_paths)
@@ -69,33 +74,43 @@ def process_article(
     pdf_paths: list[Path],
     output_path: Path,
     system_prompt: str,
+    extractor: LayoutExtractor | DoclingPaddleExtractor,
     llm_client: LlmClient | None = None,
     offline: bool = False,
-    refinement_enabled: bool = False,
-    refinement_prompt_path: Path | None = None,
-    refinement_max_attempts: int = 1,
+    use_spatial_layout: bool = False,
 ) -> dict[str, Any]:
     """Extract multiple PDFs for one article and write a combined JSON."""
     debug_prefix = output_path.with_name(f"{output_path.stem}.DEBUG")
 
-    # extractor.py haben wir so umgebaut, dass sie Listen akzeptieren
-    layout_backend = os.getenv("LAYOUT_BACKEND", "docling-paddle").lower()
-    if layout_backend == "pymupdf":
-        extractor = LayoutExtractor(language="deu")
-    elif layout_backend == "docling-paddle":
-        extractor = DoclingPaddleExtractor(language="german")
-    else:
-        raise ValueError(
-            "Unbekanntes LAYOUT_BACKEND. Erlaubt sind: docling-paddle, pymupdf."
+    cache_key = hashlib.md5(
+        "\n".join(path.name for path in pdf_paths).encode("utf-8")
+    ).hexdigest()
+    cache_path = Path(".cache") / f"layout_{cache_key}.json"
+    if cache_path.is_file():
+        layout_result = LayoutExtractionResult(
+            source=pdf_paths,
+            elements=json.loads(cache_path.read_text(encoding="utf-8")),
+            backend=extractor.backend,
         )
-    layout_result = extractor.extract(pdf_paths)
+    else:
+        layout_result = extractor.extract(pdf_paths)
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        cache_path.write_text(
+            json.dumps(layout_result.elements, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
     write_debug_markdown(
         debug_prefix.with_name(f"{debug_prefix.name}_02_layout.md"),
         "Layout-Extraktion (Kombiniert)",
         json.dumps(layout_result.elements, ensure_ascii=False, indent=2),
     )
 
-    prompt = merge_layout_to_markdown(layout_result.elements)
+    if use_spatial_layout:
+        from pdf_merkmal_extrahierer.preprocessing import layout_to_spatial_format
+
+        prompt = layout_to_spatial_format(layout_result.elements)
+    else:
+        prompt = merge_layout_to_markdown(layout_result.elements)
     write_debug_markdown(
         output_path.parent / "llm_input.md",
         "LLM-Eingabe",
@@ -123,22 +138,6 @@ def process_article(
                 system_prompt,
                 debug_output_path=output_path.parent / "llm_output.md",
             )
-            if refinement_enabled:
-                if refinement_prompt_path is None:
-                    raise ValueError("Für den Refinement-Modus fehlt der Refinement-Prompt.")
-                refinement_prompt = load_system_prompt(refinement_prompt_path)
-                result, feedback = refine_extraction_result(
-                    initial_result=result,
-                    document_prompt=prompt,
-                    refinement_prompt=refinement_prompt,
-                    llm_extract=client.extract_json,
-                    debug_directory=output_path.parent,
-                    max_attempts=refinement_max_attempts,
-                )
-                (output_path.parent / "refinement_feedback.json").write_text(
-                    json.dumps(feedback, ensure_ascii=False, indent=2) + "\n",
-                    encoding="utf-8",
-                )
         except Exception as exc:  # noqa: BLE001 - intentionally keep run metadata
             result = {
                 "merkmale": [],
@@ -186,14 +185,18 @@ def main() -> None:
     input_root = Path(os.getenv("INPUT_ROOT", "./data"))
     offline = os.getenv("OFFLINE_MODE", "false").lower() in {"1", "true", "yes"}
     if args.article_number is None and args.prompt_file is None:
-        args.article_number, prompt_path, refinement_enabled = choose_experiment_settings(
+        (
+            args.article_number,
+            prompt_path,
+            use_spatial_layout,
+        ) = choose_experiment_settings(
             Path("./prompts")
         )
     else:
         prompt_path = args.prompt_file or Path(
             os.getenv("SYSTEM_PROMPT_FILE", "./prompts/system_default.txt")
         )
-        refinement_enabled = False
+        use_spatial_layout = False
     system_prompt = load_system_prompt(prompt_path)
     
     # PDFs suchen
@@ -207,6 +210,16 @@ def main() -> None:
     pdfs_by_article = defaultdict(list)
     for article_name, pdf_path in pdfs:
         pdfs_by_article[article_name].append(pdf_path)
+
+    layout_backend = os.getenv("LAYOUT_BACKEND", "docling-paddle").lower()
+    if layout_backend == "pymupdf":
+        extractor: LayoutExtractor | DoclingPaddleExtractor = LayoutExtractor(language="deu")
+    elif layout_backend == "docling-paddle":
+        extractor = DoclingPaddleExtractor(language="german")
+    else:
+        raise ValueError(
+            "Unbekanntes LAYOUT_BACKEND. Erlaubt sind: docling-paddle, pymupdf."
+        )
 
     # Verarbeitung auf Artikelebene (nicht mehr auf Dateiebene)
     for article_name, pdf_paths in pdfs_by_article.items():
@@ -224,13 +237,10 @@ def main() -> None:
                 pdf_paths=pdf_paths,
                 output_path=output_path,
                 system_prompt=system_prompt,
+                extractor=extractor,
                 llm_client=client,
                 offline=offline,
-                refinement_enabled=refinement_enabled,
-                refinement_prompt_path=Path(
-                    os.getenv("REFINEMENT_PROMPT_FILE", "./prompts/refinement_prompt.txt")
-                ),
-                refinement_max_attempts=int(os.getenv("REFINEMENT_MAX_ATTEMPTS", "1")),
+                use_spatial_layout=use_spatial_layout,
             )
             status = result.get("_meta", {}).get("status", "ok")
             error_text = result.get("_meta", {}).get("error")
