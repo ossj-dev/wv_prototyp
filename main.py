@@ -48,24 +48,21 @@ def create_run_directory(results_root: Path, article_name: str) -> Path:
 
 def choose_experiment_settings(
     prompt_directory: Path,
-) -> tuple[str, Path, bool]:
+) -> tuple[str, Path]:
     """Select the article and prompt interactively."""
     article_number = input("Artikelnummer: ").strip()
     prompt_choices = {
-        "1": ("few-shot-2", prompt_directory / "few-shot-2.txt", False, False),
-        "2": ("few-shot-4", prompt_directory / "few-shot-4.txt", False, False),
-        "3": ("zero-shot", prompt_directory / "zero_shot.txt", False, False),
-        "4": ("spatial", prompt_directory / "spatial_prompt.txt", False, True),
+        "1": ("few-shot-2", prompt_directory / "few-shot-2.txt"),
+        "2": ("few-shot-4", prompt_directory / "few-shot-4.txt"),
+        "3": ("zero-shot", prompt_directory / "zero_shot.txt"),
     }
-    print(
-        "Prompt auswählen: [1] few-shot-2  [2] few-shot-4  [3] zero-shot  [4] spatial"
-    )
+    print("Prompt auswählen: [1] few-shot-2  [2] few-shot-4  [3] zero-shot")
     prompt_choice = input("Auswahl [1]: ").strip() or "1"
     if prompt_choice not in prompt_choices:
-        raise ValueError("Ungültige Prompt-Auswahl. Bitte 1, 2, 3 oder 4 verwenden.")
+        raise ValueError("Ungültige Prompt-Auswahl. Bitte 1, 2 oder 3 verwenden.")
 
-    _, prompt_path, _, use_spatial_layout = prompt_choices[prompt_choice]
-    return article_number, prompt_path, use_spatial_layout
+    _, prompt_path = prompt_choices[prompt_choice]
+    return article_number, prompt_path
 
 
 # GEÄNDERT: Akzeptiert jetzt eine Liste von Pfaden (pdf_paths)
@@ -77,7 +74,6 @@ def process_article(
     extractor: LayoutExtractor | DoclingPaddleExtractor,
     llm_client: LlmClient | None = None,
     offline: bool = False,
-    use_spatial_layout: bool = False,
 ) -> dict[str, Any]:
     """Extract multiple PDFs for one article and write a combined JSON."""
     debug_prefix = output_path.with_name(f"{output_path.stem}.DEBUG")
@@ -105,12 +101,7 @@ def process_article(
         json.dumps(layout_result.elements, ensure_ascii=False, indent=2),
     )
 
-    if use_spatial_layout:
-        from pdf_merkmal_extrahierer.preprocessing import layout_to_spatial_format
-
-        prompt = layout_to_spatial_format(layout_result.elements)
-    else:
-        prompt = merge_layout_to_markdown(layout_result.elements)
+    prompt = merge_layout_to_markdown(layout_result.elements)
     write_debug_markdown(
         output_path.parent / "llm_input.md",
         "LLM-Eingabe",
@@ -188,7 +179,6 @@ def main() -> None:
         (
             args.article_number,
             prompt_path,
-            use_spatial_layout,
         ) = choose_experiment_settings(
             Path("./prompts")
         )
@@ -196,7 +186,6 @@ def main() -> None:
         prompt_path = args.prompt_file or Path(
             os.getenv("SYSTEM_PROMPT_FILE", "./prompts/system_default.txt")
         )
-        use_spatial_layout = False
     system_prompt = load_system_prompt(prompt_path)
     
     # PDFs suchen
@@ -240,7 +229,6 @@ def main() -> None:
                 extractor=extractor,
                 llm_client=client,
                 offline=offline,
-                use_spatial_layout=use_spatial_layout,
             )
             status = result.get("_meta", {}).get("status", "ok")
             error_text = result.get("_meta", {}).get("error")
