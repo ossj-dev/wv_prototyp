@@ -1,0 +1,3 @@
+# LLM-Ausgabe
+
+{"dokumentensprache": "Deutsch", "artikelnummer": null, "labels": [{"verpackungsebene": "Verpackungsebene 0", "label_inhalt": ["Erbe-Artikel Nr.", "Bezeichnung", "Menge"]}, {"verpackungsebene": "Einzelartikel", "label_inhalt": ["Erbe-Artikel Nr.", "Lot- oder SN"]}]}

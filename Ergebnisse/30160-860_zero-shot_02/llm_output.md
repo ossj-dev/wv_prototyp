@@ -1,0 +1,3 @@
+# LLM-Ausgabe
+
+{"dokumentensprache": "Deutsch", "artikelnummer": "30160-860 PB HW VIO 3n PowerBoard", "labels": [{"verpackungsebene": "Verpackungsebene 0", "label_inhalt": ["Erbe-Artikel Nr.", "Bezeichnung", "Menge"]}, {"verpackungsebene": "Einzelartikel", "label_inhalt": ["Erbe-Artikel Nr.", "Lot- bzw. SN", "Mindesthaltbarkeitsdatum bzw. Herstelldatum"]}]}

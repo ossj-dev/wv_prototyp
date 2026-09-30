@@ -114,10 +114,9 @@ Erwarteter JSON-Output:
     {
       "verpackungsebene": "Beispiel-Label",
       "label_inhalt": [
-        "REF"
-        "Erbe-Art.Nr."
-        "Lot"
-        "Menge"
+        "REF / Erbe-Art.Nr.",
+        "Lot",
+        "Menge",
         "Barcode"
       ]
     }

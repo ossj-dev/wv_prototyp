@@ -1,0 +1,89 @@
+{
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": "20134-005",
+  "labels": [
+    {
+      "verpackungsebene": "Beispiel-Label",
+      "label_inhalt": [
+        "Fa. GCE"
+      ]
+    },
+    {
+      "verpackungsebene": "Allgemein",
+      "label_inhalt": [
+        "Material",
+        "Toleranzen",
+        "Allgemeintoleranzen",
+        "Volumen",
+        "Gewicht",
+        "Datum",
+        "Company Logo"
+      ]
+    },
+    {
+      "verpackungsebene": "Allgemein",
+      "label_inhalt": [
+        "DÉLKA KABELU",
+        "JIS B 8246 A1 W22 R",
+        "NA KRABICI LEPIT ŠTÍTEK POZ. 9; ŠTÍTEK JE ULOŽEN NA ŠABLONĚ \"EAN CODE\"",
+        "HOTOVÝ VENTIL POZ 1 BALIT DLE Č.V. 397303x"
+      ]
+    },
+    {
+      "verpackungsebene": "Allgemein",
+      "label_inhalt": [
+        "Material: N/A",
+        "Toleranzen: ISO 8015",
+        "Allgemeintoleranzen: N/A",
+        "Vollständige Spezifikation zusammen mit 3D-Datensatz: N/A",
+        "Alle Maße in mm = Prüfmaß",
+        "Company Logo"
+      ]
+    },
+    {
+      "verpackungsebene": "Allgemein",
+      "label_inhalt": [
+        "Datum",
+        "JWAHL",
+        "Ersteller",
+        "Prüfer und Freigeber",
+        "Schrift/Font",
+        "Symbols"
+      ]
+    },
+    {
+      "verpackungsebene": "Allgemein",
+      "label_inhalt": [
+        "P1 = 200 bar / 2900 psi",
+        "P2 = 5 bar / 72.5 psi",
+        "JIS B 8246 A1 W22 R"
+      ]
+    },
+    {
+      "verpackungsebene": "Allgemein",
+      "label_inhalt": [
+        "DÉLKA HADICE",
+        "NA KRABICI LEPIT ŠTÍTEK POZ. 9; ŠTÍTEK JE ULOŽEN NA ŠABLONĚ \"EAN CODE\"",
+        "HOTOVÝ VENTIL POZ 1 BALIT DLE Č.V. 397303x",
+        "FOR EACH BULK PACKAGING PRINT 1 PCE OF COM017547,",
+        "WRITE DATE OF PACKAGING AND LOT NUMBER."
+      ]
+    },
+    {
+      "verpackungsebene": "Allgemein",
+      "label_inhalt": [
+        "Datum",
+        "Ra",
+        "Měřítko / Scale",
+        "Hmotnost",
+        "Sheet / Number of sheets"
+      ]
+    },
+    {
+      "verpackungsebene": "Allgemein",
+      "label_inhalt": [
+        "MR II AR W22x14 RECTUS PT S ERBE,200BAR,5BAR,BLACK,RIGHT,DD,PT"
+      ]
+    }
+  ]
+}

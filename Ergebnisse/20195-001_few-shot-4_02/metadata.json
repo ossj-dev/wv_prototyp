@@ -1,0 +1,32 @@
+{
+  "article_number": "20195-001",
+  "strategy": "few-shot-4",
+  "source_files": [
+    "data/20195-001/20195-001.pdf",
+    "data/20195-001/ZgVerpackung_Sutter.pdf"
+  ],
+  "prompt_file": "prompts/few-shot-4.txt",
+  "json_schema": true,
+  "thinking_enabled": false,
+  "model": "nuextract3",
+  "offline": false,
+  "started_at_utc": "2026-09-30T13:25:14.439334+00:00",
+  "finished_at_utc": "2026-09-30T13:26:12.709399+00:00",
+  "duration_seconds": 58.27,
+  "token_usage": {
+    "completion_tokens": 569,
+    "prompt_tokens": 7127,
+    "total_tokens": 7696,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 494,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "20195-001_few-shot-4_extrahierte_daten.json",
+  "status": "ok",
+  "error": null
+}

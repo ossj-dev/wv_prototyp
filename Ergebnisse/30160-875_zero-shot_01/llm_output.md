@@ -1,0 +1,22 @@
+# LLM-Ausgabe
+
+{
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": null,
+  "labels": [
+    {
+      "verpackungsebene": "Verpackungsebene 0",
+      "label_inhalt": [
+        "Erbe article no./Erbe-Artikel Nr.",
+        "Designation/Bezeichnung",
+        "Quantity/Menge"
+      ]
+    },
+    {
+      "verpackungsebene": "Article/Einzelartikel",
+      "label_inhalt": [
+        "Erbe article no./Erbe-Artikel Nr."
+      ]
+    }
+  ]
+}

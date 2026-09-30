@@ -1,0 +1,32 @@
+{
+  "article_number": "20862-021",
+  "strategy": "zero-shot",
+  "source_files": [
+    "data/20862-021/800015672.lab_2.pdf",
+    "data/20862-021/Verpackungsvorschrift D210231.pdf"
+  ],
+  "prompt_file": "prompts/zero_shot.txt",
+  "json_schema": true,
+  "thinking_enabled": false,
+  "model": "nuextract3",
+  "offline": false,
+  "started_at_utc": "2026-09-30T13:06:20.072395+00:00",
+  "finished_at_utc": "2026-09-30T13:06:43.635780+00:00",
+  "duration_seconds": 23.564,
+  "token_usage": {
+    "completion_tokens": 887,
+    "prompt_tokens": 1379,
+    "total_tokens": 2266,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 711,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "20862-021_zero-shot_extrahierte_daten.json",
+  "status": "ok",
+  "error": null
+}
