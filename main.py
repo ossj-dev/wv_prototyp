@@ -9,7 +9,7 @@ import hashlib
 import time
 from pathlib import Path
 from typing import Any
-from collections import defaultdict # Neu hinzugefügt für die Gruppierung
+from collections import defaultdict
 from datetime import datetime, timezone
 
 from pdf_merkmal_extrahierer.discovery import find_article_pdfs
@@ -18,7 +18,7 @@ from pdf_merkmal_extrahierer.extractor import (
     LayoutExtractionResult,
     LayoutExtractor,
 )
-from pdf_merkmal_extrahierer.llm_client import LlmClient
+from pdf_merkmal_extrahierer.llm_client import LlmClient, run_extraction
 from pdf_merkmal_extrahierer.preprocessing import merge_layout_to_markdown
 
 
@@ -27,6 +27,7 @@ STRATEGIES = {
     "few-shot-4": Path("./prompts/few-shot-4.txt"),
     "zero-shot": Path("./prompts/zero_shot.txt"),
 }
+REASONING_MODE = "Internal-CoT"
 
 
 def load_system_prompt(prompt_path: Path) -> str:
@@ -62,12 +63,15 @@ def process_article(
     layout_result: LayoutExtractionResult,
     llm_client: LlmClient | None = None,
     offline: bool = False,
+    reasoning_mode: str = REASONING_MODE,
 ) -> dict[str, Any]:
-    """Run one prompting strategy for prepared article content."""
+    """Run one strategy/reasoning combination for prepared article content."""
     write_debug_markdown(
         output_path.parent / "llm_input.md",
         "LLM-Eingabe",
-        f"## Systemprompt\n\n{system_prompt}\n\n## Benutzereingabe\n\n{prompt}",
+        f"## Reasoning-Modus\n\n{reasoning_mode}\n\n"
+        f"## Systemprompt\n\n{system_prompt}\n\n"
+        f"## Benutzereingabe\n\n{prompt}",
     )
 
     if offline:
@@ -86,11 +90,14 @@ def process_article(
     else:
         client = llm_client or LlmClient()
         try:
-            result = client.extract_json(
+            extraction_run = run_extraction(
                 prompt,
                 system_prompt,
-                debug_output_path=output_path.parent / "llm_output.md",
+                reasoning_mode,
+                client=client,
+                debug_output_dir=output_path.parent,
             )
+            result = extraction_run.result
         except Exception as exc:  # noqa: BLE001 - intentionally keep run metadata
             result = {
                 "merkmale": [],
@@ -125,6 +132,11 @@ def main() -> None:
         "article_number",
         nargs="?",
         help="Artikelnummer, z. B. 123456; ohne Angabe wird interaktiv gefragt",
+    )
+    parser.add_argument(
+        "--prompt-file",
+        type=Path,
+        help="Optionaler einzelner Systemprompt für gezielte Testläufe.",
     )
     args = parser.parse_args()
 
@@ -179,79 +191,91 @@ def main() -> None:
             )
         prompt = merge_layout_to_markdown(layout_result.elements)
 
-        for strategy_name, prompt_path in STRATEGIES.items():
+        strategies = (
+            {"custom": args.prompt_file}
+            if args.prompt_file is not None
+            else STRATEGIES
+        )
+        reasoning_modes = (REASONING_MODE,)
+        for strategy_name, prompt_path in strategies.items():
             system_prompt = load_system_prompt(prompt_path)
-            run_directory = create_run_directory(
-                results_root, f"{article_name}_{strategy_name}"
-            )
-            output_path = (
-                run_directory
-                / f"{article_name}_{strategy_name}_extrahierte_daten.json"
-            )
-            started_at = datetime.now(timezone.utc)
-            started_counter = time.perf_counter()
-            client = LlmClient() if not offline else None
-
-            write_debug_markdown(
-                run_directory / "layout.md",
-                "Layout-Extraktion (Kombiniert)",
-                json.dumps(layout_result.elements, ensure_ascii=False, indent=2),
-            )
-            try:
-                result = process_article(
-                    article_name=article_name,
-                    pdf_paths=pdf_paths,
-                    output_path=output_path,
-                    system_prompt=system_prompt,
-                    prompt=prompt,
-                    layout_result=layout_result,
-                    llm_client=client,
-                    offline=offline,
+            for reasoning_mode in reasoning_modes:
+                mode_slug = reasoning_mode.lower().replace("-", "_")
+                run_directory = create_run_directory(
+                    results_root,
+                    f"{article_name}_{strategy_name}_{mode_slug}",
                 )
-                status = result.get("_meta", {}).get("status", "ok")
-                error_text = result.get("_meta", {}).get("error")
-            except Exception as exc:  # noqa: BLE001 - still write metadata for analysis
-                result = {
-                    "merkmale": [],
-                    "_meta": {
-                        "source_files": [str(path) for path in pdf_paths],
-                        "status": "processing_error",
-                        "error": str(exc),
-                    },
-                }
-                status = "processing_error"
-                error_text = str(exc)
+                output_path = (
+                    run_directory
+                    / f"{article_name}_{strategy_name}_{mode_slug}_extrahierte_daten.json"
+                )
+                started_at = datetime.now(timezone.utc)
+                started_counter = time.perf_counter()
+                client = LlmClient() if not offline else None
 
-            finished_at = datetime.now(timezone.utc)
-            elapsed_seconds = time.perf_counter() - started_counter
-            metadata = {
-                "article_number": article_name,
-                "strategy": strategy_name,
-                "source_files": [str(path) for path in pdf_paths],
-                "prompt_file": str(prompt_path),
-                "json_schema": True,
-                "thinking_enabled": os.getenv(
-                    "LM_STUDIO_ENABLE_THINKING", "false"
-                ).lower() in {"1", "true", "yes"},
-                "model": os.getenv("LM_STUDIO_MODEL", "local-model"),
-                "offline": offline,
-                "started_at_utc": started_at.isoformat(),
-                "finished_at_utc": finished_at.isoformat(),
-                "duration_seconds": round(elapsed_seconds, 3),
-                "token_usage": client.last_usage if client is not None else None,
-                "result_file": output_path.name,
-                "status": status,
-                "error": error_text,
-            }
-            (run_directory / "metadata.json").write_text(
-                json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
-                encoding="utf-8",
-            )
-            print(
-                f"Fertig! Artikel: {article_name} | Strategie: {strategy_name} | "
-                f"{len(pdf_paths)} Datei(en) verarbeitet | Ergebnisordner: "
-                f"{run_directory} | JSON: {output_path} | Status: {status}"
-            )
+                write_debug_markdown(
+                    run_directory / "layout.md",
+                    "Layout-Extraktion (Kombiniert)",
+                    json.dumps(layout_result.elements, ensure_ascii=False, indent=2),
+                )
+                try:
+                    result = process_article(
+                        article_name=article_name,
+                        pdf_paths=pdf_paths,
+                        output_path=output_path,
+                        system_prompt=system_prompt,
+                        prompt=prompt,
+                        layout_result=layout_result,
+                        llm_client=client,
+                        offline=offline,
+                        reasoning_mode=reasoning_mode,
+                    )
+                    status = result.get("_meta", {}).get("status", "ok")
+                    error_text = result.get("_meta", {}).get("error")
+                except Exception as exc:  # noqa: BLE001 - still write metadata for analysis
+                    result = {
+                        "merkmale": [],
+                        "_meta": {
+                            "source_files": [str(path) for path in pdf_paths],
+                            "status": "processing_error",
+                            "error": str(exc),
+                        },
+                    }
+                    status = "processing_error"
+                    error_text = str(exc)
+
+                finished_at = datetime.now(timezone.utc)
+                elapsed_seconds = time.perf_counter() - started_counter
+                metadata = {
+                    "article_number": article_name,
+                    "strategy": strategy_name,
+                    "Reasoning_Mode": reasoning_mode,
+                    "source_files": [str(path) for path in pdf_paths],
+                    "prompt_file": str(prompt_path),
+                    "json_schema": True,
+                    "thinking_enabled": os.getenv(
+                        "LM_STUDIO_ENABLE_THINKING", "false"
+                    ).lower() in {"1", "true", "yes"},
+                    "model": os.getenv("LM_STUDIO_MODEL", "local-model"),
+                    "offline": offline,
+                    "started_at_utc": started_at.isoformat(),
+                    "finished_at_utc": finished_at.isoformat(),
+                    "duration_seconds": round(elapsed_seconds, 3),
+                    "token_usage": client.last_usage if client is not None else None,
+                    "result_file": output_path.name,
+                    "status": status,
+                    "error": error_text,
+                }
+                (run_directory / "metadata.json").write_text(
+                    json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+                    encoding="utf-8",
+                )
+                print(
+                    f"Fertig! Artikel: {article_name} | Strategie: {strategy_name} | "
+                    f"Reasoning: {reasoning_mode} | {len(pdf_paths)} Datei(en) "
+                    f"verarbeitet | Ergebnisordner: {run_directory} | "
+                    f"JSON: {output_path} | Status: {status}"
+                )
 
 
 if __name__ == "__main__":
