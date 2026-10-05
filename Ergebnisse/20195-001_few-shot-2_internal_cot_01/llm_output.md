@@ -1,0 +1,3 @@
+# LLM-Ausgabe
+
+{"_gedankengang": "Das Dokument ist eine Produktbeschreibung und enthält keine expliziten Verpackungsvorschriften oder Checkboxen, die für Szenario A (Verpackungsvorschrift) anwendbar wären. Daher wird das Regelwerk für Szenario B (Reines Beispiel-Label) angewendet.\n\n**BELEGE:**\n- Artikelnummer: \"REF 20195-001\" ist klar im Dokument zu finden.\n- Label-Daten: Es werden Felder wie \"LOT\", ein Datum („2025-03-18“) und eine Barcode-Zahl („(10)13245555“) aufgeführt, die typischerweise auf einem Produktlabel stehen.", "dokumentensprache": null, "artikelnummer": "20195-001", "labels": [{"verpackungsebene": "Beispiel-Label", "label_inhalt": ["LOT", "Datum", "Barcode"]}]}

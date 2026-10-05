@@ -1,0 +1,19 @@
+{
+  "_gedankengang": "Das Dokument D289949_DE_000.pdf ist eine Verpackungsvorschrift. Die Artikelnummer ist im Dokument vorhanden, aber leer gelassen, daher wird sie als null extrahiert. Für die Verpackungsebene 0 (Einweg-Palette) ist das Kennzeichnungsfeld mit Label aktiv ([X] Ja). Alle gefragten Datenfelder sind markiert: Erbe-Artikel Nr., Bezeichnung, Menge, Lot- bzw. SN, Mindesthaltbarkeitsdatum bzw. Herstelldatum und Barcode. Zusätzlich wird für den Lot/SN-Feld der UDI-Code als Sonstiges angegeben. Die Verpackungsebene 1 und Einzelartikel sind nicht gekennzeichnet ([ ] Nein) und werden daher ignoriert.",
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": null,
+  "labels": [
+    {
+      "verpackungsebene": "Verpackungsebene 0",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+        "Barcode",
+        "UDI-Code"
+      ]
+    }
+  ]
+}

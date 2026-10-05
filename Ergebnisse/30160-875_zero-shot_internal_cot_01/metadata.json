@@ -1,0 +1,34 @@
+{
+  "article_number": "30160-875",
+  "strategy": "zero-shot",
+  "Reasoning_Mode": "Internal-CoT",
+  "source_files": [
+    "data/30160-875/D108713_DE_001.pdf",
+    "data/30160-875/D230937_007_Assembly.pdf",
+    "data/30160-875/D275038_DE_000.pdf"
+  ],
+  "prompt_file": "prompts/zero_shot.txt",
+  "json_schema": true,
+  "thinking_enabled": true,
+  "model": "nuextract3",
+  "offline": false,
+  "started_at_utc": "2026-10-05T07:55:43.280606+00:00",
+  "finished_at_utc": "2026-10-05T07:56:52.284206+00:00",
+  "duration_seconds": 69.006,
+  "token_usage": {
+    "completion_tokens": 1138,
+    "prompt_tokens": 7515,
+    "total_tokens": 8653,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 808,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "30160-875_zero-shot_internal_cot_extrahierte_daten.json",
+  "status": "ok",
+  "error": null
+}

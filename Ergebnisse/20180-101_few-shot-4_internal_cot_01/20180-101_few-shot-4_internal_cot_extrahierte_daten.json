@@ -1,0 +1,18 @@
+{
+  "_gedankengang": "Das Dokument ist eine 'Verpackungsvorschrift' (D208847_DE_001.pdf), was die Anwendung von Szenario A erfordert. Ich habe den Text von oben nach unten gelesen, um die Checkboxen zu finden.\n\n**BELEGE:**\n- Die Artikelnummern `20180-100` und `20180-101` werden im Dokument explizit genannt.\n- Für Verpackungsebene 0 steht: `[X] Kennzeichnung der Verpackungsebene 0 mit Label: Ja Nein`. Das `[X]` deutet auf 'Ja' hin, also ist ein Label erforderlich.\n- Der `Labelinhalt` für Ebene 0 wird detailliert aufgelistet: `[X] Erbe-Artikel Nr.`, `[X] Bezeichnung`, `[X] Menge`, `[X] Lot- bzw. SN`, `[X] Mindesthaltbarkeitsdatum bzw. Herstelldatum`. Zusätzlich gibt es eine kombinierte Anforderung für den Barcode: `[X] Barcode  Inhalt: Erbe-Artikel Nr. + Lot- bzw. SN + UDI-Code + Herstelldatum`.\n\n**CHECKBOX-ENTSCHEIDUNGEN:**\n- Verpackungsebene 0: Kennzeichnung mit Label ist `[X] Ja`. Labelinhalt wird explizit aufgeführt.\n- Verpackungsebene 1: Kennzeichnung mit Label ist `[ ] Nein`. Diese Ebene wird ignoriert.\n- Einzelartikel: Kennzeichnung mit Label ist `[ ] Nein`. Diese Ebene wird ignoriert.\n\n**ABLEITUNG:**\nDa nur für Verpackungsebene 0 ein Label erforderlich ist, werde ich nur dieses Objekt im `labels`-Array enthalten. Die anderen Ebenen werden ausgeschlossen, da ihre Kennzeichnung nicht als zwingend markiert wurde.",
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": null,
+  "labels": [
+    {
+      "verpackungsebene": "Verpackungsebene 0",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+        "Barcode"
+      ]
+    }
+  ]
+}
