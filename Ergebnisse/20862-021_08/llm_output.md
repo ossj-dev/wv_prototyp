@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "Deutsch", "artikelnummer": "20862-021", "labels": [{"verpackungsebene": "Beispiel-Label", "label_inhalt": ["Chargennummer", "Artikelnummer", "Revisionslevel", "Barcode", "Herstellungsdatum"]}]}

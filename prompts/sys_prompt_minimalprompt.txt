@@ -1,4 +1,0 @@
-Extrahiere aus dem Dokument die erforderlichen Labels und deren Datenfelder.
-
-Gib ausschließlich ein JSON-Objekt mit den Feldern
-dokumentensprache, artikelnummer und labels zurück.

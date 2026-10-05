@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "Deutsch", "artikelnummer": "25030", "labels": [{"verpackungsebene": "Beispiel-Label", "label_inhalt": ["Material", "Toleranzen", "Allgemeintoleranzen", "Vollständige Spezifikation zusammen mit 3D-Datensatz", "Größe/Size", "Maßstab", "Volumen", "Gewicht", "Company Logo, Color: Pantone Process Cyan C", "Schrift/Font: Calibri (prefered) Arial (alternative)", "Symbols: ISO 7000", "P1 = 200 bar / 2900 psi", "P2 = 5 bar / 72.5 psi"]}, {"verpackungsebene": "Beispiel-Label", "label_inhalt": ["P1 = 200 bar / 2900 psi", "P2 = 5 bar / 72.5 psi"]}, {"verpackungsebene": "Außenverpackung", "label_inhalt": ["COM017547", "Datum der Verpackung", "Lotnummer"]}]}

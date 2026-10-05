@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "de", "artikelnummer": null, "labels": [{"verpackungsebene": "Außen", "label_inhalt": ["Label (Etikett) rechtsseitig zentriert aufgeklebt"]}, {"verpackungsebene": "Innen", "label_inhalt": ["Erbesiegel"]}, {"verpackungsebene": "Innen", "label_inhalt": ["Trockenmittelbeutel staubdicht: 85x40x8mm, Art. Nr. TMB1-6 (Lieferant Ratioform)"]}, {"verpackungsebene": "Innen", "label_inhalt": ["PE-Kammernbeutel, transparent: 60x360x0,07mm, Artikelnummer L44603606 (Lieferant Papke)"]}, {"verpackungsebene": "Außen", "label_inhalt": ["Erbesiegel (82003-110) mittig"]}, {"verpackungsebene": "Innen", "label_inhalt": ["Erbesiegel (82003 -110) mittig"]}, {"verpackungsebene": "Innen", "label_inhalt": ["Erbesiegel (82003-110)"]}]}

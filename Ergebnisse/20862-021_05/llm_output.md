@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "deu", "artikelnummer": "20862-021", "labels": [{"label": "Working element", "data": "bip., active, 26/24CH, w. protection rod"}, {"label": "Revision", "data": "2"}]}

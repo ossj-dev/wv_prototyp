@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "Deutsch", "artikelnummer": "20134-005", "labels": [{"verpackungsebene": "Innenverpackung", "label_inhalt": ["Datum", "Lot"]}, {"verpackungsebene": "Außenverpackung", "label_inhalt": []}]}

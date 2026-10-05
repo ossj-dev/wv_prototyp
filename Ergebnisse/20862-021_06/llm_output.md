@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "de", "artikelnummer": "20862-021", "labels": [{"verpackungsebene": "}", "label_inhalt": ["Working element", "bip.", "active", "26/24CH", "w. protection rod"]}]}

@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "Deutsch", "artikelnummer": "1234567 20862-021", "labels": [{"verpackungsebene": "Beispiel-Label", "label_inhalt": ["Working element bip., active, 26/24CH", "1234567 20862-021"]}, {"verpackungsebene": "Schaumstoff/ Schachtel_", "label_inhalt": ["Prüfsiegel", "working element"]}, {"verpackungsebene": "Schaumstoff/ Schachtel_", "label_inhalt": ["Etikett"]}, {"verpackungsebene": "Arbeitselement", "label_inhalt": ["Füllstab"]}]}

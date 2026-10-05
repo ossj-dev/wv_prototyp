@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "deutsch", "artikelnummer": "20180-100/-101", "labels": [{"verpackungsebene": "}]}}.  labels[0][","label_inhalt": ["Sonstiges: N/A + Herstelldatum", "[X]", "[X]", "[X]", "Erbe-Artikel Nr.", "[X]", "[X]", "[X]", "Bezeichnung", "[X]", "[X]", "[X]"]}]}

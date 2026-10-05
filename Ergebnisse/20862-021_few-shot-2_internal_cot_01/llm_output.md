@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"_gedankengang": "Zwei Dokumente wurden analysiert. Das erste Dokument (800015672.lab_2.pdf) ist ein konkretes Beispiel-Label, das eine Artikelnummer enthält. Daher wurde es als 'Beispiel-Label' klassifiziert und die extrahierten Felder daraus übernommen. Das zweite Dokument (Verpackungsvorschrift D210231.pdf) ist eine Verpackungsvorschrift, enthält jedoch keine Checkboxen ([X] oder [ ]), die spezifische Label-Anforderungen für bestimmte Verpackungsebenen definieren würden. Daher wurden aus diesem Dokument keine konkreten Label-Objekte extrahiert.", "dokumentensprache": "Deutsch", "artikelnummer": "20862-021", "labels": [{"verpackungsebene": "Beispiel-Label", "label_inhalt": ["Artikelnummer"]}]}

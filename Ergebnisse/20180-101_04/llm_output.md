@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "Deutsch", "artikelnummer": "20180-100", "labels": [{"verpackungsebene": "Verpackungsebene 0", "label_inhalt": ["Erbe-Artikel Nr.", "Mindesthaltbarkeitsdatum bzw. Herstelldatum", "Barcode"]}, {"verpackungsebene": "Verpackungsebene 1", "label_inhalt": []}]}

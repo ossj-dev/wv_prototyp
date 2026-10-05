@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"name": "extract_labels", "parameters": {"document_language": "German", "article_number": "30160-860", "labels": "[{'label': 'Herstelldatum', 'value': '05.08.2026'}, {'label': 'Erbe article no.', 'value': '30160-860'}, {'label': 'Designation', 'value': 'PB HW VIO 3n PowerBoard'}, {'label': 'Quantity', 'value': '1'}, {'label': 'Lot no. or SN', 'value': 'FB_0526_Packaging specification/Verpackungsvorschrift Based on master template OID: 1501230, Version: 10'}]"}}

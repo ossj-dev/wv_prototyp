@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "Deutsch", "artikelnummer": "40135-014", "labels": [{"verpackungsebene": "Kennzeichnung mit Label", "label_inhalt": []}, {"verpackungsebene": "Kennzeichnung Außenverpackung", "label_inhalt": []}, {"verpackungsebene": "Kennzeichnung Einzelverpackung", "label_inhalt": ["Artikelnummer", "Artikelbezeichnung", "Menge", "Barcode"]}]}

@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "Deutsch", "artikelnummer": "1234567", "labels": [{"verpackungsebene": "Einzelverpackung", "label_inhalt": ["Bauart", "Seriennummer"]}, {"verpackungsebene": "Außenverpackung", "label_inhalt": ["Lieferantencode", "Produktcode"]}]}

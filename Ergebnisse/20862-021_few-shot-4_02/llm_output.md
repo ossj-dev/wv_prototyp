@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"dokumentensprache": "Deutsch", "artikelnummer": null, "labels": [{"verpackungsebene": "Verpackungsebene 0", "label_inhalt": ["Werkstück- AB WN"]}, {"verpackungsebene": "Außenverpackung", "label_inhalt": ["Werkstück- AB WN"]}]}

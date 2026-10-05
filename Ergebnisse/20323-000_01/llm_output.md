@@ -1,3 +1,0 @@
-# LLM-Ausgabe
-
-{"name": "extract_labels", "parameters": {"document_language": "deutsch", "article_number": "20323-000", "labels": "['Hauptfilterkassette IES 3', 'Verpackungsvorschrift deutsch']"}}
