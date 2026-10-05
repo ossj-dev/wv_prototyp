@@ -1,0 +1,18 @@
+{
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": "20180-110",
+  "labels": [
+    {
+      "verpackungsebene": "Verpackungsebene 0",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+        "Barcode",
+        "Lot no. or SN/Lot- bzw. SN + UDI-Code"
+      ]
+    }
+  ]
+}

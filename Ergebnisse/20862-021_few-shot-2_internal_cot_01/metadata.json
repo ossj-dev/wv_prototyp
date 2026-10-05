@@ -1,0 +1,33 @@
+{
+  "article_number": "20862-021",
+  "strategy": "few-shot-2",
+  "Reasoning_Mode": "Internal-CoT",
+  "source_files": [
+    "data/20862-021/800015672.lab_2.pdf",
+    "data/20862-021/Verpackungsvorschrift D210231.pdf"
+  ],
+  "prompt_file": "prompts/few-shot-2.txt",
+  "json_schema": true,
+  "thinking_enabled": true,
+  "model": "nuextract3",
+  "offline": false,
+  "started_at_utc": "2026-10-05T08:04:54.965202+00:00",
+  "finished_at_utc": "2026-10-05T08:05:21.448674+00:00",
+  "duration_seconds": 26.484,
+  "token_usage": {
+    "completion_tokens": 751,
+    "prompt_tokens": 4798,
+    "total_tokens": 5549,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 558,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "20862-021_few-shot-2_internal_cot_extrahierte_daten.json",
+  "status": "ok",
+  "error": null
+}

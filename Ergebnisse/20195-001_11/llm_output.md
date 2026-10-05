@@ -1,0 +1,14 @@
+# LLM-Ausgabe
+
+{
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": null,
+  "labels": [
+    {
+      "verpackungsebene": "Außenverpackung",
+      "label_inhalt": [
+        "Artikelnummer"
+      ]
+    }
+  ]
+}

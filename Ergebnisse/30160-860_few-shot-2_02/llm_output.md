@@ -1,0 +1,3 @@
+# LLM-Ausgabe
+
+{"dokumentensprache": "Deutsch", "artikelnummer": "30160-860", "labels": [{"verpackungsebene": "Beispiel-Label", "label_inhalt": ["Werkstoff", "Bezeichnung", "Lieferant", "ERBE-Nr.", "Datum", "Gültig", "Chargenpflicht", "Gepr.", "Dokumentklasse", "Dokumentnummer", "Größe", "Produktkennzeichnung"]}, {"verpackungsebene": "Verpackungsebene 0", "label_inhalt": ["Erbe-Artikel Nr.", "Bezeichnung", "Menge", "Barcode"]}, {"verpackungsebene": "Einzelartikel", "label_inhalt": ["Erbe-Artikel Nr.", "Lot- bzw. SN"]}]}

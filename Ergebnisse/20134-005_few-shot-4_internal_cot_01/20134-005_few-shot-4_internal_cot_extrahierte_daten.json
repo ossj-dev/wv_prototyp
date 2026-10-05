@@ -1,0 +1,26 @@
+{
+  "_gedankengang": "Die Analyse der vier Dokumente ergab, dass drei davon relevante Informationen für die Etikettierung enthalten.",
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": "20134-005",
+  "labels": [
+    {
+      "verpackungsebene": "Produktkennzeichnung",
+      "label_inhalt": [
+        "Material",
+        "Toleranzen",
+        "Vollständige Spezifikation zusammen mit 3D-Datensatz",
+        "Prüfmaß"
+      ]
+    },
+    {
+      "verpackungsebene": "KRABICI",
+      "label_inhalt": [
+        "DÉLKA KABELU 100 cm",
+        "DÉLKA HADICE 100 cm",
+        "NA KRABICI LEPIT ŠTÍTEK POZ. 9",
+        "FOR EACH BULK PACKAGING PRINT 1 PCE OF COM017547",
+        "WRITE DATE OF PACKAGING AND LOT NUMBER"
+      ]
+    }
+  ]
+}

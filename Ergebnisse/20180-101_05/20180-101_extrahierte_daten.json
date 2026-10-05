@@ -1,0 +1,12 @@
+{
+  "merkmale": [],
+  "_meta": {
+    "source_files": [
+      "20231127094618.pdf",
+      "D208847_DE_001.pdf"
+    ],
+    "status": "llm_json_error",
+    "error": "Extra data: line 1 column 820 (char 819)",
+    "layout_backend": "pymupdf"
+  }
+}

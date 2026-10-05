@@ -1,0 +1,3 @@
+# LLM-Ausgabe
+
+{"name": "extract_labels", "parameters": {"document": "{'Dokumentensprache': 'Deutsch', 'Artikelnummer': '40402-405', 'Labels': [{'Labelinhalt': 'Artikelnummer + Artikelbezeichnung + Menge + Barcode'}"}}

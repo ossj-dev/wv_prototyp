@@ -1,0 +1,32 @@
+{
+  "article_number": "20180-101",
+  "strategy": "zero-shot",
+  "source_files": [
+    "data/20180-101/20231127094618.pdf",
+    "data/20180-101/D208847_DE_001.pdf"
+  ],
+  "prompt_file": "prompts/zero_shot.txt",
+  "json_schema": true,
+  "thinking_enabled": false,
+  "model": "qwen2.5-7b-instruct",
+  "offline": false,
+  "started_at_utc": "2026-09-30T12:19:47.640248+00:00",
+  "finished_at_utc": "2026-09-30T12:19:56.942209+00:00",
+  "duration_seconds": 9.302,
+  "token_usage": {
+    "completion_tokens": 238,
+    "prompt_tokens": 2240,
+    "total_tokens": 2478,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "20180-101_zero-shot_extrahierte_daten.json",
+  "status": "ok",
+  "error": null
+}

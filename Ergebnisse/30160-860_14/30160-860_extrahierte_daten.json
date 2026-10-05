@@ -1,0 +1,13 @@
+{
+  "merkmale": [],
+  "_meta": {
+    "source_files": [
+      "D108713_DE_001.pdf",
+      "D230936_007_Assembly.pdf",
+      "D275036_DE_000.pdf"
+    ],
+    "status": "llm_json_error",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "layout_backend": "pymupdf"
+  }
+}

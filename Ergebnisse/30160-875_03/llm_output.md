@@ -1,0 +1,12 @@
+# LLM-Ausgabe
+
+```json
+{
+    "name": "extrahiere_label_inhalte",
+    "parameters": {
+        "dokumententext": """
+Packaging instructions Project name Project number Change number VIO sv 6519013 25241 Document class Document number Packaging Specification D275038 Version: 000 Delivery conditions/Anlieferbedingungen: 1. Delivery on pallet mandatory/Anlieferung auf Palette zwingend erforderlich: [ ] Yes/Ja Pallet dimensions/Palettenabmaße: Length/Länge: Width/Breite: Height/Höhe: 1,2 Meter(s) 0,8 Meter(s) 1,4 Meter(s) [X] No/Nein 2. Specifications/Spezifikationen To be supplied in ESD packaging/Anlieferung in ESD-Verpackung: [X] Yes/Ja [ ] No/Nein To be supplied in cleanroom compatible packaging/Anlieferung in Reinraum-geeigneter Verpackung: [ ] Yes/Ja [X] No/Nein 3. Packaging levels/Verpackungsebenen Packaging level 0 is the smallest packing unit and must always be defined. If required, higher packaging levels can be defined. Verpackungsebene 0 ist die kleinste Verpackungseinheit und ist in jedem Fall zu definieren - Bei Bedarf können zusätzlich höhere Verpackungsebenen definiert werden. Packaging level 0/Verpackungsebene 0: Type/Art: [X] Reusable packaging/Mehrwegbehälter [ ] Cardboard/Kartonage [ ] Bag/Beutel [ ] Other/Sonstiges: Content quantity of packaging level 0 in pcs./Inhaltsmenge der Verpackungsebene 0 in Stk: 4 Length/Länge: 400 mm Dimensions of packaging level 0/Abmessungen der Verpackungsebene 0: Width/Breite: 300 mm Height/Höhe: 320 mm Label on packaging level 0/Kennzeichnung der Verpackungsebene 0 mit Label: [X] [ ] Yes/Ja No/Nein Content of the label/Labelinhalt: [X] [X] [X] [ ] [ ] [ ] Herstelldatum Erbe article no./Erbe-Artikel Nr. Designation/Bezeichnung Quantity/Menge Lot no. or SN/Lot- bzw. SN Expiry date or Manufacturing date/Mindesthaltbarkeitsdatum bzw. Barcode  Content/Inhalt: [ ] Erbe article no./Erbe Artikel Nr. + Other/Sonstiges: [ ] Lot no. or SN/Lot- bzw. SN + FB_0526_Packaging specification/Verpackungsvorschrift Based on master template OID: 1501230, Version: 10 Version: Page: 3 1/4 packaging instructions Project name Project number Change number VIO sv 6519013 25241 Document class Document number Packaging Specification D275038 Version: 000 Delivery conditions/Anlieferbedung
+"""
+    }
+}
+```

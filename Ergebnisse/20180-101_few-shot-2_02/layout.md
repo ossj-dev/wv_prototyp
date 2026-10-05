@@ -1,0 +1,2272 @@
+# Layout-Extraktion (Kombiniert)
+
+[
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      250.8,
+      12.96,
+      256.08,
+      24.48
+    ],
+    "text": "V003",
+    "confidence": 0.7232,
+    "source": "paddleocr",
+    "index": 1
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      19.44,
+      43.92,
+      184.32,
+      51.84
+    ],
+    "text": "(01 )04050147023468C11 )000101(21 )12345678",
+    "confidence": 0.9426,
+    "source": "paddleocr",
+    "index": 2
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      236.88,
+      57.36,
+      259.2,
+      86.16
+    ],
+    "text": "CE",
+    "confidence": 0.8644,
+    "source": "paddleocr",
+    "index": 3
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      54.0,
+      89.04,
+      60.96,
+      110.4
+    ],
+    "text": "Ouanity:",
+    "confidence": 0.9266,
+    "source": "paddleocr",
+    "index": 4
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      60.96,
+      92.88,
+      67.92,
+      110.16
+    ],
+    "text": "ONE (1)",
+    "confidence": 0.8529,
+    "source": "paddleocr",
+    "index": 5
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      167.04,
+      102.96,
+      174.0,
+      116.16
+    ],
+    "text": "0.09",
+    "confidence": 0.8671,
+    "source": "paddleocr",
+    "index": 6
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      172.56,
+      103.44,
+      178.56,
+      117.84
+    ],
+    "text": "140°F",
+    "confidence": 0.8533,
+    "source": "paddleocr",
+    "index": 7
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      200.64,
+      102.0,
+      206.16,
+      112.08
+    ],
+    "text": "%58",
+    "confidence": 0.8183,
+    "source": "paddleocr",
+    "index": 8
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      182.4,
+      132.48,
+      195.36,
+      149.04
+    ],
+    "text": "39050",
+    "confidence": 0.4197,
+    "source": "paddleocr",
+    "index": 9
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      222.72,
+      137.52,
+      228.0,
+      147.6
+    ],
+    "text": "15%",
+    "confidence": 0.8286,
+    "source": "paddleocr",
+    "index": 10
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      137.52,
+      151.44,
+      143.76,
+      205.92
+    ],
+    "text": "Folo lss suse",
+    "confidence": 0.784,
+    "source": "paddleocr",
+    "index": 11
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      50.16,
+      166.32,
+      59.28,
+      206.4
+    ],
+    "text": "20180-101",
+    "confidence": 0.9581,
+    "source": "paddleocr",
+    "index": 12
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      68.88,
+      168.48,
+      77.28,
+      206.16
+    ],
+    "text": "2345678",
+    "confidence": 0.8338,
+    "source": "paddleocr",
+    "index": 13
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      85.44,
+      163.2,
+      96.24,
+      206.88
+    ],
+    "text": "2000-01-01",
+    "confidence": 0.9316,
+    "source": "paddleocr",
+    "index": 14
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      143.76,
+      160.08,
+      149.52,
+      206.4
+    ],
+    "text": "nn e  meifo",
+    "confidence": 0.6263,
+    "source": "paddleocr",
+    "index": 15
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      49.68,
+      213.12,
+      59.76,
+      231.84
+    ],
+    "text": "REF",
+    "confidence": 0.8306,
+    "source": "paddleocr",
+    "index": 16
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      67.44,
+      214.56,
+      78.0,
+      229.92
+    ],
+    "text": "SN",
+    "confidence": 0.8967,
+    "source": "paddleocr",
+    "index": 17
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      82.08,
+      213.36,
+      97.44,
+      231.36
+    ],
+    "text": "3",
+    "confidence": 0.5937,
+    "source": "paddleocr",
+    "index": 18
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      19.44,
+      221.04,
+      36.48,
+      407.52
+    ],
+    "text": "Systco rrmplus",
+    "confidence": 0.7458,
+    "source": "paddleocr",
+    "index": 19
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      120.72,
+      287.76,
+      138.72,
+      406.8
+    ],
+    "text": "op  temas",
+    "confidence": 0.7794,
+    "source": "paddleocr",
+    "index": 20
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      100.08,
+      311.52,
+      115.68,
+      405.84
+    ],
+    "text": "har sme",
+    "confidence": 0.7984,
+    "source": "paddleocr",
+    "index": 21
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      239.52,
+      330.0,
+      245.28,
+      385.44
+    ],
+    "text": "Érbe  mbH",
+    "confidence": 0.7848,
+    "source": "paddleocr",
+    "index": 22
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      245.04,
+      337.2,
+      251.28,
+      385.44
+    ],
+    "text": "alo 1",
+    "confidence": 0.8643,
+    "source": "paddleocr",
+    "index": 23
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      250.56,
+      329.28,
+      257.76,
+      385.68
+    ],
+    "text": "02 n   ra一",
+    "confidence": 0.5832,
+    "source": "paddleocr",
+    "index": 24
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      54.24,
+      321.6,
+      70.56,
+      406.32
+    ],
+    "text": "Éyst  aier",
+    "confidence": 0.7483,
+    "source": "paddleocr",
+    "index": 25
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      77.52,
+      326.88,
+      93.36,
+      405.84
+    ],
+    "text": "ystrrger",
+    "confidence": 0.8431,
+    "source": "paddleocr",
+    "index": 26
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      143.76,
+      348.0,
+      161.28,
+      405.84
+    ],
+    "text": "上品品车",
+    "confidence": 0.5402,
+    "source": "paddleocr",
+    "index": 27
+  },
+  {
+    "file": "20231127094618.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      219.84,
+      349.2,
+      237.84,
+      406.8
+    ],
+    "text": "agja",
+    "confidence": 0.6973,
+    "source": "paddleocr",
+    "index": 28
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      19.8,
+      29.33,
+      252.7,
+      34.96
+    ],
+    "text": "Verpackungsvorschrift 20180-100/-101 Systemträger compact und compact plus",
+    "source": "docling",
+    "index": 29
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      19.8,
+      53.93,
+      32.53,
+      59.56
+    ],
+    "text": "Muli",
+    "source": "docling",
+    "index": 30
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      144.6,
+      53.93,
+      169.38,
+      59.56
+    ],
+    "text": "6519007",
+    "source": "docling",
+    "index": 31
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      260.88,
+      53.93,
+      263.01,
+      59.56
+    ],
+    "text": "-",
+    "source": "docling",
+    "index": 32
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      19.8,
+      64.61,
+      68.1,
+      70.24
+    ],
+    "text": "Dokumentklasse Dokumentnummer",
+    "source": "docling",
+    "index": 33
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      19.8,
+      77.21,
+      83.29,
+      82.84
+    ],
+    "text": "Verpackungsvorschrift D208847 Version: 001",
+    "source": "docling",
+    "index": 34
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      62.4,
+      117.13,
+      267.19,
+      130.04
+    ],
+    "text": "Verpackungsvorschrift deutsch",
+    "source": "docling",
+    "index": 35
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      62.4,
+      162.05,
+      285.51,
+      171.37
+    ],
+    "text": "Die Verpackungsvorschrift ist anzuwenden für:",
+    "source": "docling",
+    "index": 36
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 1,
+    "type": "table",
+    "bbox": [
+      61.6,
+      172.6,
+      290.21,
+      223.33
+    ],
+    "text": "| Erbe-Artikel Nr.: | 20180-100 | |---------------------|---------------------------| | | 20180-101 | | Bezeichnung: | Systemträger compact | | | Systemträger compact plus |",
+    "source": "docling",
+    "index": 37
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      62.4,
+      337.25,
+      333.76,
+      346.57
+    ],
+    "text": "Abbildung der Verpackung (nicht zwingend erforderlich):",
+    "source": "docling",
+    "index": 38
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      19.8,
+      41.21,
+      57.25,
+      46.84
+    ],
+    "text": "Projektname",
+    "source": "docling",
+    "index": 39
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      19.8,
+      53.93,
+      32.53,
+      59.56
+    ],
+    "text": "Muli Projektnummer ÄM-Nummer",
+    "source": "docling",
+    "index": 40
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      144.6,
+      53.93,
+      169.38,
+      59.56
+    ],
+    "text": "6519007",
+    "source": "docling",
+    "index": 41
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      260.88,
+      53.93,
+      263.01,
+      59.56
+    ],
+    "text": "-",
+    "source": "docling",
+    "index": 42
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      19.8,
+      64.61,
+      68.1,
+      70.24
+    ],
+    "text": "Dokumentklasse Dokumentnummer",
+    "source": "docling",
+    "index": 43
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      19.8,
+      77.21,
+      83.29,
+      82.84
+    ],
+    "text": "Verpackungsvorschrift D208847 Version: 001",
+    "source": "docling",
+    "index": 44
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      62.4,
+      115.61,
+      166.08,
+      124.93
+    ],
+    "text": "Anlieferbedingungen:",
+    "source": "docling",
+    "index": 45
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 46,
+    "type": "checkbox",
+    "bbox": [
+      311.28,
+      142.2,
+      322.44,
+      153.36
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 47,
+    "type": "checkbox",
+    "bbox": [
+      350.88,
+      142.2,
+      362.04,
+      153.36
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      62.4,
+      144.29,
+      301.9,
+      153.61
+    ],
+    "text": "Anlieferung auf Palette zwingend erforderlich:",
+    "source": "docling",
+    "index": 48
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      326.14,
+      144.59,
+      334.94,
+      153.52
+    ],
+    "text": "Ja",
+    "source": "docling",
+    "index": 49
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      365.74,
+      144.59,
+      386.63,
+      153.52
+    ],
+    "text": "Nein",
+    "source": "docling",
+    "index": 50
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      81.96,
+      172.79,
+      405.62,
+      181.72
+    ],
+    "text": "Produkt wird einzeln auf produktspezifischer Einweg-Palette angeliefert.",
+    "source": "docling",
+    "index": 51
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      62.4,
+      201.23,
+      154.05,
+      210.93
+    ],
+    "text": "Spezifikationen",
+    "source": "docling",
+    "index": 52
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 53,
+    "type": "checkbox",
+    "bbox": [
+      311.28,
+      228.24,
+      322.44,
+      239.4
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 54,
+    "type": "checkbox",
+    "bbox": [
+      350.88,
+      228.24,
+      362.04,
+      239.4
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      80.4,
+      230.63,
+      222.19,
+      239.56
+    ],
+    "text": "Anlieferung in ESD-Verpackung:",
+    "source": "docling",
+    "index": 55
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      326.14,
+      230.63,
+      334.94,
+      239.56
+    ],
+    "text": "Ja",
+    "source": "docling",
+    "index": 56
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      365.74,
+      230.63,
+      386.63,
+      239.56
+    ],
+    "text": "Nein",
+    "source": "docling",
+    "index": 57
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 58,
+    "type": "checkbox",
+    "bbox": [
+      311.28,
+      242.28,
+      322.44,
+      253.44
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 59,
+    "type": "checkbox",
+    "bbox": [
+      350.88,
+      242.28,
+      362.04,
+      253.44
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      80.4,
+      244.67,
+      298.31,
+      253.6
+    ],
+    "text": "Anlieferung in Reinraum geeigneter Verpackung:",
+    "source": "docling",
+    "index": 60
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      326.14,
+      244.67,
+      334.94,
+      253.6
+    ],
+    "text": "Ja",
+    "source": "docling",
+    "index": 61
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      365.74,
+      244.67,
+      386.63,
+      253.6
+    ],
+    "text": "Nein",
+    "source": "docling",
+    "index": 62
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      62.4,
+      272.21,
+      177.49,
+      281.53
+    ],
+    "text": "Verpackungsebenen",
+    "source": "docling",
+    "index": 63
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      80.35,
+      286.67,
+      506.92,
+      309.64
+    ],
+    "text": "Verpackungsebene 0 ist die kleinste Verpackungseinheit und ist in jedem Fall zu definieren - Bei Bedarf können zusätzlich höhere Verpackungsebenen definiert werden.",
+    "source": "docling",
+    "index": 64
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.8,
+      328.43,
+      200.58,
+      338.13
+    ],
+    "text": "Verpackungsebene 0:",
+    "source": "docling",
+    "index": 65
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 66,
+    "type": "checkbox",
+    "bbox": [
+      118.2,
+      340.92,
+      129.36,
+      352.08
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 67,
+    "type": "checkbox",
+    "bbox": [
+      222.36,
+      340.92,
+      233.52,
+      352.08
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 68,
+    "type": "checkbox",
+    "bbox": [
+      291.84,
+      340.92,
+      303.0,
+      352.08
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 69,
+    "type": "checkbox",
+    "bbox": [
+      344.16,
+      340.92,
+      355.32,
+      352.08
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.8,
+      343.31,
+      211.58,
+      352.24
+    ],
+    "text": "Art: Mehrwegbehälter",
+    "source": "docling",
+    "index": 70
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      234.72,
+      343.31,
+      333.21,
+      352.24
+    ],
+    "text": "Kartonage Beutel",
+    "source": "docling",
+    "index": 71
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      356.52,
+      343.31,
+      492.62,
+      352.24
+    ],
+    "text": "sonstiges: auf Einweg-Palette",
+    "source": "docling",
+    "index": 72
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.8,
+      371.27,
+      312.83,
+      380.2
+    ],
+    "text": "Inhaltsmenge der Verpackungsebene 0 in Stk.: 1",
+    "source": "docling",
+    "index": 73
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.8,
+      399.35,
+      277.16,
+      408.28
+    ],
+    "text": "Abmessungen der Verpackungsebene 0:",
+    "source": "docling",
+    "index": 74
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.78,
+      412.79,
+      387.96,
+      421.72
+    ],
+    "text": "Länge: 700 mm Breite: 700 mm Höhe: 1165 mm",
+    "source": "docling",
+    "index": 75
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 76,
+    "type": "checkbox",
+    "bbox": [
+      346.68,
+      437.28,
+      357.84,
+      448.44
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 77,
+    "type": "checkbox",
+    "bbox": [
+      388.8,
+      437.28,
+      399.96,
+      448.44
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.56,
+      439.67,
+      325.73,
+      448.6
+    ],
+    "text": "Kennzeichnung der Verpackungsebene 0 mit Label:",
+    "source": "docling",
+    "index": 78
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      361.54,
+      439.67,
+      370.34,
+      448.6
+    ],
+    "text": "Ja",
+    "source": "docling",
+    "index": 79
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      403.66,
+      439.67,
+      424.55,
+      448.6
+    ],
+    "text": "Nein",
+    "source": "docling",
+    "index": 80
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 81,
+    "type": "checkbox",
+    "bbox": [
+      162.72,
+      464.04,
+      173.88,
+      475.2
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 82,
+    "type": "checkbox",
+    "bbox": [
+      253.08,
+      464.04,
+      264.24,
+      475.2
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 83,
+    "type": "checkbox",
+    "bbox": [
+      346.68,
+      464.04,
+      357.84,
+      475.2
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 84,
+    "type": "checkbox",
+    "bbox": [
+      420.0,
+      464.04,
+      431.16,
+      475.2
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.56,
+      466.43,
+      149.87,
+      475.36
+    ],
+    "text": "Labelinhalt:",
+    "source": "docling",
+    "index": 85
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      177.58,
+      466.43,
+      393.01,
+      475.36
+    ],
+    "text": "Erbe-Artikel Nr. Bezeichnung Menge",
+    "source": "docling",
+    "index": 86
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      434.86,
+      466.43,
+      490.35,
+      475.36
+    ],
+    "text": "Lot- bzw. SN",
+    "source": "docling",
+    "index": 87
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 88,
+    "type": "checkbox",
+    "bbox": [
+      162.72,
+      477.48,
+      173.88,
+      488.64
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      177.58,
+      479.87,
+      386.8,
+      488.8
+    ],
+    "text": "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+    "source": "docling",
+    "index": 89
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 90,
+    "type": "checkbox",
+    "bbox": [
+      162.72,
+      490.92,
+      173.88,
+      502.08
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 91,
+    "type": "checkbox",
+    "bbox": [
+      309.84,
+      490.92,
+      321.0,
+      502.08
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 92,
+    "type": "checkbox",
+    "bbox": [
+      405.72,
+      490.92,
+      416.88,
+      502.08
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      177.58,
+      492.56,
+      529.26,
+      502.24
+    ],
+    "text": "Barcode  Inhalt: Erbe-Artikel Nr. + Lot- bzw. SN + UDI-Code",
+    "source": "docling",
+    "index": 93
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      161.64,
+      506.75,
+      233.68,
+      515.68
+    ],
+    "text": "+ Herstelldatum",
+    "source": "docling",
+    "index": 94
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      161.59,
+      520.19,
+      227.0,
+      529.12
+    ],
+    "text": "Sonstiges: N/A",
+    "source": "docling",
+    "index": 95
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 96,
+    "type": "checkbox",
+    "bbox": [
+      98.64,
+      545.76,
+      109.8,
+      556.92
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      116.04,
+      547.85,
+      218.64,
+      557.17
+    ],
+    "text": "Verpackungsebene 1:",
+    "source": "docling",
+    "index": 97
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 98,
+    "type": "checkbox",
+    "bbox": [
+      118.2,
+      559.8,
+      129.36,
+      570.96
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 99,
+    "type": "checkbox",
+    "bbox": [
+      222.36,
+      559.8,
+      233.52,
+      570.96
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 100,
+    "type": "checkbox",
+    "bbox": [
+      291.84,
+      559.8,
+      303.0,
+      570.96
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 101,
+    "type": "checkbox",
+    "bbox": [
+      344.16,
+      559.8,
+      355.32,
+      570.96
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.8,
+      562.19,
+      211.58,
+      571.12
+    ],
+    "text": "Art: Mehrwegbehälter",
+    "source": "docling",
+    "index": 102
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      234.72,
+      562.19,
+      333.21,
+      571.12
+    ],
+    "text": "Kartonage Beutel",
+    "source": "docling",
+    "index": 103
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      356.52,
+      562.19,
+      400.71,
+      571.12
+    ],
+    "text": "sonstiges:",
+    "source": "docling",
+    "index": 104
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.8,
+      590.27,
+      304.94,
+      599.2
+    ],
+    "text": "Inhaltsmenge der Verpackungsebene 1 in Stk.:",
+    "source": "docling",
+    "index": 105
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.8,
+      618.23,
+      277.16,
+      627.16
+    ],
+    "text": "Abmessungen der Verpackungsebene 1:",
+    "source": "docling",
+    "index": 106
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.78,
+      631.67,
+      127.16,
+      640.6
+    ],
+    "text": "Länge:",
+    "source": "docling",
+    "index": 107
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      163.04,
+      631.67,
+      233.98,
+      640.6
+    ],
+    "text": "mm Breite:",
+    "source": "docling",
+    "index": 108
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      269.32,
+      631.67,
+      337.11,
+      640.6
+    ],
+    "text": "mm Höhe:",
+    "source": "docling",
+    "index": 109
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      375.45,
+      631.67,
+      393.08,
+      640.6
+    ],
+    "text": "mm",
+    "source": "docling",
+    "index": 110
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 111,
+    "type": "checkbox",
+    "bbox": [
+      346.68,
+      656.16,
+      357.84,
+      667.32
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 112,
+    "type": "checkbox",
+    "bbox": [
+      388.8,
+      656.16,
+      399.96,
+      667.32
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.56,
+      658.55,
+      325.73,
+      667.48
+    ],
+    "text": "Kennzeichnung der Verpackungsebene 1 mit Label:",
+    "source": "docling",
+    "index": 113
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      361.54,
+      658.55,
+      370.34,
+      667.48
+    ],
+    "text": "Ja",
+    "source": "docling",
+    "index": 114
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      403.66,
+      658.55,
+      424.55,
+      667.48
+    ],
+    "text": "Nein",
+    "source": "docling",
+    "index": 115
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 116,
+    "type": "checkbox",
+    "bbox": [
+      162.72,
+      682.92,
+      173.88,
+      694.08
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 117,
+    "type": "checkbox",
+    "bbox": [
+      253.08,
+      682.92,
+      264.24,
+      694.08
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 118,
+    "type": "checkbox",
+    "bbox": [
+      346.68,
+      682.92,
+      357.84,
+      694.08
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 119,
+    "type": "checkbox",
+    "bbox": [
+      420.0,
+      682.92,
+      431.16,
+      694.08
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      97.56,
+      685.31,
+      149.87,
+      694.24
+    ],
+    "text": "Labelinhalt:",
+    "source": "docling",
+    "index": 120
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      177.58,
+      685.31,
+      393.01,
+      694.24
+    ],
+    "text": "Erbe-Artikel Nr. Bezeichnung Menge",
+    "source": "docling",
+    "index": 121
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      434.86,
+      685.31,
+      490.35,
+      694.24
+    ],
+    "text": "Lot- bzw. SN",
+    "source": "docling",
+    "index": 122
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 123,
+    "type": "checkbox",
+    "bbox": [
+      162.72,
+      696.36,
+      173.88,
+      707.52
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      177.58,
+      698.75,
+      386.8,
+      707.68
+    ],
+    "text": "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+    "source": "docling",
+    "index": 124
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 125,
+    "type": "checkbox",
+    "bbox": [
+      162.72,
+      709.8,
+      173.88,
+      720.96
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 126,
+    "type": "checkbox",
+    "bbox": [
+      309.84,
+      709.8,
+      321.0,
+      720.96
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "index": 127,
+    "type": "checkbox",
+    "bbox": [
+      403.2,
+      709.8,
+      414.36,
+      720.96
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      177.58,
+      711.44,
+      483.91,
+      721.12
+    ],
+    "text": "Barcode  Inhalt: Erbe-Artikel Nr. + Lot- bzw. SN +",
+    "source": "docling",
+    "index": 128
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      161.59,
+      725.63,
+      206.73,
+      734.56
+    ],
+    "text": "Sonstiges:",
+    "source": "docling",
+    "index": 129
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      381.84,
+      783.95,
+      567.44,
+      792.88
+    ],
+    "text": "FB_0526_Verpackungsvorschrift deutsch",
+    "source": "docling",
+    "index": 130
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      19.8,
+      41.21,
+      57.25,
+      46.84
+    ],
+    "text": "Projektname",
+    "source": "docling",
+    "index": 131
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      19.8,
+      53.93,
+      32.53,
+      59.56
+    ],
+    "text": "Muli Projektnummer ÄM-Nummer",
+    "source": "docling",
+    "index": 132
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      144.6,
+      53.93,
+      169.38,
+      59.56
+    ],
+    "text": "6519007",
+    "source": "docling",
+    "index": 133
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      260.88,
+      53.93,
+      263.01,
+      59.56
+    ],
+    "text": "-",
+    "source": "docling",
+    "index": 134
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      19.8,
+      64.61,
+      68.1,
+      70.24
+    ],
+    "text": "Dokumentklasse Dokumentnummer",
+    "source": "docling",
+    "index": 135
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      19.8,
+      77.21,
+      83.29,
+      82.84
+    ],
+    "text": "Verpackungsvorschrift D208847 Version: 001",
+    "source": "docling",
+    "index": 136
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "index": 137,
+    "type": "checkbox",
+    "bbox": [
+      98.64,
+      141.6,
+      109.8,
+      152.76
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      116.04,
+      143.69,
+      255.71,
+      153.01
+    ],
+    "text": "weitere Verpackungsebenen:",
+    "source": "docling",
+    "index": 138
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      62.4,
+      305.93,
+      139.12,
+      315.25
+    ],
+    "text": "4. Einzelartikel",
+    "source": "docling",
+    "index": 139
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "index": 140,
+    "type": "checkbox",
+    "bbox": [
+      346.68,
+      317.4,
+      357.84,
+      328.56
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "index": 141,
+    "type": "checkbox",
+    "bbox": [
+      388.8,
+      317.4,
+      399.96,
+      328.56
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      97.56,
+      319.79,
+      287.1,
+      328.72
+    ],
+    "text": "Kennzeichnung des Einzelartikel mit Label:",
+    "source": "docling",
+    "index": 142
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      361.54,
+      319.79,
+      370.34,
+      328.72
+    ],
+    "text": "Ja",
+    "source": "docling",
+    "index": 143
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      403.66,
+      319.79,
+      424.55,
+      328.72
+    ],
+    "text": "Nein",
+    "source": "docling",
+    "index": 144
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "index": 145,
+    "type": "checkbox",
+    "bbox": [
+      162.72,
+      344.28,
+      173.88,
+      355.44
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "index": 146,
+    "type": "checkbox",
+    "bbox": [
+      253.08,
+      344.28,
+      264.24,
+      355.44
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "index": 147,
+    "type": "checkbox",
+    "bbox": [
+      346.68,
+      344.28,
+      357.84,
+      355.44
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "index": 148,
+    "type": "checkbox",
+    "bbox": [
+      420.0,
+      344.28,
+      431.16,
+      355.44
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      97.56,
+      346.67,
+      149.87,
+      355.6
+    ],
+    "text": "Labelinhalt:",
+    "source": "docling",
+    "index": 149
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      177.58,
+      346.67,
+      393.01,
+      355.6
+    ],
+    "text": "Erbe-Artikel Nr. Bezeichnung Menge",
+    "source": "docling",
+    "index": 150
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      434.86,
+      346.67,
+      490.35,
+      355.6
+    ],
+    "text": "Lot- bzw. SN",
+    "source": "docling",
+    "index": 151
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "index": 152,
+    "type": "checkbox",
+    "bbox": [
+      162.72,
+      357.72,
+      173.88,
+      368.88
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      177.58,
+      360.11,
+      386.8,
+      369.04
+    ],
+    "text": "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+    "source": "docling",
+    "index": 153
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "index": 154,
+    "type": "checkbox",
+    "bbox": [
+      162.72,
+      371.16,
+      173.88,
+      382.32
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "index": 155,
+    "type": "checkbox",
+    "bbox": [
+      307.32,
+      371.16,
+      318.48,
+      382.32
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "index": 156,
+    "type": "checkbox",
+    "bbox": [
+      400.68,
+      371.16,
+      411.84,
+      382.32
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      177.58,
+      372.8,
+      481.39,
+      382.48
+    ],
+    "text": "Barcode  Inhalt: Erbe-Artikel Nr. + Lot- bzw. SN +",
+    "source": "docling",
+    "index": 157
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      161.59,
+      386.99,
+      206.73,
+      395.92
+    ],
+    "text": "Sonstiges:",
+    "source": "docling",
+    "index": 158
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      62.4,
+      428.69,
+      354.78,
+      438.01
+    ],
+    "text": "Vermerke und Zusätze zu den Transport-, Lieferbedingungen:",
+    "source": "docling",
+    "index": 159
+  },
+  {
+    "file": "D208847_DE_001.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      62.4,
+      442.55,
+      301.32,
+      451.48
+    ],
+    "text": "Artikel dürfen für Transport 2-lagig gestapelt werden.",
+    "source": "docling",
+    "index": 160
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "article_number": "20134-005",
+  "strategy": "few-shot-2",
+  "Reasoning_Mode": "Internal-CoT",
+  "source_files": [
+    "data/20134-005/174012_DE_005 20134-005_V5.pdf",
+    "data/20134-005/20134-005-1.pdf",
+    "data/20134-005/20134-005_SLV.pdf",
+    "data/20134-005/D111190_DE_002.pdf"
+  ],
+  "prompt_file": "prompts/few-shot-2.txt",
+  "json_schema": true,
+  "thinking_enabled": true,
+  "model": "nuextract3",
+  "offline": false,
+  "started_at_utc": "2026-10-05T08:30:52.899750+00:00",
+  "finished_at_utc": "2026-10-05T08:31:51.571807+00:00",
+  "duration_seconds": 58.673,
+  "token_usage": {
+    "completion_tokens": 1851,
+    "prompt_tokens": 5826,
+    "total_tokens": 7677,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 1111,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "20134-005_few-shot-2_internal_cot_extrahierte_daten.json",
+  "status": "ok",
+  "error": null
+}

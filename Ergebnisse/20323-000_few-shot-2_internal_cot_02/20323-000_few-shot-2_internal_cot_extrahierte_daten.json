@@ -1,0 +1,30 @@
+{
+  "_gedankengang": "Das Dokument D163142_DE_000.pdf ist eine Verpackungsvorschrift und enthält detaillierte Anforderungen an Etiketten für verschiedene Verpackungsebenen. Die Artikelnummer wird explizit als \"Erbe-Artikel Nr.: 20323-000\" angegeben. Für die Verpackungsebene 0 (kleinste Einheit) wurde ein Label gefordert ([X] Ja), und der Inhalt wurde mit Erbe-Artikel-Nr., Bezeichnung, Menge und Lot-/SN markiert. Für Verpackungsebene 1 wurde kein Label gefordert ([ ] Nein). Für den Einzelartikel wurde ein Label gefordert ([X] Ja), und der Inhalt wurde mit Erbe-Artikel-Nr., Bezeichnung, Menge, Lot-/SN und Mindesthaltbarkeitsdatum markiert.",
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": "20323-000",
+  "labels": [
+    {
+      "verpackungsebene": "Verpackungsebene 0",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN"
+      ]
+    },
+    {
+      "verpackungsebene": "Verpackungsebene 1",
+      "label_inhalt": []
+    },
+    {
+      "verpackungsebene": "Einzelartikel",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum"
+      ]
+    }
+  ]
+}

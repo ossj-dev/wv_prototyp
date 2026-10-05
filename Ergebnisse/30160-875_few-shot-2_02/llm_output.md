@@ -1,0 +1,3 @@
+# LLM-Ausgabe
+
+{"dokumentensprache": "Deutsch", "artikelnummer": null, "labels": [{"verpackungsebene": "Verpackungsvorschrift", "label_inhalt": ["Werkstoff", "Bezeichnung", "Lieferant", "ERBE-Nr.", "Datum", "LOT-Nummer", "Datamatrixcode"]}, {"verpackungsebene": "Verpackungsebene 0", "label_inhalt": ["Erbe-Artikel Nr.", "Bezeichnung", "Menge", "Lot no. or SN", "Expiry date or Manufacturing date", "Barcode"]}, {"verpackungsebene": "Einzelartikel", "label_inhalt": ["Erbe-Artikel Nr.", "Lot- bzw. SN", "Mindesthaltbarkeitsdatum bzw. Herstelldatum"]}]}

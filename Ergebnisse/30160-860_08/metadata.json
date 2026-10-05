@@ -1,0 +1,32 @@
+{
+  "article_number": "30160-860",
+  "source_files": [
+    "data/30160-860/D108713_DE_001.pdf",
+    "data/30160-860/D230936_007_Assembly.pdf",
+    "data/30160-860/D275036_DE_000.pdf"
+  ],
+  "prompt_file": "prompts/sys_prompt_regelprompt.txt",
+  "json_schema": true,
+  "thinking_enabled": false,
+  "model": "nuextract3",
+  "offline": false,
+  "started_at_utc": "2026-09-22T14:04:51.018916+00:00",
+  "finished_at_utc": "2026-09-22T14:05:31.659673+00:00",
+  "duration_seconds": 40.641,
+  "token_usage": {
+    "completion_tokens": 1686,
+    "prompt_tokens": 6510,
+    "total_tokens": 8196,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 892,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "result_file": "30160-860_extrahierte_daten.json",
+  "status": "ok",
+  "error": null
+}

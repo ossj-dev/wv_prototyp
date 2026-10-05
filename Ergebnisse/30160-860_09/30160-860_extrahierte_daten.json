@@ -1,0 +1,39 @@
+{
+  "dokumentensprache": "deutsch",
+  "artikelnummer": "PB HW VIO 3n PowerBoard 30160-860",
+  "labels": [
+    {
+      "labelname": "Erbe article no./Erbe-Artikel Nr.",
+      "dokumentenfelder": [
+        "Erbe article no."
+      ]
+    },
+    {
+      "labelname": "Designation/Bezeichnung",
+      "dokumentenfelder": [
+        "Designation"
+      ]
+    },
+    {
+      "labelname": "Quantity/Menge",
+      "dokumentenfelder": [
+        "Quantity"
+      ]
+    },
+    {
+      "labelname": "Lot no. or SN/Lot- bzw. SN",
+      "dokumentenfelder": [
+        "Lot no.",
+        "SN"
+      ]
+    },
+    {
+      "labelname": "Expiry date or Manufacturing date/Mindesthaltbarkeitsdatum bzw. Barcode  Content/Inhalt",
+      "dokumentenfelder": [
+        "Expiry date",
+        "Manufacturing date",
+        "Barcode"
+      ]
+    }
+  ]
+}

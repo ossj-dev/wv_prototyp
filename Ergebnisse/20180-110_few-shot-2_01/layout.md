@@ -1,0 +1,2736 @@
+# Layout-Extraktion (Kombiniert)
+
+[
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      250.8,
+      13.2,
+      256.08,
+      24.72
+    ],
+    "text": "000A",
+    "confidence": 0.8979,
+    "source": "paddleocr",
+    "index": 1
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      19.44,
+      43.92,
+      184.32,
+      51.84
+    ],
+    "text": "(01 )04050147023710C11 )000101(21 )12345678",
+    "confidence": 0.9363,
+    "source": "paddleocr",
+    "index": 2
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      236.88,
+      57.6,
+      259.2,
+      86.16
+    ],
+    "text": "CE",
+    "confidence": 0.8928,
+    "source": "paddleocr",
+    "index": 3
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      53.76,
+      89.04,
+      61.44,
+      110.4
+    ],
+    "text": "Ouantity:",
+    "confidence": 0.9434,
+    "source": "paddleocr",
+    "index": 4
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      60.72,
+      92.4,
+      68.4,
+      110.4
+    ],
+    "text": "ONE (1)",
+    "confidence": 0.8347,
+    "source": "paddleocr",
+    "index": 5
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      167.04,
+      102.96,
+      174.0,
+      116.16
+    ],
+    "text": "0.09",
+    "confidence": 0.8671,
+    "source": "paddleocr",
+    "index": 6
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      172.56,
+      103.44,
+      178.56,
+      117.36
+    ],
+    "text": "140F",
+    "confidence": 0.8826,
+    "source": "paddleocr",
+    "index": 7
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      200.88,
+      102.0,
+      206.16,
+      112.08
+    ],
+    "text": "558",
+    "confidence": 0.8516,
+    "source": "paddleocr",
+    "index": 8
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      182.16,
+      132.48,
+      195.36,
+      149.04
+    ],
+    "text": "39050",
+    "confidence": 0.4112,
+    "source": "paddleocr",
+    "index": 9
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      222.72,
+      138.48,
+      228.24,
+      148.56
+    ],
+    "text": "15%",
+    "confidence": 0.9732,
+    "source": "paddleocr",
+    "index": 10
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      137.52,
+      151.44,
+      143.76,
+      205.92
+    ],
+    "text": "Folo lss suse",
+    "confidence": 0.784,
+    "source": "paddleocr",
+    "index": 11
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      50.16,
+      165.84,
+      59.28,
+      206.4
+    ],
+    "text": "20180-110",
+    "confidence": 0.9053,
+    "source": "paddleocr",
+    "index": 12
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      68.88,
+      168.48,
+      77.28,
+      206.16
+    ],
+    "text": "2345678",
+    "confidence": 0.8338,
+    "source": "paddleocr",
+    "index": 13
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      85.92,
+      163.44,
+      95.76,
+      206.88
+    ],
+    "text": "2000-01-01",
+    "confidence": 0.9654,
+    "source": "paddleocr",
+    "index": 14
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      143.76,
+      160.08,
+      149.52,
+      206.4
+    ],
+    "text": "nn er  meif",
+    "confidence": 0.6901,
+    "source": "paddleocr",
+    "index": 15
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      49.68,
+      213.12,
+      59.76,
+      231.84
+    ],
+    "text": "REF",
+    "confidence": 0.8306,
+    "source": "paddleocr",
+    "index": 16
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      67.44,
+      214.8,
+      78.0,
+      229.92
+    ],
+    "text": "SN",
+    "confidence": 0.9234,
+    "source": "paddleocr",
+    "index": 17
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      82.08,
+      213.6,
+      97.44,
+      231.36
+    ],
+    "text": "3",
+    "confidence": 0.4474,
+    "source": "paddleocr",
+    "index": 18
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      18.48,
+      223.2,
+      36.24,
+      407.52
+    ],
+    "text": "Systrrrnce",
+    "confidence": 0.8383,
+    "source": "paddleocr",
+    "index": 19
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      186.72,
+      277.68,
+      193.44,
+      405.12
+    ],
+    "text": "h    t           on",
+    "confidence": 0.6287,
+    "source": "paddleocr",
+    "index": 20
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      120.72,
+      287.76,
+      138.72,
+      406.8
+    ],
+    "text": "op temas",
+    "confidence": 0.8386,
+    "source": "paddleocr",
+    "index": 21
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      100.08,
+      311.52,
+      115.68,
+      405.84
+    ],
+    "text": "har sme",
+    "confidence": 0.8066,
+    "source": "paddleocr",
+    "index": 22
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      239.52,
+      330.0,
+      245.28,
+      385.44
+    ],
+    "text": "Érbe  mbH",
+    "confidence": 0.7848,
+    "source": "paddleocr",
+    "index": 23
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      245.04,
+      337.2,
+      251.28,
+      385.44
+    ],
+    "text": "aldhoE 1",
+    "confidence": 0.6784,
+    "source": "paddleocr",
+    "index": 24
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      250.56,
+      329.04,
+      257.76,
+      385.68
+    ],
+    "text": "207    any",
+    "confidence": 0.7152,
+    "source": "paddleocr",
+    "index": 25
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      54.24,
+      321.6,
+      70.32,
+      406.32
+    ],
+    "text": "Éyste  ier",
+    "confidence": 0.6854,
+    "source": "paddleocr",
+    "index": 26
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      77.52,
+      326.88,
+      94.08,
+      406.56
+    ],
+    "text": "ystger",
+    "confidence": 0.7341,
+    "source": "paddleocr",
+    "index": 27
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      143.76,
+      348.0,
+      161.28,
+      406.08
+    ],
+    "text": "上品品车",
+    "confidence": 0.5525,
+    "source": "paddleocr",
+    "index": 28
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      192.96,
+      356.88,
+      198.72,
+      405.12
+    ],
+    "text": "wrm/",
+    "confidence": 0.7305,
+    "source": "paddleocr",
+    "index": 29
+  },
+  {
+    "file": "20240620081328.pdf",
+    "page": 1,
+    "type": "ocr-word",
+    "bbox": [
+      219.84,
+      349.2,
+      237.84,
+      406.8
+    ],
+    "text": "agja",
+    "confidence": 0.6973,
+    "source": "paddleocr",
+    "index": 30
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      44.52,
+      50.84,
+      56.69,
+      56.12
+    ],
+    "text": "Muli Project number Change number",
+    "source": "docling",
+    "index": 31
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      161.76,
+      50.84,
+      185.05,
+      56.12
+    ],
+    "text": "6519007",
+    "source": "docling",
+    "index": 32
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      271.08,
+      50.84,
+      273.08,
+      56.12
+    ],
+    "text": "-",
+    "source": "docling",
+    "index": 33
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      44.52,
+      60.8,
+      87.41,
+      66.08
+    ],
+    "text": "Document class Document number",
+    "source": "docling",
+    "index": 34
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      44.52,
+      72.68,
+      106.8,
+      77.96
+    ],
+    "text": "Packaging Specification D289949 Version: 000",
+    "source": "docling",
+    "index": 35
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      84.6,
+      103.57,
+      375.62,
+      115.7
+    ],
+    "text": "Packaging specification/Verpackungsvorschrift",
+    "source": "docling",
+    "index": 36
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      84.6,
+      145.69,
+      478.75,
+      154.44
+    ],
+    "text": "This packaging specification applies to/Diese Verpackungsvorschrift ist anzuwenden für:",
+    "source": "docling",
+    "index": 37
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      84.6,
+      171.88,
+      218.69,
+      180.29
+    ],
+    "text": "Erbe article no./Erbe Artikel Nr.:",
+    "source": "docling",
+    "index": 38
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      84.6,
+      184.48,
+      194.06,
+      192.89
+    ],
+    "text": "Designation/Bezeichnung:",
+    "source": "docling",
+    "index": 39
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      250.88,
+      171.9,
+      296.11,
+      180.28
+    ],
+    "text": "20180-110",
+    "source": "docling",
+    "index": 40
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      250.92,
+      184.5,
+      366.88,
+      192.88
+    ],
+    "text": "SystemCarrier performance",
+    "source": "docling",
+    "index": 41
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 1,
+    "type": "text",
+    "bbox": [
+      84.6,
+      285.61,
+      506.62,
+      294.36
+    ],
+    "text": "Image of packaging (not mandatory)/Abbildung der Verpackung (nicht zwingend erforderlich):",
+    "source": "docling",
+    "index": 42
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      44.52,
+      38.84,
+      80.94,
+      44.12
+    ],
+    "text": "Project name",
+    "source": "docling",
+    "index": 43
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      44.52,
+      50.84,
+      56.69,
+      56.12
+    ],
+    "text": "Muli Project number Change number",
+    "source": "docling",
+    "index": 44
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      161.76,
+      50.84,
+      185.05,
+      56.12
+    ],
+    "text": "6519007",
+    "source": "docling",
+    "index": 45
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      271.08,
+      50.84,
+      273.08,
+      56.12
+    ],
+    "text": "-",
+    "source": "docling",
+    "index": 46
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      44.52,
+      60.8,
+      87.41,
+      66.08
+    ],
+    "text": "Document class Document number",
+    "source": "docling",
+    "index": 47
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      44.52,
+      72.68,
+      106.8,
+      77.96
+    ],
+    "text": "Packaging Specification D289949 Version: 000",
+    "source": "docling",
+    "index": 48
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      84.6,
+      102.13,
+      272.69,
+      110.88
+    ],
+    "text": "Delivery conditions/Anlieferbedingungen:",
+    "source": "docling",
+    "index": 49
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 50,
+    "type": "checkbox",
+    "bbox": [
+      451.64,
+      127.1,
+      462.13,
+      137.59
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      84.6,
+      129.01,
+      444.46,
+      137.76
+    ],
+    "text": "Delivery on pallet mandatory/Anlieferung auf Palette zwingend erforderlich:",
+    "source": "docling",
+    "index": 51
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      465.48,
+      129.28,
+      492.37,
+      137.69
+    ],
+    "text": "Yes/Ja",
+    "source": "docling",
+    "index": 52
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 53,
+    "type": "checkbox",
+    "bbox": [
+      451.64,
+      140.29,
+      462.13,
+      150.78
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      465.48,
+      142.48,
+      500.96,
+      150.89
+    ],
+    "text": "No/Nein",
+    "source": "docling",
+    "index": 54
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 55,
+    "type": "checkbox",
+    "bbox": [
+      418.36,
+      245.19,
+      428.85,
+      255.68
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 56,
+    "type": "checkbox",
+    "bbox": [
+      471.82,
+      245.19,
+      482.32,
+      255.68
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      432.24,
+      247.48,
+      521.22,
+      255.89
+    ],
+    "text": "Yes/Ja No/Nein",
+    "source": "docling",
+    "index": 57
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 58,
+    "type": "checkbox",
+    "bbox": [
+      418.36,
+      271.47,
+      428.85,
+      281.96
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 59,
+    "type": "checkbox",
+    "bbox": [
+      471.82,
+      271.47,
+      482.32,
+      281.96
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      432.24,
+      273.76,
+      521.22,
+      282.17
+    ],
+    "text": "Yes/Ja No/Nein",
+    "source": "docling",
+    "index": 60
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      102.96,
+      155.2,
+      253.45,
+      163.61
+    ],
+    "text": "Pallet dimensions/Palettenabmaße:",
+    "source": "docling",
+    "index": 61
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      102.96,
+      167.8,
+      236.34,
+      176.21
+    ],
+    "text": "Length/Länge: 0,7 Meter(s)",
+    "source": "docling",
+    "index": 62
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      102.96,
+      180.4,
+      160.57,
+      188.81
+    ],
+    "text": "Width/Breite:",
+    "source": "docling",
+    "index": 63
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      184.39,
+      180.42,
+      236.32,
+      188.8
+    ],
+    "text": "0,7 Meter(s)",
+    "source": "docling",
+    "index": 64
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      102.96,
+      193.12,
+      159.49,
+      201.53
+    ],
+    "text": "Height/Höhe:",
+    "source": "docling",
+    "index": 65
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      184.41,
+      193.14,
+      241.6,
+      201.52
+    ],
+    "text": "0,15 Meter(s)",
+    "source": "docling",
+    "index": 66
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      84.6,
+      219.8,
+      236.7,
+      228.92
+    ],
+    "text": "Specifications/Spezifikationen",
+    "source": "docling",
+    "index": 67
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      101.16,
+      247.48,
+      376.5,
+      282.17
+    ],
+    "text": "To be supplied in ESD packaging/Anlieferung in ESD-Verpackung: To be supplied in cleanroom compatible packaging/Anlieferung in Reinraum-geeigneter Verpackung:",
+    "source": "docling",
+    "index": 68
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      84.6,
+      299.77,
+      269.9,
+      308.52
+    ],
+    "text": "Packaging levels/Verpackungsebenen",
+    "source": "docling",
+    "index": 69
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      101.52,
+      326.46,
+      489.07,
+      348.04
+    ],
+    "text": "Packaging level 0 is the smallest packing unit and must always be defined. If required, higher packaging levels can be defined.",
+    "source": "docling",
+    "index": 70
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      101.52,
+      352.84,
+      497.76,
+      374.33
+    ],
+    "text": "Verpackungsebene 0 ist die kleinste Verpackungseinheit und ist in jedem Fall zu definieren - Bei Bedarf können zusätzlich höhere Verpackungsebenen definiert werden.",
+    "source": "docling",
+    "index": 71
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      117.84,
+      392.12,
+      295.29,
+      401.24
+    ],
+    "text": "Packaging level 0/Verpackungsebene 0:",
+    "source": "docling",
+    "index": 72
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 73,
+    "type": "checkbox",
+    "bbox": [
+      185.44,
+      403.78,
+      195.93,
+      414.27
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      117.84,
+      406.0,
+      157.81,
+      414.41
+    ],
+    "text": "Type/Art:",
+    "source": "docling",
+    "index": 74
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      199.32,
+      406.0,
+      361.33,
+      414.41
+    ],
+    "text": "Reusable packaging/Mehrwegbehälter",
+    "source": "docling",
+    "index": 75
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 76,
+    "type": "checkbox",
+    "bbox": [
+      185.44,
+      416.98,
+      195.93,
+      427.46
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      199.32,
+      419.2,
+      291.55,
+      427.61
+    ],
+    "text": "Cardboard/Kartonage",
+    "source": "docling",
+    "index": 77
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 78,
+    "type": "checkbox",
+    "bbox": [
+      185.44,
+      430.06,
+      195.93,
+      440.55
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      199.32,
+      432.28,
+      245.46,
+      440.69
+    ],
+    "text": "Bag/Beutel",
+    "source": "docling",
+    "index": 79
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 80,
+    "type": "checkbox",
+    "bbox": [
+      185.44,
+      443.26,
+      195.93,
+      453.74
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      199.32,
+      445.48,
+      340.5,
+      453.89
+    ],
+    "text": "Other/Sonstiges: Einweg-Palette",
+    "source": "docling",
+    "index": 81
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      117.84,
+      471.76,
+      505.16,
+      480.17
+    ],
+    "text": "Content quantity of packaging level 0 in pcs./Inhaltsmenge der Verpackungsebene 0 in Stk: 1",
+    "source": "docling",
+    "index": 82
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      117.84,
+      498.16,
+      422.53,
+      506.57
+    ],
+    "text": "Dimensions of packaging level 0/Abmessungen der Verpackungsebene 0:",
+    "source": "docling",
+    "index": 83
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      117.81,
+      510.64,
+      490.36,
+      519.05
+    ],
+    "text": "Length/Länge: 700 mm Width/Breite: 700 mm Height/Höhe: 1165 mm",
+    "source": "docling",
+    "index": 84
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 85,
+    "type": "checkbox",
+    "bbox": [
+      451.64,
+      533.71,
+      462.13,
+      544.21
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      117.6,
+      535.96,
+      443.41,
+      544.37
+    ],
+    "text": "Label on packaging level 0/Kennzeichnung der Verpackungsebene 0 mit Label:",
+    "source": "docling",
+    "index": 86
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      465.48,
+      535.96,
+      492.37,
+      544.37
+    ],
+    "text": "Yes/Ja",
+    "source": "docling",
+    "index": 87
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 88,
+    "type": "checkbox",
+    "bbox": [
+      451.64,
+      546.35,
+      462.13,
+      556.84
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      465.48,
+      548.56,
+      500.96,
+      556.97
+    ],
+    "text": "No/Nein",
+    "source": "docling",
+    "index": 89
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      117.6,
+      573.88,
+      254.65,
+      582.29
+    ],
+    "text": "Content of the label/Labelinhalt:",
+    "source": "docling",
+    "index": 90
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 91,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      584.25,
+      189.38,
+      594.73
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      192.74,
+      586.48,
+      324.93,
+      594.89
+    ],
+    "text": "Erbe article no./Erbe-Artikel Nr.",
+    "source": "docling",
+    "index": 92
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 93,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      596.88,
+      189.38,
+      607.37
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      192.74,
+      599.08,
+      299.4,
+      607.49
+    ],
+    "text": "Designation/Bezeichnung",
+    "source": "docling",
+    "index": 94
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 95,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      609.52,
+      189.38,
+      620.0
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      192.74,
+      611.8,
+      262.87,
+      620.21
+    ],
+    "text": "Quantity/Menge",
+    "source": "docling",
+    "index": 96
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 97,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      622.04,
+      189.38,
+      632.53
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      192.74,
+      624.28,
+      302.65,
+      632.69
+    ],
+    "text": "Lot no. or SN/Lot- bzw. SN",
+    "source": "docling",
+    "index": 98
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 99,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      634.66,
+      189.38,
+      645.16
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      192.74,
+      636.88,
+      474.81,
+      645.29
+    ],
+    "text": "Expiry date or Manufacturing date/Mindesthaltbarkeitsdatum bzw.",
+    "source": "docling",
+    "index": 100
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      191.74,
+      649.6,
+      251.4,
+      658.01
+    ],
+    "text": "Herstelldatum",
+    "source": "docling",
+    "index": 101
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 102,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      659.93,
+      189.38,
+      670.43
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      192.74,
+      662.22,
+      227.31,
+      670.6
+    ],
+    "text": "Barcode",
+    "source": "docling",
+    "index": 103
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 104,
+    "type": "checkbox",
+    "bbox": [
+      285.49,
+      675.16,
+      295.98,
+      685.65
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      194.28,
+      676.76,
+      271.69,
+      685.85
+    ],
+    "text": " Content/Inhalt:",
+    "source": "docling",
+    "index": 105
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      299.4,
+      675.67,
+      439.64,
+      686.34
+    ],
+    "text": "Erbe article no./Erbe Artikel Nr. +",
+    "source": "docling",
+    "index": 106
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "index": 107,
+    "type": "checkbox",
+    "bbox": [
+      285.49,
+      691.29,
+      295.98,
+      701.78
+    ],
+    "state": "checked",
+    "text": "[X]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      177.88,
+      706.96,
+      248.53,
+      715.37
+    ],
+    "text": "Other/Sonstiges:",
+    "source": "docling",
+    "index": 108
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      299.4,
+      691.75,
+      466.15,
+      702.42
+    ],
+    "text": "Lot no. or SN/Lot- bzw. SN + UDI-Code",
+    "source": "docling",
+    "index": 109
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 2,
+    "type": "text",
+    "bbox": [
+      317.28,
+      736.98,
+      558.98,
+      745.36
+    ],
+    "text": "FB_0526_Packaging specification/Verpackungsvorschrift",
+    "source": "docling",
+    "index": 110
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      44.52,
+      38.84,
+      80.94,
+      44.12
+    ],
+    "text": "Project name",
+    "source": "docling",
+    "index": 111
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      44.52,
+      50.84,
+      56.69,
+      56.12
+    ],
+    "text": "Muli Project number Change number",
+    "source": "docling",
+    "index": 112
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      161.76,
+      50.84,
+      185.05,
+      56.12
+    ],
+    "text": "6519007",
+    "source": "docling",
+    "index": 113
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      271.08,
+      50.84,
+      273.08,
+      56.12
+    ],
+    "text": "-",
+    "source": "docling",
+    "index": 114
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      44.52,
+      60.8,
+      87.41,
+      66.08
+    ],
+    "text": "Document class Document number",
+    "source": "docling",
+    "index": 115
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      44.52,
+      72.68,
+      106.8,
+      77.96
+    ],
+    "text": "Packaging Specification D289949 Version: 000",
+    "source": "docling",
+    "index": 116
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      117.84,
+      115.52,
+      295.29,
+      124.65
+    ],
+    "text": "Packaging level 1/Verpackungsebene 1:",
+    "source": "docling",
+    "index": 117
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 118,
+    "type": "checkbox",
+    "bbox": [
+      185.44,
+      127.1,
+      195.93,
+      137.59
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      117.84,
+      129.28,
+      157.81,
+      137.69
+    ],
+    "text": "Type/Art:",
+    "source": "docling",
+    "index": 119
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      199.32,
+      129.28,
+      361.33,
+      137.69
+    ],
+    "text": "Reusable packaging/Mehrwegbehälter",
+    "source": "docling",
+    "index": 120
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 121,
+    "type": "checkbox",
+    "bbox": [
+      185.44,
+      140.29,
+      195.93,
+      150.78
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      199.32,
+      142.48,
+      291.55,
+      150.89
+    ],
+    "text": "Cardboard/Kartonage",
+    "source": "docling",
+    "index": 122
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 123,
+    "type": "checkbox",
+    "bbox": [
+      185.44,
+      153.38,
+      195.93,
+      163.87
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      199.32,
+      155.56,
+      245.46,
+      163.97
+    ],
+    "text": "Bag/Beutel",
+    "source": "docling",
+    "index": 124
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 125,
+    "type": "checkbox",
+    "bbox": [
+      185.44,
+      166.58,
+      195.93,
+      177.06
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      199.32,
+      168.76,
+      270.01,
+      177.17
+    ],
+    "text": "Other/Sonstiges:",
+    "source": "docling",
+    "index": 126
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      117.84,
+      195.04,
+      497.56,
+      203.45
+    ],
+    "text": "Content quantity of packaging level 1 in pcs./Inhaltsmenge der Verpackungsebene 1 in Stk:",
+    "source": "docling",
+    "index": 127
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      117.84,
+      221.44,
+      422.53,
+      229.85
+    ],
+    "text": "Dimensions of packaging level 1/Abmessungen der Verpackungsebene 1:",
+    "source": "docling",
+    "index": 128
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      117.81,
+      234.16,
+      178.45,
+      242.57
+    ],
+    "text": "Length/Länge:",
+    "source": "docling",
+    "index": 129
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      212.51,
+      234.16,
+      308.53,
+      242.57
+    ],
+    "text": "mm Width/Breite:",
+    "source": "docling",
+    "index": 130
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      345.57,
+      234.16,
+      440.53,
+      242.57
+    ],
+    "text": "mm Height/Höhe:",
+    "source": "docling",
+    "index": 131
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      478.67,
+      234.18,
+      495.21,
+      242.56
+    ],
+    "text": "mm",
+    "source": "docling",
+    "index": 132
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 133,
+    "type": "checkbox",
+    "bbox": [
+      451.64,
+      257.14,
+      462.13,
+      267.64
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      117.6,
+      259.36,
+      443.41,
+      267.77
+    ],
+    "text": "Label on packaging level 1/Kennzeichnung der Verpackungsebene 1 mit Label:",
+    "source": "docling",
+    "index": 134
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      465.48,
+      259.36,
+      492.37,
+      267.77
+    ],
+    "text": "Yes/Ja",
+    "source": "docling",
+    "index": 135
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 136,
+    "type": "checkbox",
+    "bbox": [
+      451.64,
+      269.67,
+      462.13,
+      280.15
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      465.48,
+      271.96,
+      500.96,
+      280.37
+    ],
+    "text": "No/Nein",
+    "source": "docling",
+    "index": 137
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      117.6,
+      297.16,
+      254.65,
+      305.57
+    ],
+    "text": "Content of the label/Labelinhalt:",
+    "source": "docling",
+    "index": 138
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 139,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      307.57,
+      189.38,
+      318.05
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      192.74,
+      309.76,
+      324.93,
+      318.17
+    ],
+    "text": "Erbe article no./Erbe-Artikel Nr.",
+    "source": "docling",
+    "index": 140
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 141,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      320.2,
+      189.38,
+      330.69
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      192.74,
+      322.48,
+      299.4,
+      330.89
+    ],
+    "text": "Designation/Bezeichnung",
+    "source": "docling",
+    "index": 142
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 143,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      332.83,
+      189.38,
+      343.32
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      192.74,
+      335.08,
+      262.87,
+      343.49
+    ],
+    "text": "Quantity/Menge",
+    "source": "docling",
+    "index": 144
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 145,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      345.46,
+      189.38,
+      355.96
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      192.74,
+      347.68,
+      302.65,
+      356.09
+    ],
+    "text": "Lot no. or SN/Lot- bzw. SN",
+    "source": "docling",
+    "index": 146
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 147,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      358.1,
+      189.38,
+      368.59
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      191.74,
+      360.28,
+      474.81,
+      381.41
+    ],
+    "text": "Expiry date or Manufacturing date/Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+    "source": "docling",
+    "index": 148
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 149,
+    "type": "checkbox",
+    "bbox": [
+      178.9,
+      383.25,
+      189.38,
+      393.74
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      192.74,
+      385.5,
+      227.31,
+      393.88
+    ],
+    "text": "Barcode",
+    "source": "docling",
+    "index": 150
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 151,
+    "type": "checkbox",
+    "bbox": [
+      285.49,
+      398.47,
+      295.98,
+      408.97
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      194.16,
+      400.04,
+      271.69,
+      409.13
+    ],
+    "text": " Content/Inhalt:",
+    "source": "docling",
+    "index": 152
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      299.4,
+      398.95,
+      439.64,
+      409.62
+    ],
+    "text": "Erbe article no./Erbe Artikel Nr. +",
+    "source": "docling",
+    "index": 153
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 154,
+    "type": "checkbox",
+    "bbox": [
+      285.49,
+      414.61,
+      295.98,
+      425.1
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      177.88,
+      430.24,
+      248.53,
+      438.65
+    ],
+    "text": "Other/Sonstiges:",
+    "source": "docling",
+    "index": 155
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 156,
+    "type": "checkbox",
+    "bbox": [
+      118.66,
+      454.31,
+      129.15,
+      464.8
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      134.76,
+      456.25,
+      392.13,
+      465.0
+    ],
+    "text": "Additional packaging levels/weitere Verpackungsebenen:",
+    "source": "docling",
+    "index": 157
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      84.6,
+      596.29,
+      190.44,
+      605.04
+    ],
+    "text": "Article/Einzelartikel",
+    "source": "docling",
+    "index": 158
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 159,
+    "type": "checkbox",
+    "bbox": [
+      418.36,
+      607.04,
+      428.85,
+      617.52
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 160,
+    "type": "checkbox",
+    "bbox": [
+      476.57,
+      607.04,
+      487.05,
+      617.52
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      117.6,
+      609.28,
+      362.65,
+      617.69
+    ],
+    "text": "Label on article/Kennzeichnung des Einzelartikel mit Label:",
+    "source": "docling",
+    "index": 161
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      432.24,
+      609.28,
+      459.11,
+      617.69
+    ],
+    "text": "Yes/Ja",
+    "source": "docling",
+    "index": 162
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      490.44,
+      609.28,
+      525.84,
+      617.69
+    ],
+    "text": "No/Nein",
+    "source": "docling",
+    "index": 163
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 164,
+    "type": "checkbox",
+    "bbox": [
+      245.56,
+      632.18,
+      256.05,
+      642.68
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      117.48,
+      634.48,
+      228.01,
+      642.89
+    ],
+    "text": "Label content/Labelinhalt:",
+    "source": "docling",
+    "index": 165
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      259.44,
+      634.48,
+      391.65,
+      642.89
+    ],
+    "text": "Erbe article no./Erbe-Artikel Nr.",
+    "source": "docling",
+    "index": 166
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 167,
+    "type": "checkbox",
+    "bbox": [
+      245.56,
+      644.82,
+      256.05,
+      655.3
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      259.44,
+      647.08,
+      366.1,
+      655.49
+    ],
+    "text": "Designation/Bezeichnung",
+    "source": "docling",
+    "index": 168
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 169,
+    "type": "checkbox",
+    "bbox": [
+      245.56,
+      657.45,
+      256.05,
+      667.94
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      259.44,
+      659.68,
+      329.5,
+      668.09
+    ],
+    "text": "Quantity/Menge",
+    "source": "docling",
+    "index": 170
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 171,
+    "type": "checkbox",
+    "bbox": [
+      245.56,
+      670.09,
+      256.05,
+      680.57
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      259.44,
+      672.28,
+      369.43,
+      680.69
+    ],
+    "text": "Lot no. or SN/Lot- bzw. SN",
+    "source": "docling",
+    "index": 172
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "index": 173,
+    "type": "checkbox",
+    "bbox": [
+      245.56,
+      682.72,
+      256.05,
+      693.21
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      258.34,
+      685.0,
+      519.16,
+      706.01
+    ],
+    "text": "Expiry date or manufacturing date/Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+    "source": "docling",
+    "index": 174
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      299.4,
+      415.04,
+      420.56,
+      425.71
+    ],
+    "text": "Lot no. or SN/Lot- bzw. SN +",
+    "source": "docling",
+    "index": 175
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      317.28,
+      736.98,
+      558.98,
+      745.36
+    ],
+    "text": "FB_0526_Packaging specification/Verpackungsvorschrift",
+    "source": "docling",
+    "index": 176
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 3,
+    "type": "text",
+    "bbox": [
+      509.88,
+      750.8,
+      524.55,
+      756.08
+    ],
+    "text": "Page:",
+    "source": "docling",
+    "index": 177
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      44.52,
+      38.84,
+      80.94,
+      44.12
+    ],
+    "text": "Project name",
+    "source": "docling",
+    "index": 178
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      44.52,
+      50.84,
+      56.69,
+      56.12
+    ],
+    "text": "Muli Project number Change number",
+    "source": "docling",
+    "index": 179
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      161.76,
+      50.84,
+      185.05,
+      56.12
+    ],
+    "text": "6519007",
+    "source": "docling",
+    "index": 180
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      271.08,
+      50.84,
+      273.08,
+      56.12
+    ],
+    "text": "-",
+    "source": "docling",
+    "index": 181
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      44.52,
+      60.8,
+      87.41,
+      66.08
+    ],
+    "text": "Document class Document number",
+    "source": "docling",
+    "index": 182
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      44.52,
+      72.68,
+      106.8,
+      77.96
+    ],
+    "text": "Packaging Specification D289949 Version: 000",
+    "source": "docling",
+    "index": 183
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "index": 184,
+    "type": "checkbox",
+    "bbox": [
+      245.56,
+      99.69,
+      256.05,
+      110.17
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      259.44,
+      101.94,
+      293.93,
+      110.32
+    ],
+    "text": "Barcode",
+    "source": "docling",
+    "index": 185
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "index": 186,
+    "type": "checkbox",
+    "bbox": [
+      351.81,
+      114.92,
+      362.3,
+      125.41
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      260.76,
+      116.48,
+      338.29,
+      125.57
+    ],
+    "text": " Content/Inhalt:",
+    "source": "docling",
+    "index": 187
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      365.66,
+      115.39,
+      505.88,
+      126.06
+    ],
+    "text": "Erbe article no./Erbe Artikel Nr. +",
+    "source": "docling",
+    "index": 188
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "index": 189,
+    "type": "checkbox",
+    "bbox": [
+      351.81,
+      130.93,
+      362.3,
+      141.42
+    ],
+    "state": "unchecked",
+    "text": "[ ]"
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      244.58,
+      146.56,
+      315.25,
+      154.97
+    ],
+    "text": "Other/Sonstiges:",
+    "source": "docling",
+    "index": 190
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      84.6,
+      185.77,
+      490.52,
+      207.72
+    ],
+    "text": "Comments and additional information on transport and delivery conditions/Vermerke und Zusätze zu den Transport-, Lieferbedingungen:",
+    "source": "docling",
+    "index": 191
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      84.6,
+      211.98,
+      275.3,
+      220.36
+    ],
+    "text": "Siehe Verpackungsschritte 1-8 (Bilder Seite 1)",
+    "source": "docling",
+    "index": 192
+  },
+  {
+    "file": "D289949_DE_000.pdf",
+    "page": 4,
+    "type": "text",
+    "bbox": [
+      365.66,
+      131.35,
+      486.8,
+      142.03
+    ],
+    "text": "Lot no. or SN/Lot- bzw. SN +",
+    "source": "docling",
+    "index": 193
+  }
+]

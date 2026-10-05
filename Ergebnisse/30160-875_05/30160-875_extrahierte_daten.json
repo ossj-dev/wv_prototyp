@@ -1,0 +1,13 @@
+{
+  "merkmale": [],
+  "_meta": {
+    "source_files": [
+      "D108713_DE_001.pdf",
+      "D230937_007_Assembly.pdf",
+      "D275038_DE_000.pdf"
+    ],
+    "status": "llm_json_error",
+    "error": "Unterminated string starting at: line 1 column 72379 (char 72378)",
+    "layout_backend": "pymupdf"
+  }
+}

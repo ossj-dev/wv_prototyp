@@ -1,0 +1,16 @@
+# LLM-Ausgabe
+
+{
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": null,
+  "labels": [
+    {
+      "verpackungsebene": "Beispiel-Label",
+      "label_inhalt": [
+        "EAN Code",
+        "Datum des Packungsdatums",
+        "Ciselní pořadové číslo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": null,
+  "labels": [
+    {
+      "verpackungsebene": "Verpackungsebene 0",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+        "Barcode"
+      ]
+    },
+    {
+      "verpackungsebene": "Verpackungsebene 1",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum"
+      ]
+    },
+    {
+      "verpackungsebene": "Einzelartikel",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# LLM-Ausgabe
+
+{"dokumentensprache": "de", "artikelnummer": "989101, 989102, 989103, 989104", "labels": [{"verpackungsebene": "Außen", "label_inhalt": ["E-Welle einseitig außen weiß"]}, {"verpackungsebene": "Innen", "label_inhalt": ["Schaumstoff: zweiteilig PU-Schaum anthrazit"]}, {"verpackungsebene": "Außen", "label_inhalt": ["Trockenmittelbeutel staubdicht: 85x40x8mm, Art. Nr. TMB1-6 (Lieferant Ratioform) PE-Kammernbeutel, transparent: 60x360x0,07mm, Artikelnummer L44603606 (Lieferant Papke)"]}, {"verpackungsebene": "Außen", "label_inhalt": ["Erbesiegel: Verpackung Art. Nr. 989101, 989102, 989103"]}, {"verpackungsebene": "Innen", "label_inhalt": ["Schaumstoff: zweiteilig PU-Schaum anthrazit"]}] }

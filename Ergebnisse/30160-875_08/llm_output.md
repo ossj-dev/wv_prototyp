@@ -1,0 +1,3 @@
+# LLM-Ausgabe
+
+{"dokumentensprache": "Deutsch", "artikelnummer": "30160-875", "labels": [{"verpackungsebene": "Verpackungsebene 0", "label_inhalt": ["Herstelldatum", "Erbe article no./Erbe-Artikel Nr.", "Designation/Bezeichnung", "Lot no. or SN/Lot- bzw. SN", "Expiry date or Manufacturing date/Mindesthaltbarkeitsdatum bzw. Barcode"]}, {"verpackungsebene": "Einzelartikel", "label_inhalt": ["Erbe article no./Erbe-Artikel Nr.", "Designation/Bezeichnung", "Quantity/Menge", "Lot no. or SN/Lot- bzw. SN", "Barcode"]}]}
