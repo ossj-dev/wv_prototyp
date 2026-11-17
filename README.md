@@ -70,3 +70,15 @@ OFFLINE_MODE=true python main.py 20323-000
 ```
 
 Ohne Artikelnummer fragt das Programm interaktiv danach. Zum Ausführen der Auswertungen zusätzlich `jupyterlab pandas seaborn matplotlib` installieren und die Notebooks mit `study/` als Arbeitsverzeichnis öffnen.
+
+## Lizenz
+
+Copyright 2026 Jonas Osswald.
+
+Der eigene Quellcode dieses Projekts einschließlich des Auswertungscodes in den Notebooks sowie die eigene Dokumentation stehen unter der **[Apache License, Version 2.0](LICENSE)** (`SPDX-License-Identifier: Apache-2.0`). Dies gilt auch für selbst verfasste Prompt-Anweisungen, jedoch nicht für darin enthaltene fremde Dokumentauszüge. Die Software wird nach Maßgabe der Lizenz ohne Gewährleistungen bereitgestellt.
+
+Vom Geltungsbereich dieser Apache-Lizenz ausgenommen sind:
+
+- **Paper:** Für [short-paper/osswald_endfassung.pdf](short-paper/osswald_endfassung.pdf) gilt die im PDF angegebene **CC BY 4.0**.
+- **Dokumente und Studiendaten:** Eingabedokumente unter `data/`, Laufartefakte unter `Ergebnisse/`, Bewertungs-CSV-Dateien und gespeicherte Notebook-Ausgaben werden durch diese Erklärung nicht unter Apache 2.0 lizenziert. Gleiches gilt für fremde Dokumentauszüge, insbesondere in den Few-Shot-Prompts. Rechte und vorhandene Hinweise der jeweiligen Rechteinhaber bleiben bestehen; diese Projektlizenz erteilt dafür keine Nutzungserlaubnis.
+- **Abhängigkeiten und Modelle:** Es gelten deren jeweilige Lizenzen. Insbesondere wird [PyMuPDF unter AGPL oder einer kommerziellen Lizenz](https://pymupdf.readthedocs.io/en/latest/about.html#license-and-copyright) angeboten. Die Apache-Lizenz des eigenen Codes ersetzt diese Bedingungen nicht; bei Weitergabe oder Bereitstellung der kombinierten Anwendung sind sie gesondert zu beachten.
