@@ -1,0 +1,29 @@
+{
+  "_gedankengang": "Das Dokument ist eine 'Verpackungsvorschrift' und enthält explizite Checkboxen ([X] / [ ]).\n\nBELEGE:\n- Seite 1: \"Anlieferung auf Palette zwingend erforderlich: [ ] [X] Ja\".\n- Seite 1: \"Kennzeichnung der Verpackungsebene 0 mit Label: [X] [ ]\".\n- Seite 2: \"Kennzeichnung des Einzelartikel mit Label: [ ] [X]\".\n\nCHECKBOX-ENTSCHEIDUNGEN:\n- Für die Verpackungsebene 0 ist die Kennzeichnung mit einem Label erforderlich ([X]).\n- Die Anlieferung in ESD-Verpackung und Reinraumgeeigneter Verpackung sind nicht erforderlich ([ ]).\n- Für den Einzelartikel ist eine Kennzeichnung mit einem Label erforderlich ([X]).\n\nABLEITUNG:\n- Da für beide Ebenen (0 und Einzelartikel) die Kennzeichnungspflicht explizit markiert ist, werden beide als separate Label-Einträge im JSON erfasst.\n- Der `label_inhalt` wird aus der Liste aller aufgeführten Felder extrahiert, da keine spezifischen Checkboxen neben den einzelnen Feldern gesetzt sind. Die Felder sind: Erbe-Artikel Nr., Bezeichnung, Menge, Lot- bzw. SN, Mindesthaltbarkeitsdatum bzw. Herstelldatum und Barcode.\n\nUNSICHERHEITEN:\n- Es ist nicht klar, ob die Felder im `Labelinhalt` für beide Verpackungsebenen identisch sind oder ob es Unterschiede gibt, die durch die Checkboxen angedeutet werden könnten. Da keine spezifischen Zuordnungen vorliegen, wird eine konsistente Liste aller aufgeführten Felder verwendet.",
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": "40323-113 Schaumteil Mitte unten IES 3",
+  "labels": [
+    {
+      "verpackungsebene": "Verpackungsebene 0",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+        "Barcode"
+      ]
+    },
+    {
+      "verpackungsebene": "Einzelartikel",
+      "label_inhalt": [
+        "Erbe-Artikel Nr.",
+        "Bezeichnung",
+        "Menge",
+        "Lot- bzw. SN",
+        "Mindesthaltbarkeitsdatum bzw. Herstelldatum",
+        "Barcode"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "_gedankengang": "Das Dokument ist eine Verpackungsvorschrift für das Produkt 'Boden 101 HF' mit der Artikelnummer 40160-104. Die Sprache des Dokuments ist Deutsch.\n\nDie Analyse der Verpackungsebenen und Label-Anforderungen erfolgt wie folgt:\n- **Verpackungsebene 0 (Einzelverpackung/Transportbehältnis):** Es werden Abmessungen für diese Ebene angegeben. Die Kennzeichnung mit einem Label ist explizit als `[X]` markiert, also erforderlich. Der `label_inhalt` wird direkt im Dokument aufgeführt: \"Artikelnummer + Artikelbezeichnung + Menge + Barcode\".\n- **Verpackungsebene 1 (Kartonage):** Diese Ebene enthält 16 Einheiten. Die Kennzeichnung mit einem Label ist ebenfalls als `[X]` markiert, also erforderlich. Der `label_inhalt` wird nicht explizit für diese Ebene aufgeführt, aber basierend auf dem Muster aus Beispiel 1 und der Logik, dass Kartonlabels oft dieselben Informationen wie Einzelartikellabels enthalten, wird davon ausgegangen, dass die gleichen Felder (Artikelnummer, Bezeichnung, Menge, Barcode) erforderlich sind.\n- **Verpackungsebene 2 (Außenverpackung):** Die Kennzeichnung mit einem Label ist hier ebenfalls als `[X]` markiert, also erforderlich. Der `label_inhalt` wird nicht explizit aufgeführt, daher wird analog zur Verpackungsebene 1 davon ausgegangen, dass dieselben Felder erforderlich sind.\n\nEs wurde keine spezifische Verpackungsebene \"Beispiel-Label\" identifiziert, daher ist diese Ebene nicht im Ergebnis enthalten.",
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": "40160-104",
+  "labels": [
+    {
+      "verpackungsebene": "Verpackungsebene 0",
+      "label_inhalt": [
+        "Artikelnummer",
+        "Artikelbezeichnung",
+        "Menge",
+        "Barcode"
+      ]
+    },
+    {
+      "verpackungsebene": "Verpackungsebene 1",
+      "label_inhalt": [
+        "Artikelnummer",
+        "Artikelbezeichnung",
+        "Menge",
+        "Barcode"
+      ]
+    },
+    {
+      "verpackungsebene": "Außenverpackung",
+      "label_inhalt": [
+        "Artikelnummer",
+        "Artikelbezeichnung",
+        "Menge",
+        "Barcode"
+      ]
+    }
+  ]
+}

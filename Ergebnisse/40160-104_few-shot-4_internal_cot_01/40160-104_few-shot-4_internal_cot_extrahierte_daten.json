@@ -1,0 +1,29 @@
+{
+  "_gedankengang": "Das Dokument ist eine Verpackungsvorschrift auf Deutsch. Die Artikelnummer wird als '40160-104' extrahiert. Es werden drei Verpackungsebenen identifiziert, für die ein Label erforderlich ist: 1. Einzelverpackung: Hier steht explizit '[X] Kennzeichnung mit Label: Ja Nein'. Der geforderte Labelinhalt ist 'Artikelnummer + Artikelbezeichnung + Menge + Barcode'. 2. Außenverpackung: Die Anweisung '[X] Kennzeichnung Außenverpackung mit Label: Ja Nein' zeigt, dass ein Label für diese Ebene ebenfalls erforderlich ist. Der Labelinhalt ist identisch zur Einzelverpackung. 3. Einzelartikel: Hier steht '[ ] [X] Kennzeichnung Einzelartikel mit Label: Ja Nein', was auf die Anforderung eines Labels für den Einzelartikel hinweist. Der geforderte Labelinhalt ist hier leer.",
+  "dokumentensprache": "Deutsch",
+  "artikelnummer": "40160-104",
+  "labels": [
+    {
+      "verpackungsebene": "Einzelverpackung",
+      "label_inhalt": [
+        "Artikelnummer",
+        "Artikelbezeichnung",
+        "Menge",
+        "Barcode"
+      ]
+    },
+    {
+      "verpackungsebene": "Außenverpackung",
+      "label_inhalt": [
+        "Artikelnummer",
+        "Artikelbezeichnung",
+        "Menge",
+        "Barcode"
+      ]
+    },
+    {
+      "verpackungsebene": "Einzelartikel",
+      "label_inhalt": []
+    }
+  ]
+}
